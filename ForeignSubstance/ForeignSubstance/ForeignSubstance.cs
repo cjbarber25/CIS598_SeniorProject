@@ -4,12 +4,12 @@ using Microsoft.Xna.Framework.Input;
 
 namespace ForeignSubstance
 {
-    public class Game1 : Game
+    public class ForeignSubstance : Game
     {
         private GraphicsDeviceManager _graphics;
         private SpriteBatch _spriteBatch;
 
-        public Game1()
+        public ForeignSubstance()
         {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";

@@ -59,9 +59,11 @@ namespace ForeignSubstance.StateManagement
         protected override void LoadContent()
         {
             SpriteBatch = new SpriteBatch(GraphicsDevice);
-            Font = _content.Load<SpriteFont>("menufont");
-            BlankTexture = _content.Load<Texture2D>("blank");
-            // Tell each of the screens to load thier content 
+
+            Font = _content.Load<SpriteFont>("File");
+            //BlankTexture = _content.Load<Texture2D>("blank");
+
+            // Tell each of the screens to load their content 
             foreach (var screen in _screens)
             {
                 screen.Activate();

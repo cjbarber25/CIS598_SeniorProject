@@ -1,1 +1,3 @@
 Source File,Dest File,Processor Type,Content Type,Source File Size,Dest File Size,Build Seconds
+"C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/File.spritefont","C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/bin/Windows/Content/File.xnb","FontDescriptionProcessor","SpriteFontContent",2013,21538,0.2561286
+"C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/scifi-tileset.png","C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/bin/Windows/Content/scifi-tileset.xnb","TextureProcessor","Texture2DContent",19978,766037,0.225263

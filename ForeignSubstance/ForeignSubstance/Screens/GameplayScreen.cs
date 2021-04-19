@@ -7,12 +7,16 @@ using Microsoft.Xna.Framework.Input;
 using ForeignSubstance.StateManagement;
 using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
+using ForeignSubstance.Sprites;
+using ForeignSubstance.Rooms;
+
 namespace ForeignSubstance.Screens
 {
     public class GameplayScreen : GameScreen
     {
         private ContentManager _content;
         private SpriteBatch _spriteBatch;
+        private BasicRoom testRoom;
 
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;
@@ -33,7 +37,11 @@ namespace ForeignSubstance.Screens
             if (_content == null)
                 _content = new ContentManager(ScreenManager.Game.Services, "Content");
             _spriteBatch = new SpriteBatch(ScreenManager.GraphicsDevice);
-           
+
+
+            testRoom = new BasicRoom();
+            testRoom.Build(5, 5, new Vector2(0,0));
+            testRoom.LoadContent(_content);
         }
 
 
@@ -113,9 +121,12 @@ namespace ForeignSubstance.Screens
         public override void Draw(GameTime gameTime)
         {
 
-            ScreenManager.GraphicsDevice.Clear(Color.LightSlateGray);
+            ScreenManager.GraphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
-            var spriteBatch = ScreenManager.SpriteBatch;
+
+            _spriteBatch.Begin();
+            testRoom.Draw(gameTime, _spriteBatch);
+            _spriteBatch.End();
 
         }
     }

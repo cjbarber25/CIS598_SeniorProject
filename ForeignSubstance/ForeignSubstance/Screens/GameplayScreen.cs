@@ -17,6 +17,7 @@ namespace ForeignSubstance.Screens
         private ContentManager _content;
         private SpriteBatch _spriteBatch;
         private BasicRoom testRoom;
+        private Player testPlayer;
 
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;
@@ -40,8 +41,11 @@ namespace ForeignSubstance.Screens
 
 
             testRoom = new BasicRoom();
-            testRoom.Build(5, 5, new Vector2(0,0));
+            testRoom.Build(5, 9, new Vector2(0,0));
             testRoom.LoadContent(_content);
+
+            testPlayer = new Player(new Vector2(200,200));
+            testPlayer.LoadContent(_content);
         }
 
 
@@ -126,6 +130,7 @@ namespace ForeignSubstance.Screens
 
             _spriteBatch.Begin();
             testRoom.Draw(gameTime, _spriteBatch);
+            testPlayer.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 
         }

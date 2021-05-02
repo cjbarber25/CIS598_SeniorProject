@@ -18,6 +18,7 @@ namespace ForeignSubstance.Screens
         private SpriteBatch _spriteBatch;
         private BasicRoom testRoom;
         private Player _player;
+        private bool _moving = false;
 
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;

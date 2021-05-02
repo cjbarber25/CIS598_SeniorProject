@@ -12,7 +12,9 @@ namespace ForeignSubstance.Sprites
     public class Player : Sprite
     {
 
-        private Texture2D _texture;
+        private Texture2D _activeTexture;
+        private Texture2D _idleTexture;
+        private Texture2D _runningTexture;
         private Vector2 _position;
         private Vector2 _velocity;
         private Inventory _inventory;
@@ -28,12 +30,14 @@ namespace ForeignSubstance.Sprites
             _inventory = new Inventory(5,this);
             _healthMax = 6;
             _healthRemaining = 6;
-            _textureMapPosition = new Rectangle(32 * (5), 32 * (5), 32, 32);
+            _textureMapPosition = new Rectangle(0,0,19,25);
         }
 
         public override void LoadContent(ContentManager content)
         {
-            _texture = content.Load<Texture2D>("scifi-tileset");
+            _idleTexture = content.Load<Texture2D>("Scifi Character/idle");
+            _runningTexture = content.Load<Texture2D>("Scifi Character/run");
+            _activeTexture = _idleTexture;
         }
 
         public override void Update(GameTime gametime)
@@ -44,20 +48,33 @@ namespace ForeignSubstance.Sprites
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
             {
                 _position += new Vector2(0, -2);
+                _activeTexture = _runningTexture;
+                _textureMapPosition = new Rectangle(0, 0, 19, 25);
 
             }
             if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S))
             {
                 _position += new Vector2(0, 2);
+                _activeTexture = _runningTexture;
+                _textureMapPosition = new Rectangle(0, 0, 19, 25);
 
             }
             if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
             {
                 _position += new Vector2(-2, 0);
+                _activeTexture = _runningTexture;
+                _textureMapPosition = new Rectangle(0, 0, 19, 25);
             }
             if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
             {
                 _position += new Vector2(2, 0);
+                _activeTexture = _runningTexture;
+                _textureMapPosition = new Rectangle(0, 0, 19, 25);
+            }
+            else
+            {
+                _activeTexture = _idleTexture;
+                _textureMapPosition = new Rectangle(0, 0, 19, 25);
             }
             _velocity = position - _position;
             //_position = position;
@@ -65,7 +82,7 @@ namespace ForeignSubstance.Sprites
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
+            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
             
         }
 

@@ -23,6 +23,7 @@ namespace ForeignSubstance.Screens
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;
 
+
         public GameplayScreen(Player player)
         {
             TransitionOnTime = TimeSpan.FromSeconds(1.5);
@@ -46,7 +47,6 @@ namespace ForeignSubstance.Screens
             testRoom.Build(5, 9, new Vector2(100,50));
             testRoom.LoadContent(_content);
 
-            
             _player.LoadContent(_content);
         }
 

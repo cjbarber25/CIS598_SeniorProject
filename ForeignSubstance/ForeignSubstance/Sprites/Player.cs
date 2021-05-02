@@ -23,7 +23,13 @@ namespace ForeignSubstance.Sprites
         private Rectangle _bounds;
         Rectangle _textureMapPosition;
         private KeyboardState keyboardState;
+        private double animationTimer;
+        private short animationFrame = 1;
+        private bool running = false;
+        private bool flipped = false;
+        private ArmSprite arm;
 
+        public Vector2 Position => _position;
         public Player(Vector2 position1)
         {
             this._position = position1;
@@ -31,6 +37,7 @@ namespace ForeignSubstance.Sprites
             _healthMax = 6;
             _healthRemaining = 6;
             _textureMapPosition = new Rectangle(0,0,19,25);
+            arm = new ArmSprite(this);
         }
 
         public override void LoadContent(ContentManager content)
@@ -38,6 +45,7 @@ namespace ForeignSubstance.Sprites
             _idleTexture = content.Load<Texture2D>("Scifi Character/idle");
             _runningTexture = content.Load<Texture2D>("Scifi Character/run");
             _activeTexture = _idleTexture;
+            arm.LoadContent(content);
         }
 
         public override void Update(GameTime gametime)
@@ -48,26 +56,27 @@ namespace ForeignSubstance.Sprites
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
             {
                 _position += new Vector2(0, -2);
-                _activeTexture = _runningTexture;
-                _textureMapPosition = new Rectangle(0, 0, 19, 25);
-
+                running = true;
             }
             if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S))
             {
                 _position += new Vector2(0, 2);
-                _activeTexture = _runningTexture;
-                _textureMapPosition = new Rectangle(0, 0, 19, 25);
-
+                running = true;
             }
             if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
             {
                 _position += new Vector2(-2, 0);
-                _activeTexture = _runningTexture;
-                _textureMapPosition = new Rectangle(0, 0, 19, 25);
+                running = true;
+                flipped = true;
             }
             if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
             {
                 _position += new Vector2(2, 0);
+                running = true;
+                flipped = false;
+            }
+            if(running)
+            {
                 _activeTexture = _runningTexture;
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
             }
@@ -76,14 +85,29 @@ namespace ForeignSubstance.Sprites
                 _activeTexture = _idleTexture;
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
             }
+            arm.Update(gametime);
+            running = false;
             _velocity = position - _position;
             //_position = position;
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
-            
+            animationTimer += gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (animationTimer > 0.2)
+            {
+                animationFrame++;
+                if (animationFrame > 3)
+                {
+                    animationFrame = 1;
+                }
+                animationTimer -= 0.2;
+            }
+            SpriteEffects spriteEffects = (flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            _textureMapPosition = new Rectangle(animationFrame * 19, 0, 19,25);
+            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.5f, spriteEffects, 0);
+            arm.Draw(gameTime, spriteBatch);
         }
 
     }

@@ -2486,7 +2486,7 @@
       ]
     },
     "Microsoft.NETCore.Platforms/1.0.2": {
-      "sha512": "fRHBvQs9Z/ZSUAqaSotK1UPol/lwybTgdeTXR4eVw3rVDgzUnWGTUsK0A418oR7NrimNL1TQu/IM0RDa26s0qg==",
+      "sha512": "Z6nHORZtHe6t8rgnqnLKcrTp5CRB2GK46CDbMhhrnc1HHiuhIrDqKDqjJ/fgtM/f26FYk8Y8pKLTB6rzAeGNZA==",
       "type": "package",
       "path": "microsoft.netcore.platforms/1.0.2",
       "files": [
@@ -7320,23 +7320,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ajbon\\.nuget\\packages\\": {},
-    "C:\\Microsoft\\Xamarin\\NuGet\\": {}
+    "C:\\Users\\coleb\\.nuget\\packages\\": {},
+    "C:\\Microsoft\\Xamarin\\NuGet\\": {},
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ajbon\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
+      "projectUniqueName": "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
       "projectName": "ForeignSubstance",
-      "projectPath": "C:\\Users\\ajbon\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
-      "packagesPath": "C:\\Users\\ajbon\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ajbon\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\obj\\",
+      "projectPath": "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
+      "packagesPath": "C:\\Users\\coleb\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "C:\\Microsoft\\Xamarin\\NuGet\\"
+        "C:\\Microsoft\\Xamarin\\NuGet\\",
+        "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\ajbon\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\coleb\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
       ],

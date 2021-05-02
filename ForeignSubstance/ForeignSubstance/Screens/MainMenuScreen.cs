@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using ForeignSubstance.StateManagement;
+using ForeignSubstance.Sprites;
 
 namespace ForeignSubstance.Screens
 {
@@ -23,7 +24,7 @@ namespace ForeignSubstance.Screens
 
         private void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            ScreenManager.AddScreen(new GameplayScreen(), e.PlayerIndex);
+            ScreenManager.AddScreen(new GameplayScreen(new Player(new Vector2(200, 200))), e.PlayerIndex);
         }
 
         private void OptionsMenuEntrySelected(object sender, PlayerIndexEventArgs e)

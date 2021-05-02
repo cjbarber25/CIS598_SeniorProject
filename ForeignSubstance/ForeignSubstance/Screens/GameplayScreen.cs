@@ -17,15 +17,16 @@ namespace ForeignSubstance.Screens
         private ContentManager _content;
         private SpriteBatch _spriteBatch;
         private BasicRoom testRoom;
-        private Player testPlayer;
+        private Player _player;
 
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;
 
-        public GameplayScreen()
+        public GameplayScreen(Player player)
         {
             TransitionOnTime = TimeSpan.FromSeconds(1.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
+            _player = player;
 
             _pauseAction = new InputAction(
                 new[] { Buttons.Start, Buttons.Back },
@@ -41,11 +42,11 @@ namespace ForeignSubstance.Screens
 
 
             testRoom = new BasicRoom();
-            testRoom.Build(5, 9, new Vector2(0,0));
+            testRoom.Build(5, 9, new Vector2(100,50));
             testRoom.LoadContent(_content);
 
-            testPlayer = new Player(new Vector2(200,200));
-            testPlayer.LoadContent(_content);
+            
+            _player.LoadContent(_content);
         }
 
 
@@ -63,12 +64,15 @@ namespace ForeignSubstance.Screens
         // stop updating when the pause menu is active, or if you tab away to a different application.
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
+            _player.Update(gameTime);
             base.Update(gameTime, otherScreenHasFocus, false);
             // Gradually fade in or out depending on whether we are covered by the pause screen.
             if (coveredByOtherScreen)
                 _pauseAlpha = Math.Min(_pauseAlpha + 1f / 32, 1);
             else
                 _pauseAlpha = Math.Max(_pauseAlpha - 1f / 32, 0);
+
+            
 
         }
 
@@ -128,9 +132,9 @@ namespace ForeignSubstance.Screens
             ScreenManager.GraphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
 
-            _spriteBatch.Begin();
+            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
             testRoom.Draw(gameTime, _spriteBatch);
-            testPlayer.Draw(gameTime, _spriteBatch);
+            _player.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 
         }

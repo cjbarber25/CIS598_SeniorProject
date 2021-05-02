@@ -1,4 +1,6 @@
 ﻿using ForeignSubstance.StateManagement;
+using ForeignSubstance.Sprites;
+using Microsoft.Xna.Framework;
 
 namespace ForeignSubstance.Screens
 {
@@ -31,7 +33,7 @@ namespace ForeignSubstance.Screens
 
         private void RestartGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            LoadingScreen.Load(ScreenManager, true, e.PlayerIndex, new GameplayScreen());
+            LoadingScreen.Load(ScreenManager, true, e.PlayerIndex, new GameplayScreen(new Player(new Vector2(200, 200))));
         }
 
         private void QuitGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)

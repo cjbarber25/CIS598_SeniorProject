@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework;
 using ForeignSubstance.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using ForeignSubstance.Collisions;
 
 namespace ForeignSubstance.Rooms
 {
@@ -95,9 +96,26 @@ namespace ForeignSubstance.Rooms
             }
         }
 
+        public bool CheckForOutOfBounds(BoundingRectangle playerBounds)
+        {
+            for (int i = 0; i < _sprites.GetLength(0); i++)
+            {
+                for (int j = 0; j < _sprites.GetLength(1); j++)
+                {
+                    if(_sprites[i, j].CheckCollision(playerBounds))
+                    {
+                        return true;
+                    }
+                }
+            }
+            
+            return false;
+            
+        }
+
         public override void Update(GameTime gametime)
         {
-
+            
         }
 
         public override void Draw(GameTime gameTime,SpriteBatch spriteBatch)

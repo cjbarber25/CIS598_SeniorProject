@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ForeignSubstance.Collisions;
 
 namespace ForeignSubstance.Sprites
 {
@@ -11,10 +12,12 @@ namespace ForeignSubstance.Sprites
     {
         private Texture2D _texture;
         private Vector2 _position;
+        public BoundingRectangle _bounds;
 
         public FloorSprite(Vector2 position)
         {
             _position = position;
+            
         }
 
         public override void LoadContent(ContentManager content)
@@ -25,6 +28,11 @@ namespace ForeignSubstance.Sprites
         public override void Update(GameTime gametime)
         {
             throw new NotImplementedException();
+        }
+
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            return false;
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

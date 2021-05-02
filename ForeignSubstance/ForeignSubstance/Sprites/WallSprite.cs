@@ -10,8 +10,7 @@ namespace ForeignSubstance.Sprites
 {
     public class WallSprite : Sprite
     {
-
-        private BoundingRectangle _bounds;
+        private BoundingRectangle _bounds = new BoundingRectangle(0,0,0,0);
 
         private Texture2D _texture;
 
@@ -25,7 +24,8 @@ namespace ForeignSubstance.Sprites
         {
             this._position = position;
             this._type = type;
-            
+           
+
         }
 
         public override void LoadContent(ContentManager content)
@@ -38,6 +38,15 @@ namespace ForeignSubstance.Sprites
 
         }
 
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            if (_bounds.CollidesWith(other))
+            {
+                return true;
+            }
+            return false;
+        }
+
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             //spriteBatch.Draw(_texture, _position, new Rectangle(0, 0, 32, 32),Color.White);
@@ -45,6 +54,7 @@ namespace ForeignSubstance.Sprites
             {
                 _textureMapPosition = new Rectangle(32 * (0), 32 * (1), 32, 32);
                 spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+                _bounds = new BoundingRectangle(_position.X, _position.Y, 12, 64);
             }
             else if (_type == ("TOP", "LEFT", "CORNER"))
             {

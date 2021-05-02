@@ -18,7 +18,7 @@ namespace ForeignSubstance.Screens
         private SpriteBatch _spriteBatch;
         private BasicRoom testRoom;
         private Player _player;
-        private bool _moving = false;
+        
 
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;
@@ -73,6 +73,14 @@ namespace ForeignSubstance.Screens
             else
                 _pauseAlpha = Math.Max(_pauseAlpha - 1f / 32, 0);
 
+            if (testRoom.CheckForOutOfBounds(_player.Bounds))
+            {
+                _player.Color = Color.Blue;
+            }
+            else
+            {
+                _player.Color = Color.White;
+            }
             
 
         }

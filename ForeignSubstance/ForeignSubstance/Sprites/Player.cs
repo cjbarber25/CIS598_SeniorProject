@@ -6,6 +6,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ForeignSubstance.Items;
+using ForeignSubstance.Collisions;
 
 namespace ForeignSubstance.Sprites
 {
@@ -20,9 +21,13 @@ namespace ForeignSubstance.Sprites
         private Inventory _inventory;
         private int _healthMax;
         private int _healthRemaining;
-        private Rectangle _bounds;
+        private BoundingRectangle _bounds;
         Rectangle _textureMapPosition;
         private KeyboardState keyboardState;
+
+        public Color Color { get; set; } = Color.White;
+        public BoundingRectangle Bounds => _bounds;
+
 
         public Player(Vector2 position1)
         {
@@ -31,6 +36,7 @@ namespace ForeignSubstance.Sprites
             _healthMax = 6;
             _healthRemaining = 6;
             _textureMapPosition = new Rectangle(0,0,19,25);
+            _bounds = new BoundingRectangle(_position.X, _position.Y, 19, 25);
         }
 
         public override void LoadContent(ContentManager content)
@@ -38,6 +44,15 @@ namespace ForeignSubstance.Sprites
             _idleTexture = content.Load<Texture2D>("Scifi Character/idle");
             _runningTexture = content.Load<Texture2D>("Scifi Character/run");
             _activeTexture = _idleTexture;
+        }
+
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            if (_bounds.CollidesWith(other))
+            {
+                return true;
+            }
+            return false;
         }
 
         public override void Update(GameTime gametime)
@@ -78,11 +93,14 @@ namespace ForeignSubstance.Sprites
             }
             _velocity = position - _position;
             //_position = position;
+            _bounds.X = _position.X;
+            _bounds.Y = _position.Y;
+            
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
+            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
             
         }
 

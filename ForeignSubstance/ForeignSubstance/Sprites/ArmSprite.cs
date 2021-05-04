@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ForeignSubstance.Collisions;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -30,6 +31,11 @@ namespace ForeignSubstance.Sprites
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_texture, _position, new Rectangle(0,0,9,5), Color.White, 0.0f, new Vector2(0, 0), 2.5f, SpriteEffects.None, 0);
+        }
+
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            return _player.CheckCollision(other);
         }
     }
 }

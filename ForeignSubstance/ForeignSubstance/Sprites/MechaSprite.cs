@@ -4,6 +4,8 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using ForeignSubstance.Collisions;
+
 namespace ForeignSubstance.Sprites
 {
     public class MechaSprite : Sprite
@@ -29,6 +31,11 @@ namespace ForeignSubstance.Sprites
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_texture, _position, new Rectangle(0,0,135,120), Color.White, 0.0f, new Vector2(0, 0), 2.5f, SpriteEffects.FlipHorizontally, 0);
+        }
+
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            throw new NotImplementedException();
         }
     }
 }

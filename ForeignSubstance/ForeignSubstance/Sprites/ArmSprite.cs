@@ -1,9 +1,11 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ForeignSubstance.Collisions;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ForeignSubstance.Collisions;
 
 namespace ForeignSubstance.Sprites
 {
@@ -21,7 +23,10 @@ namespace ForeignSubstance.Sprites
         {
             _texture = content.Load<Texture2D>("Scifi Character/arm_cannon");
         }
-
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            return false;
+        }
         public override void Update(GameTime gametime)
         {
             _position = _player.Position + new Vector2(31, 25);

@@ -124,7 +124,7 @@ namespace ForeignSubstance.Sprites
             }
             SpriteEffects spriteEffects = (flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             _textureMapPosition = new Rectangle(animationFrame * 19, 0, 19,25);
-            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.5f, spriteEffects, 0);
+            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color, 0.0f, new Vector2(0, 0), 2.5f, spriteEffects, 0);
             arm.Draw(gameTime, spriteBatch);
         }
 

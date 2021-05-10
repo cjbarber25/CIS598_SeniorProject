@@ -36,5 +36,10 @@ namespace ForeignSubstance.Sprites
         {
             spriteBatch.Draw(_texture, _position, new Rectangle(0,0,135,120), Color.White, 0.0f, new Vector2(0, 0), 2.5f, SpriteEffects.FlipHorizontally, 0);
         }
+
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

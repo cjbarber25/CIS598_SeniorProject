@@ -17,7 +17,7 @@ namespace ForeignSubstance
             _graphics.GraphicsProfile = GraphicsProfile.HiDef;
 
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
 
             var screenFactory = new ScreenFactory();
             Services.AddService(typeof(IScreenFactory), screenFactory);

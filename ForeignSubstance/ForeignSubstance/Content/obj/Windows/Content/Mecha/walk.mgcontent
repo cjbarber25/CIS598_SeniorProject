@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <SourceFile>C:/Users/coleb/Source/Repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/walk.png</SourceFile>
-  <SourceTime>2021-05-03T20:20:01.1891905-05:00</SourceTime>
+  <SourceTime>2021-05-10T23:28:54.5545093-05:00</SourceTime>
   <DestFile>C:/Users/coleb/Source/Repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/bin/Windows/Content/Mecha/walk.xnb</DestFile>
-  <DestTime>2021-05-03T20:20:11.0814464-05:00</DestTime>
+  <DestTime>2021-05-10T23:29:03.3475023-05:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2020-08-10T16:17:54-05:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

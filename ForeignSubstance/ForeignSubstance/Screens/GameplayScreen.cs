@@ -9,6 +9,7 @@ using Microsoft.Xna.Framework.Media;
 using Microsoft.Xna.Framework.Audio;
 using ForeignSubstance.Sprites;
 using ForeignSubstance.Rooms;
+using ForeignSubstance.Collisions;
 
 namespace ForeignSubstance.Screens
 {
@@ -16,7 +17,7 @@ namespace ForeignSubstance.Screens
     {
         private ContentManager _content;
         private SpriteBatch _spriteBatch;
-        private BasicRoom testRoom;
+        private Room[,] _rooms = new Room[10,10];
         private Player _player;
         
 
@@ -29,6 +30,7 @@ namespace ForeignSubstance.Screens
             TransitionOnTime = TimeSpan.FromSeconds(1.5);
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
             _player = player;
+            _player.gameScreen = this;
 
             _pauseAction = new InputAction(
                 new[] { Buttons.Start, Buttons.Back },
@@ -43,9 +45,9 @@ namespace ForeignSubstance.Screens
             _spriteBatch = new SpriteBatch(ScreenManager.GraphicsDevice);
 
 
-            testRoom = new BasicRoom();
-            testRoom.Build(5, 9, new Vector2(100,50));
-            testRoom.LoadContent(_content);
+            _rooms[0,0] = new BasicRoom();
+            _rooms[0, 0].Build(5, 9, new Vector2(100,50));
+            _rooms[0, 0].LoadContent(_content);
 
             _player.LoadContent(_content);
         }
@@ -65,7 +67,7 @@ namespace ForeignSubstance.Screens
         // stop updating when the pause menu is active, or if you tab away to a different application.
         public override void Update(GameTime gameTime, bool otherScreenHasFocus, bool coveredByOtherScreen)
         {
-            _player.Update(gameTime);
+            
             base.Update(gameTime, otherScreenHasFocus, false);
             // Gradually fade in or out depending on whether we are covered by the pause screen.
             if (coveredByOtherScreen)
@@ -73,15 +75,11 @@ namespace ForeignSubstance.Screens
             else
                 _pauseAlpha = Math.Max(_pauseAlpha - 1f / 32, 0);
 
-            if (testRoom.CheckForOutOfBounds(_player.Bounds))
+            if (IsActive)
             {
-                _player.Color = Color.Blue;
+                _player.Update(gameTime);
+                
             }
-            else
-            {
-                _player.Color = Color.White;
-            }
-            
 
         }
 
@@ -135,6 +133,20 @@ namespace ForeignSubstance.Screens
             }
         }
 
+        public bool CheckCollision(BoundingRectangle b)
+        {
+            if (_rooms[0, 0].CheckForOutOfBounds(b))
+            {
+                _player.Color = Color.Blue;
+                return true;
+            }
+            else
+            {
+                _player.Color = Color.White;
+                return false;
+            }
+        }
+
         public override void Draw(GameTime gameTime)
         {
 
@@ -142,7 +154,7 @@ namespace ForeignSubstance.Screens
             // TODO: Add your drawing code here
 
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            testRoom.Draw(gameTime, _spriteBatch);
+            _rooms[0,0].Draw(gameTime, _spriteBatch);
             _player.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 

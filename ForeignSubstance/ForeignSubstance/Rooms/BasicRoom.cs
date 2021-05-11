@@ -96,7 +96,7 @@ namespace ForeignSubstance.Rooms
             }
         }
 
-        public bool CheckForOutOfBounds(BoundingRectangle playerBounds)
+        public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
         {
             for (int i = 0; i < _sprites.GetLength(0); i++)
             {

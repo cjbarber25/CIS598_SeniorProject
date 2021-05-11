@@ -63,9 +63,5 @@ namespace ForeignSubstance.Sprites
             spriteBatch.Draw(_texture, _position, new Rectangle(0,0,9,5), Color.White, angle, pivot, 2.5f, spriteEffects, 0);
         }
 
-        public override bool CheckCollision(BoundingRectangle other)
-        {
-            return _player.CheckCollision(other);
-        }
     }
 }

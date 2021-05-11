@@ -10,7 +10,7 @@ namespace ForeignSubstance.Sprites
 {
     public class WallSprite : Sprite
     {
-        private BoundingRectangle _bounds = new BoundingRectangle(0,0,0,0);
+        private List<BoundingRectangle> _bounds = new List<BoundingRectangle>();
 
         private Texture2D _texture;
 
@@ -40,9 +40,14 @@ namespace ForeignSubstance.Sprites
 
         public override bool CheckCollision(BoundingRectangle other)
         {
-            if (_bounds.CollidesWith(other))
+            foreach (BoundingRectangle b in _bounds)
             {
-                return true;
+
+                if (b.CollidesWith(other))
+                {
+                    return true;
+                }
+                
             }
             return false;
         }
@@ -54,7 +59,9 @@ namespace ForeignSubstance.Sprites
             {
                 _textureMapPosition = new Rectangle(32 * (0), 32 * (1), 32, 32);
                 spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
-                _bounds = new BoundingRectangle(_position.X, _position.Y, 12, 64);
+
+
+                _bounds.Add( new BoundingRectangle(_position.X, _position.Y, 10, 64));
             }
             else if (_type == ("TOP", "LEFT", "CORNER"))
             {
@@ -64,16 +71,27 @@ namespace ForeignSubstance.Sprites
                 spriteBatch.Draw(_texture, new Vector2(_position.X+12,_position.Y+13), _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
                 _textureMapPosition = new Rectangle(6, 6, 26, 26);
                 spriteBatch.Draw(_texture, new Vector2(_position.X + 12, _position.Y + 75), _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+
+                _bounds.Add(new BoundingRectangle(_position.X, _position.Y, 10, 128));
+                _bounds.Add(new BoundingRectangle(_position.X, _position.Y, 64, 34));
             }
             else if (_type == ("BOTTOM", "LEFT", "CORNER"))
             {
                 _textureMapPosition = new Rectangle(32 * (0), 32 * (2), 32, 32);
                 spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+
+                _bounds.Add(new BoundingRectangle(_position.X, _position.Y, 10, 128));
+                _bounds.Add(new BoundingRectangle(_position.X - 10, _position.Y + 20, 64, 10));
             }
             else if (_type == ("NORMAL", "RIGHT", "WALL"))
             {
                 _textureMapPosition = new Rectangle(32 * (2), 32 * (1), 32, 32);
                 spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+
+                _bounds.Add(new BoundingRectangle(_position.X + 32, _position.Y, 12, 64));
             }
             else if (_type == ("TOP", "RIGHT", "CORNER"))
             {
@@ -83,11 +101,19 @@ namespace ForeignSubstance.Sprites
                 spriteBatch.Draw(_texture, new Vector2(_position.X, _position.Y + 13), _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
                 _textureMapPosition = new Rectangle(6, 6, 26, 26);
                 spriteBatch.Draw(_texture, new Vector2(_position.X, _position.Y + 75), _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+
+                _bounds.Add(new BoundingRectangle(_position.X+32, _position.Y, 12, 128));
+                _bounds.Add(new BoundingRectangle(_position.X, _position.Y, 64, 34));
             }
             else if (_type == ("BOTTOM", "RIGHT", "CORNER"))
             {
                 _textureMapPosition = new Rectangle(32 * (2), 32 * (2), 32, 32);
                 spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+
+                _bounds.Add(new BoundingRectangle(_position.X + 32, _position.Y, 12, 128));
+                _bounds.Add(new BoundingRectangle(_position.X - 10, _position.Y + 20, 64, 10));
             }
             else if (_type == ("TOP", "CENTER", "WALL"))
             {
@@ -97,6 +123,9 @@ namespace ForeignSubstance.Sprites
                 spriteBatch.Draw(_texture, new Vector2(_position.X,_position.Y+13), _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
                 _textureMapPosition = new Rectangle(32, 6, 32, 26);
                 spriteBatch.Draw(_texture, new Vector2(_position.X, _position.Y + 75), _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+
+                _bounds.Add(new BoundingRectangle(_position.X, _position.Y, 64, 34));
 
 
                 /*
@@ -110,6 +139,9 @@ namespace ForeignSubstance.Sprites
             {
                 _textureMapPosition = new Rectangle(32 * (1), 32 * (2), 32, 32);
                 spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+
+
+                _bounds.Add(new BoundingRectangle(_position.X-10, _position.Y+20, 64, 10));
             }
             else
             {

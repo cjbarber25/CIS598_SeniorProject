@@ -112,6 +112,7 @@ namespace ForeignSubstance.Sprites
             }
             
             arm.Update(gametime);
+            flipped = arm.Flipped;
             running = false;
             _velocity = position - _position;
 

@@ -27,7 +27,10 @@ namespace ForeignSubstance.Sprites
         {
 
         }
-
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            return false;
+        }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(_texture, _position, new Rectangle(0,0,135,120), Color.White, 0.0f, new Vector2(0, 0), 2.5f, SpriteEffects.FlipHorizontally, 0);

@@ -57,6 +57,10 @@ namespace ForeignSubstance.Sprites
                 _position = _player.Position + new Vector2(15, 31);
             }
         }
+        public override bool CheckCollision(BoundingRectangle other)
+        {
+            return false;
+        }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {

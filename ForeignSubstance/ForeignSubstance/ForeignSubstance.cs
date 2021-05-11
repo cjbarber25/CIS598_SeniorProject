@@ -15,9 +15,7 @@ namespace ForeignSubstance
         {
             _graphics = new GraphicsDeviceManager(this);
             _graphics.GraphicsProfile = GraphicsProfile.HiDef;
-            _graphics.PreferredBackBufferWidth = 1280;
-            _graphics.PreferredBackBufferHeight = 720;
-            _graphics.ApplyChanges();
+
             Content.RootDirectory = "Content";
             IsMouseVisible = true;
 
@@ -38,7 +36,9 @@ namespace ForeignSubstance
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-
+            _graphics.PreferredBackBufferWidth = 1280;
+            _graphics.PreferredBackBufferHeight = 720;
+            _graphics.ApplyChanges();
             base.Initialize();
         }
 

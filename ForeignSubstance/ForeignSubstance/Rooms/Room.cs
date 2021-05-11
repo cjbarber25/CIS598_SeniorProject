@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
+using ForeignSubstance.Collisions;
 
 namespace ForeignSubstance.Rooms
 {
@@ -21,7 +22,7 @@ namespace ForeignSubstance.Rooms
         /// Builds the rooms and assigns textures/bounds to proper locations.
         /// </summary>
         public abstract void Build(int length, int width, Vector2 position);
-
+        public abstract bool CheckForOutOfBounds(BoundingRectangle playerBounds);
 
         public abstract void LoadContent(ContentManager content);
 

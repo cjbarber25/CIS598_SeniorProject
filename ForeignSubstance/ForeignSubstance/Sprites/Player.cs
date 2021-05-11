@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ForeignSubstance.Items;
 using ForeignSubstance.Collisions;
+using ForeignSubstance.Screens;
 
 namespace ForeignSubstance.Sprites
 {
@@ -29,6 +30,7 @@ namespace ForeignSubstance.Sprites
         private bool running = false;
         private bool flipped = false;
         private ArmSprite arm;
+        public GameplayScreen gameScreen;
 
         public Color Color { get; set; } = Color.White;
         public BoundingRectangle Bounds => _bounds;
@@ -66,30 +68,38 @@ namespace ForeignSubstance.Sprites
         public override void Update(GameTime gametime)
         {
             keyboardState = Keyboard.GetState();
-
-            Vector2 position = new Vector2(0, 0);
+            
+            Vector2 position = _position;
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
             {
-                _position += new Vector2(0, -2);
+
+                position += new Vector2(0, -2);
                 running = true;
+                
+
             }
             if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S))
             {
-                _position += new Vector2(0, 2);
+                position += new Vector2(0, 2);
                 running = true;
+                
+
             }
             if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
             {
-                _position += new Vector2(-2, 0);
+                position += new Vector2(-2, 0);
                 running = true;
-                flipped = true;
+                
             }
             if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
             {
-                _position += new Vector2(2, 0);
+                position += new Vector2(2, 0);
                 running = true;
-                flipped = false;
+                
             }
+
+
+
             if(running)
             {
                 _activeTexture = _runningTexture;
@@ -100,13 +110,25 @@ namespace ForeignSubstance.Sprites
                 _activeTexture = _idleTexture;
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
             }
+            
             arm.Update(gametime);
             running = false;
             _velocity = position - _position;
-            //_position = position;
-            _bounds.X = _position.X;
-            _bounds.Y = _position.Y;
-            
+
+            _bounds.Y = position.Y;
+            _bounds.X = position.X;
+            if (!gameScreen.CheckCollision(_bounds))
+            {
+                _position = position;
+                
+            }
+            else
+            {
+                _bounds.X = _position.X;
+                _bounds.Y = _position.Y;
+            }
+
+
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

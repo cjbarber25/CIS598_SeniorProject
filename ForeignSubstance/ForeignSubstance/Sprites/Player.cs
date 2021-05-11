@@ -82,13 +82,11 @@ namespace ForeignSubstance.Sprites
             {
                 _position += new Vector2(-2, 0);
                 running = true;
-                flipped = true;
             }
             if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
             {
                 _position += new Vector2(2, 0);
                 running = true;
-                flipped = false;
             }
             if(running)
             {
@@ -101,6 +99,7 @@ namespace ForeignSubstance.Sprites
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
             }
             arm.Update(gametime);
+            flipped = arm.Flipped;
             running = false;
             _velocity = position - _position;
             //_position = position;

@@ -20,6 +20,8 @@ namespace ForeignSubstance.Sprites
         private Vector2 pivot;
         private float angle;
         private bool flip = false;
+
+        public bool Flipped => flip;
         public ArmSprite(Player player)
         {
             _player = player;
@@ -35,9 +37,14 @@ namespace ForeignSubstance.Sprites
             priorMouseState = currentMouseState;
             currentMouseState = Mouse.GetState();
             _direction = new Vector2(currentMouseState.X - pivot.X, currentMouseState.Y - pivot.Y);
+            _direction *= 100;
             _position = _player.Position + new Vector2(31, 29);
             angle = (float)Math.Atan2(_direction.Y, _direction.X);
-            if(angle >= Math.PI/2 && angle < 3*Math.PI/2)
+            if (angle >= Math.PI / 2 && angle <= Math.PI)
+            {
+                flip = true;
+            }
+            else if(angle >= -Math.PI && angle < -Math.PI/2)
             {
                 flip = true;
             }
@@ -45,11 +52,15 @@ namespace ForeignSubstance.Sprites
             {
                 flip = false;
             }
+            if (flip)
+            {
+                _position = _player.Position + new Vector2(15, 31);
+            }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            SpriteEffects spriteEffects = (flip) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
+            SpriteEffects spriteEffects = (flip) ? SpriteEffects.FlipVertically : SpriteEffects.None;
             spriteBatch.Draw(_texture, _position, new Rectangle(0,0,9,5), Color.White, angle, pivot, 2.5f, spriteEffects, 0);
         }
 

@@ -19,7 +19,7 @@ namespace ForeignSubstance
             _graphics.PreferredBackBufferHeight = 720;
             _graphics.ApplyChanges();
             Content.RootDirectory = "Content";
-            IsMouseVisible = true;
+            IsMouseVisible = false;
 
             var screenFactory = new ScreenFactory();
             Services.AddService(typeof(IScreenFactory), screenFactory);

@@ -36,8 +36,7 @@ namespace ForeignSubstance.Sprites
         {
             priorMouseState = currentMouseState;
             currentMouseState = Mouse.GetState();
-            _direction = new Vector2(currentMouseState.X - pivot.X, currentMouseState.Y - pivot.Y);
-            _direction *= 100;
+            _direction = new Vector2(currentMouseState.X - _position.X, currentMouseState.Y - _position.Y - pivot.Y);
             _position = _player.Position + new Vector2(31, 29);
             angle = (float)Math.Atan2(_direction.Y, _direction.X);
             if (angle >= Math.PI / 2 && angle <= Math.PI)

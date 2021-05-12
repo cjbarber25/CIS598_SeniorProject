@@ -86,6 +86,7 @@ namespace ForeignSubstance.Rooms
 
         public void LoadContent(ContentManager content)
         {
+            Random rand = new Random(DateTime.Now.Ticks.GetHashCode());
             for (int i = 0; i < _levelHeight; i++)
             {
                 for (int j = 0; j < _levelWidth; j++)
@@ -93,7 +94,7 @@ namespace ForeignSubstance.Rooms
                     if(_level[i,j] != null)
                     {
                         
-                        _level[i, j].Build(5, 5, new Vector2(100, 100));
+                        _level[i, j].Build(rand.Next(5,10), rand.Next(7,15), new Vector2(100, 100));
                         _level[i, j].LoadContent(content);
                     }
                 }

@@ -17,12 +17,15 @@ namespace ForeignSubstance.Screens
     {
         private ContentManager _content;
         private SpriteBatch _spriteBatch;
-        private Room[,] _rooms = new Room[10,10];
         private Player _player;
-        
+
+        private int[,] _layout = new int[,] { { 1, 1, 1 } };
+        private LevelBuilder _level;
 
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;
+
+        
 
 
         public GameplayScreen(Player player)
@@ -31,6 +34,8 @@ namespace ForeignSubstance.Screens
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
             _player = player;
             _player.gameScreen = this;
+
+            _level = new LevelBuilder(_layout);
 
             _pauseAction = new InputAction(
                 new[] { Buttons.Start, Buttons.Back },
@@ -45,10 +50,7 @@ namespace ForeignSubstance.Screens
             _spriteBatch = new SpriteBatch(ScreenManager.GraphicsDevice);
 
 
-            _rooms[0,0] = new BasicRoom();
-            _rooms[0, 0].Build(5, 9, new Vector2(100,50));
-            _rooms[0, 0].LoadContent(_content);
-
+            _level.LoadContent(_content);
             _player.LoadContent(_content);
         }
 
@@ -135,7 +137,7 @@ namespace ForeignSubstance.Screens
 
         public bool CheckCollision(BoundingRectangle b)
         {
-            if (_rooms[0, 0].CheckForOutOfBounds(b))
+            if (_level.CheckCollision(b))
             {
                 _player.Color = Color.Blue;
                 return true;
@@ -154,7 +156,7 @@ namespace ForeignSubstance.Screens
             // TODO: Add your drawing code here
 
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
-            _rooms[0,0].Draw(gameTime, _spriteBatch);
+            _level.Draw(gameTime, _spriteBatch);
             _player.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 

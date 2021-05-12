@@ -22,15 +22,14 @@ namespace ForeignSubstance.Rooms
     }
     public class LevelBuilder
     {
-        private int[,] _layout;
         private Room[,] _level;
-        private int _levelHeight;
-        private int _levelWidth;
+        private int _levelHeight = 1;
+        private int _levelWidth = 3;
         private Tuple<int,int> _activeRoom;
 
         public LevelBuilder(int[,] layout)
         {
-            
+            _level = new Room[_levelHeight, _levelWidth];
             _activeRoom = new Tuple<int, int>(0, 0);
             for(int i  = 0; i < _levelHeight; i++)
             {
@@ -93,8 +92,9 @@ namespace ForeignSubstance.Rooms
                 {
                     if(_level[i,j] != null)
                     {
+                        
+                        _level[i, j].Build(5, 5, new Vector2(100, 100));
                         _level[i, j].LoadContent(content);
-                        _level[i, j].Build(5, 5, new Vector2(200, 200));
                     }
                 }
             }

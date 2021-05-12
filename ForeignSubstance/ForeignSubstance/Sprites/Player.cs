@@ -17,6 +17,7 @@ namespace ForeignSubstance.Sprites
         private Texture2D _activeTexture;
         private Texture2D _idleTexture;
         private Texture2D _runningTexture;
+        private Texture2D _healthTexture;
         private Vector2 _position;
         private Vector2 _velocity;
         private Inventory _inventory;
@@ -55,6 +56,7 @@ namespace ForeignSubstance.Sprites
             _runningTexture = content.Load<Texture2D>("Scifi Character/run");
             _activeTexture = _idleTexture;
             arm.LoadContent(content);
+            _healthTexture = content.Load<Texture2D>("Health");
         }
 
         public override bool CheckCollision(BoundingRectangle other)
@@ -70,33 +72,70 @@ namespace ForeignSubstance.Sprites
         {
             keyboardState = Keyboard.GetState();
             
-            Vector2 position = _position;
+            Vector2 positionXChecker = _position;
+            Vector2 positionYChecker = _position;
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
             {
 
-                position += new Vector2(0, -2);
+                positionYChecker += new Vector2(0, -2);
                 running = true;
-                
+                _bounds.Y = positionYChecker.Y;
+                if (!gameScreen.CheckCollision(_bounds))
+                {
+                    _position.Y = positionYChecker.Y;
+                }
+                else
+                {
+                    _bounds.Y = _position.Y;
+                }
+
 
             }
             if (keyboardState.IsKeyDown(Keys.Down) || keyboardState.IsKeyDown(Keys.S))
             {
-                position += new Vector2(0, 2);
+                positionYChecker += new Vector2(0, 2);
                 running = true;
-                
+                _bounds.Y = positionYChecker.Y;
+                if (!gameScreen.CheckCollision(_bounds))
+                {
+                    _position.Y = positionYChecker.Y;
+                }
+                else
+                {
+                    _bounds.Y = _position.Y;
+                }
+
 
             }
             if (keyboardState.IsKeyDown(Keys.Left) || keyboardState.IsKeyDown(Keys.A))
             {
-                position += new Vector2(-2, 0);
+                positionXChecker += new Vector2(-2, 0);
                 running = true;
-                
+                _bounds.X = positionXChecker.X;
+                if (!gameScreen.CheckCollision(_bounds))
+                {
+                    _position.X = positionXChecker.X;
+                }
+                else
+                {
+                    _bounds.X = _position.X;
+                }
+               
             }
             if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
             {
-                position += new Vector2(2, 0);
+                positionXChecker += new Vector2(2, 0);
                 running = true;
-                
+                _bounds.X = positionXChecker.X;
+                if (!gameScreen.CheckCollision(_bounds))
+                {
+                    _position.X = positionXChecker.X;
+                }
+                else
+                {
+                    _bounds.X = _position.X;
+                }
+
             }
 
 
@@ -115,20 +154,7 @@ namespace ForeignSubstance.Sprites
             arm.Update(gametime);
             flipped = arm.Flipped;
             running = false;
-            _velocity = position - _position;
-
-            _bounds.Y = position.Y;
-            _bounds.X = position.X;
-            if (!gameScreen.CheckCollision(_bounds))
-            {
-                _position = position;
-                
-            }
-            else
-            {
-                _bounds.X = _position.X;
-                _bounds.Y = _position.Y;
-            }
+            
 
 
         }
@@ -149,6 +175,26 @@ namespace ForeignSubstance.Sprites
             SpriteEffects spriteEffects = (flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             _textureMapPosition = new Rectangle(animationFrame * 19, 0, 19,25);
             spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color, 0.0f, new Vector2(0, 0), 2.5f, spriteEffects, 0);
+            int j = _healthRemaining;
+            Vector2 k = new Vector2(20, 20);
+            for(int i = 0; i < _healthMax/2; i++)
+            {
+                if(j>= 2)
+                {
+                    spriteBatch.Draw(_healthTexture, k, new Rectangle(0, 0, 36, 32), Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
+                    j -= 2;
+                }
+                else if(j ==1)
+                {
+                    spriteBatch.Draw(_healthTexture, k, new Rectangle(36, 0, 36, 32), Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
+                    j -= 1;
+                }
+                else
+                {
+                    spriteBatch.Draw(_healthTexture, k, new Rectangle(74, 0, 36, 32), Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
+                }
+                k += new Vector2(60, 0);
+            }
             arm.Draw(gameTime, spriteBatch);
         }
 

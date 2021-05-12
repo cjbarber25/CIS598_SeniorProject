@@ -5,7 +5,6 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ForeignSubstance.Collisions;
 using Microsoft.Xna.Framework.Input;
 
 namespace ForeignSubstance.Sprites

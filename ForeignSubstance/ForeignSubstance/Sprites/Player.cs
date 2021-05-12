@@ -174,10 +174,7 @@ namespace ForeignSubstance.Sprites
             }
             SpriteEffects spriteEffects = (flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             _textureMapPosition = new Rectangle(animationFrame * 19, 0, 19,25);
-<<<<<<< HEAD
             spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color, 0.0f, new Vector2(9.5f, 0), 2.5f, spriteEffects, 0);
-=======
-            spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color, 0.0f, new Vector2(0, 0), 2.5f, spriteEffects, 0);
             int j = _healthRemaining;
             Vector2 k = new Vector2(20, 20);
             for(int i = 0; i < _healthMax/2; i++)
@@ -198,7 +195,6 @@ namespace ForeignSubstance.Sprites
                 }
                 k += new Vector2(60, 0);
             }
->>>>>>> ded79de8da0061a1b14891f0b6f5cbb6efcb63c4
             arm.Draw(gameTime, spriteBatch);
         }
 

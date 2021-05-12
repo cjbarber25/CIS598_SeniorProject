@@ -5,6 +5,7 @@
   <Config />
   <SourceFiles>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/File.spritefont</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/M484BulletCollection1.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/attack.gif</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/attack.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/damaged and death.png</File>
@@ -20,6 +21,7 @@
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/scifi-tileset.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

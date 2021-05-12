@@ -31,6 +31,7 @@ namespace ForeignSubstance.Sprites
         private bool flipped = false;
         private ArmSprite arm;
         public GameplayScreen gameScreen;
+        public ArmSprite Arm => arm;
 
         public Color Color { get; set; } = Color.White;
         public BoundingRectangle Bounds => _bounds;

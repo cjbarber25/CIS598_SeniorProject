@@ -8,3 +8,5 @@ SciFi Character with gun seperate sprite (Example?) - FartFish itch.io
 	https://fartfish.itch.io/scifi-character-pack
 Modern sprite pack (guns and items) - Tyst itch.io
 	https://tyst.itch.io/modern-sprite-pack
+Scifi Bullets and Lasers - Master494 OpenGameArt.Org
+	https://opengameart.org/content/bullet-collection-1-m484

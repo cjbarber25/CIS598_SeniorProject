@@ -137,16 +137,7 @@ namespace ForeignSubstance.Screens
 
         public bool CheckCollision(BoundingRectangle b)
         {
-            if (_level.CheckCollision(b))
-            {
-                _player.Color = Color.Blue;
-                return true;
-            }
-            else
-            {
-                _player.Color = Color.White;
-                return false;
-            }
+            return _level.CheckCollision(b);
         }
 
         public override void Draw(GameTime gameTime)

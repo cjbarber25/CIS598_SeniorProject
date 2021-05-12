@@ -28,6 +28,7 @@ namespace ForeignSubstance.Sprites
             _velocity = 3.0f;
             _textureMapPosition = new Rectangle(0,220,20,16);
             _direction = _player.Arm.Direction;
+            _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;
         }
         public override bool CheckCollision(BoundingRectangle other)
@@ -37,7 +38,7 @@ namespace ForeignSubstance.Sprites
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 1.5f, SpriteEffects.None, 0);
+            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(10, 8), 1.5f, SpriteEffects.None, 0);
         }
 
         public override void LoadContent(ContentManager content)
@@ -50,8 +51,6 @@ namespace ForeignSubstance.Sprites
             _timer += (float)gametime.ElapsedGameTime.TotalSeconds;
 
             if (_timer > _lifeSpan) IsRemoved = true;
-
-            _direction.Normalize();
             _position += _direction * _velocity;
         }
     }

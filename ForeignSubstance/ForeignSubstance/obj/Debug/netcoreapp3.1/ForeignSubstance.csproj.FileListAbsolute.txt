@@ -99,3 +99,4 @@ C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstan
 C:\Users\coleb\Source\Repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\M484BulletCollection1.xnb
 C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\M484BulletCollection1.xnb
 C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Health.xnb
+C:\Users\coleb\Source\Repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Health.xnb

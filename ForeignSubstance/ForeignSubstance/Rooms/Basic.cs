@@ -9,7 +9,7 @@ using ForeignSubstance.Collisions;
 
 namespace ForeignSubstance.Rooms
 {
-    public class BasicRoom : Room
+    public class Basic : Room
     {
         private Sprite[,] _sprites;
 

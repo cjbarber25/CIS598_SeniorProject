@@ -31,9 +31,9 @@ namespace ForeignSubstance.Sprites
         public ArmSprite(Player player)
         {
             _player = player;
-            _position = player.Position + new Vector2(31,29);
+            _position = player.Position + new Vector2(8,31);
             muzzlePosition = _position + new Vector2(22, 0);
-            pivot = new Vector2(0,2);
+            pivot = new Vector2(0,2.5f);
             bullets = new List<Bullet>();
         }
         public override void LoadContent(ContentManager content)
@@ -45,10 +45,11 @@ namespace ForeignSubstance.Sprites
         {
             priorMouseState = currentMouseState;
             currentMouseState = Mouse.GetState();
-            _direction = new Vector2(currentMouseState.X - _position.X, currentMouseState.Y - _position.Y - pivot.Y);
-            _position = _player.Position + new Vector2(31, 29);
+            _direction = new Vector2(currentMouseState.X - _position.X, currentMouseState.Y - _position.Y);
+            _position = _player.Position + new Vector2(8, 31);
             angle = (float)Math.Atan2(_direction.Y, _direction.X);
-            muzzlePosition = _position + _direction * (this._texture.Width / 2.5f);
+            
+
             if(bullets != null)
             {
                 foreach (var bullet in bullets)
@@ -70,9 +71,14 @@ namespace ForeignSubstance.Sprites
             }
             if (flip)
             {
-                _position = _player.Position + new Vector2(15, 31);
+                _position = _player.Position + new Vector2(-8, 31);
+                _direction = new Vector2(currentMouseState.X - _position.X, currentMouseState.Y - _position.Y);
             }
-            if(currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released)
+
+            _direction.Normalize();
+            muzzlePosition = _position + _direction * (this._texture.Width * 2.5f);
+
+            if (currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released)
             {
                 var bullet = new Bullet(_player);
                 bullets.Add(bullet);

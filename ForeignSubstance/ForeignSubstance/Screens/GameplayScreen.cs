@@ -36,6 +36,7 @@ namespace ForeignSubstance.Screens
             _player.gameScreen = this;
 
             _mech = new MechaSprite(new Vector2(300, 400), _player);
+            _mech.gameScreen = this;
 
             _level = new LevelBuilder(_layout);
 

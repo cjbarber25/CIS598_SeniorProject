@@ -24,5 +24,9 @@ namespace ForeignSubstance.Collisions
         {
             return CollisionHelper.Collides(this, other);
         }
+        public bool CollidesWith(BoundingRectangle other)
+        {
+            return CollisionHelper.Collides(this, other);
+        }
     }
 }

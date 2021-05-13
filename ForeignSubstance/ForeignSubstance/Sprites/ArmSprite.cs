@@ -48,7 +48,6 @@ namespace ForeignSubstance.Sprites
             _position = _player.Position + new Vector2(8, 31);
             angle = (float)Math.Atan2(_direction.Y, _direction.X);
             
-
             if(bullets != null)
             {
                 foreach (var bullet in bullets)

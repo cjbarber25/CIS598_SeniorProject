@@ -27,7 +27,10 @@ namespace ForeignSubstance.Sprites
         Rectangle _textureMapPosition;
         private KeyboardState keyboardState;
         private double animationTimer;
-        private short animationFrame = 1;
+        private short animationFrame = 0;
+        private short animationFrameNum;
+        private bool idlingCurrent = true;
+        private bool idlingPrior = false;
         private bool running = false;
         private bool flipped = false;
         private ArmSprite arm;
@@ -71,9 +74,9 @@ namespace ForeignSubstance.Sprites
         public override void Update(GameTime gametime)
         {
             keyboardState = Keyboard.GetState();
-            
             Vector2 positionXChecker = _position;
             Vector2 positionYChecker = _position;
+            idlingPrior = idlingCurrent;
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
             {
 
@@ -138,25 +141,28 @@ namespace ForeignSubstance.Sprites
 
             }
 
+            arm.Update(gametime);
+            flipped = arm.Flipped;
 
-
-            if(running)
+            if (running)
             {
                 _activeTexture = _runningTexture;
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
+                animationFrameNum = 5;
+                idlingCurrent = false;
             }
             else
             {
+                idlingCurrent = true;
                 _activeTexture = _idleTexture;
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
+                animationFrameNum = 3;
+                if(idlingCurrent && !idlingPrior)
+                {
+                    animationFrame = 0;
+                }
             }
-            
-            arm.Update(gametime);
-            flipped = arm.Flipped;
             running = false;
-            
-
-
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -166,9 +172,9 @@ namespace ForeignSubstance.Sprites
             if (animationTimer > 0.2)
             {
                 animationFrame++;
-                if (animationFrame > 3)
+                if (animationFrame > animationFrameNum)
                 {
-                    animationFrame = 1;
+                    animationFrame = 0;
                 }
                 animationTimer -= 0.2;
             }

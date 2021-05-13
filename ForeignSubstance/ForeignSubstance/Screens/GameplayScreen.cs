@@ -145,8 +145,32 @@ namespace ForeignSubstance.Screens
 
             ScreenManager.GraphicsDevice.Clear(Color.Black);
             // TODO: Add your drawing code here
+            float _gameScale;
+            Vector2 _gameOffset;
+            if(ScreenManager.GraphicsDevice.Viewport.AspectRatio < ScreenManager.Game.GraphicsDevice.Viewport.AspectRatio)
+            {
+                // letterbox vertically
+                // Scale game to screen width
+                _gameScale = (float)ScreenManager.GraphicsDevice.Viewport.Width / ScreenManager.Game.GraphicsDevice.Viewport.Width;
+                // translate vertically
+                _gameOffset.Y = (ScreenManager.GraphicsDevice.Viewport.Height - ScreenManager.Game.GraphicsDevice.Viewport.Height * _gameScale) / 2f;
+                _gameOffset.X = 0;
+            }
+            else
+            {
+                // letterbox horizontally
+                // Scale game to screen height 
+                _gameScale = (float)ScreenManager.GraphicsDevice.Viewport.Height / ScreenManager.Game.GraphicsDevice.Viewport.Height;
+                // translate horizontally
+                _gameOffset.X = (ScreenManager.GraphicsDevice.Viewport.Width - ScreenManager.Game.GraphicsDevice.Viewport.Width * _gameScale) / 2f;
+                _gameOffset.Y = 0;
+            }
+            // Determine the necessary transform to scale and position game on-screen
+            Matrix transform =
+                Matrix.CreateScale(_gameScale) * // Scale the game to screen size 
+                Matrix.CreateTranslation(_gameOffset.X, _gameOffset.Y, 0); // Translate game to letterbox position
 
-            _spriteBatch.Begin(samplerState: SamplerState.PointClamp);
+            _spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: transform);
             _level.Draw(gameTime, _spriteBatch);
             _player.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();

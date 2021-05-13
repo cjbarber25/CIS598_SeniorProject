@@ -25,8 +25,8 @@ namespace ForeignSubstance.Sprites
         {
             _player = player;
             _lifeSpan = 3.0f;
-            _velocity = 3.0f;
-            _textureMapPosition = new Rectangle(0,220,20,16);
+            _velocity = 5.0f;
+            _textureMapPosition = new Rectangle(4,220,16,16);
             _direction = _player.Arm.Direction;
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "uCNgRJMjBexrfSHtMkxSnAr0vToEsXferHmkFH4gAEG3czAb1I2Z/OfCPUOZIt34riMD9Or09V4lgGnAPFOqgA==",
+  "dgSpecHash": "fQg+TdvZXUPECs7mn4fEpZuoKhar9z56Bn3fzZsy46pIS9BTPa3KsIJf61UKGeWN3BkOfz+V/PxLhDAVTTPiRA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
+  "projectFilePath": "C:\\Users\\coleb\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\coleb\\.nuget\\packages\\libuv\\1.9.1\\libuv.1.9.1.nupkg.sha512",
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.codeanalysis.analyzers\\1.1.0\\microsoft.codeanalysis.analyzers.1.1.0.nupkg.sha512",

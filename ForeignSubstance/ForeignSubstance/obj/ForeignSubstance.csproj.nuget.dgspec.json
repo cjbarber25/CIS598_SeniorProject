@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj": {}
+    "C:\\Users\\coleb\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj": {}
   },
   "projects": {
-    "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj": {
+    "C:\\Users\\coleb\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
+        "projectUniqueName": "C:\\Users\\coleb\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
         "projectName": "ForeignSubstance",
-        "projectPath": "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
+        "projectPath": "C:\\Users\\coleb\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\ForeignSubstance.csproj",
         "packagesPath": "C:\\Users\\coleb\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\coleb\\Source\\Repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\obj\\",
+        "outputPath": "C:\\Users\\coleb\\source\\repos\\CIS598_SeniorProject\\ForeignSubstance\\ForeignSubstance\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",

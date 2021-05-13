@@ -25,6 +25,12 @@ namespace ForeignSubstance
             _screenManager = new ScreenManager(this);
             Components.Add(_screenManager);
 
+            // Use full-screen at screen resolution
+            DisplayMode screen = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode;
+            _graphics.IsFullScreen = true;
+            _graphics.PreferredBackBufferWidth = screen.Width;
+            _graphics.PreferredBackBufferHeight = screen.Height;
+
             AddInitialScreens();
         }
 
@@ -36,9 +42,10 @@ namespace ForeignSubstance
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            _graphics.PreferredBackBufferWidth = 1280;
+            /*_graphics.PreferredBackBufferWidth = 1280;
             _graphics.PreferredBackBufferHeight = 720;
-            _graphics.ApplyChanges();
+            _graphics.ApplyChanges();*/
+
             base.Initialize();
         }
 

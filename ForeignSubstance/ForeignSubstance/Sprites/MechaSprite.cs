@@ -28,6 +28,7 @@ namespace ForeignSubstance.Sprites
         private short animationFrameNum;
         private Player _player;
         private Vector2 _playerPosition;
+        private bool flipped = false;
         private bool stateChangeCurrent = false;
         private bool stateChangePrior = false;
         enum States
@@ -59,36 +60,66 @@ namespace ForeignSubstance.Sprites
             stateChangePrior = stateChangeCurrent;
             timer += gametime.ElapsedGameTime.TotalSeconds;
             _playerPosition = _player.Position;
-            State = States.walking;
+            Vector2 direction = _playerPosition - _position;
+            direction.Normalize();
             switch (State)
             {
                 case States.idle:
                     _textureActive = _textureIdle;
                     animationFrameNum = 3;
+                    if(timer > 1)
+                    {
+                        State = States.walking;
+                        stateChangeCurrent = true;
+                        timer -= 1;
+                    }
+                    if (stateChangeCurrent && !stateChangePrior)
+                    {
+                        animationFrame = 0;
+                    }
                     break;
                 case States.walking:
-                    Vector2 direction = _playerPosition - _position;
-                    direction.Normalize();
                     _textureActive = _textureWalking;
                     animationFrameNum = 5;
+                    if(direction.X < 0)
+                    {
+                        flipped = true;
+                    }
+                    else
+                    {
+                        flipped = false;
+                    }
+                    _position += direction * 20 * (float)gametime.ElapsedGameTime.TotalSeconds;
                     if(timer > 2)
                     {
-                        _position += direction * 200 * (float)gametime.ElapsedGameTime.TotalSeconds;
+                        State = States.attacking;
+                        stateChangeCurrent = true;
                         timer -= 2;
                     }
-                    //State = States.attacking;
-                    //stateChangeCurrent = true;
+                    if (stateChangeCurrent && !stateChangePrior)
+                    {
+                        animationFrame = 0;
+                    }
                     break;
                 case States.attacking:
+                    _textureActive = _textureAttack;
+                    animationFrameNum = 2;
 
+
+                    if(timer > 0.9f)
+                    {
+                        State = States.walking;
+                        stateChangeCurrent = true;
+                        timer -= 0.9f;
+                    }
+                    if (stateChangeCurrent && !stateChangePrior)
+                    {
+                        animationFrame = 0;
+                    }
                     break;
                 case States.damaged:
 
                     break;
-            }
-            if (stateChangeCurrent && !stateChangePrior)
-            {
-                animationFrame = 0;
             }
             stateChangeCurrent = false;
         }
@@ -110,8 +141,10 @@ namespace ForeignSubstance.Sprites
                 }
                 animationTimer -= 0.3f;
             }
-            _sourceRect = new Rectangle(0, animationFrame * 60, 135, 60);
-            spriteBatch.Draw(_textureActive, _position, _sourceRect, Color.White, 0.0f, new Vector2(67.5f, 30), 2.5f, _spriteEffects, 0);
+            if (flipped) _spriteEffects = SpriteEffects.FlipHorizontally;
+            else _spriteEffects = SpriteEffects.None;
+            _sourceRect = new Rectangle(0, animationFrame * 60, 75, 60);
+            spriteBatch.Draw(_textureActive, _position, _sourceRect, Color.White, 0.0f, new Vector2(37.5f, 30), 2.5f, _spriteEffects, 0);
         }
 
     }

@@ -20,13 +20,12 @@ namespace ForeignSubstance.Screens
         private Player _player;
         private MechaSprite _mech;
 
-        private int[,] _layout = new int[,] { { 1, 1, 1 } };
+        private int[,] _layout = new int[,] { { 5, 1, 1 } };
         private LevelBuilder _level;
 
         private float _pauseAlpha;
         private readonly InputAction _pauseAction;
 
-        
 
 
         public GameplayScreen(Player player)
@@ -56,6 +55,7 @@ namespace ForeignSubstance.Screens
             _level.LoadContent(_content);
             _player.LoadContent(_content);
             _mech.LoadContent(_content);
+
         }
 
 
@@ -178,6 +178,9 @@ namespace ForeignSubstance.Screens
             _level.Draw(gameTime, _spriteBatch);
             _player.Draw(gameTime, _spriteBatch);
             _mech.Draw(gameTime, _spriteBatch);
+
+           
+
             _spriteBatch.End();
 
         }

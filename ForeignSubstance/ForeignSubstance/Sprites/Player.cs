@@ -46,7 +46,7 @@ namespace ForeignSubstance.Sprites
             _healthMax = 6;
             _healthRemaining = 6;
             _textureMapPosition = new Rectangle(0,0,19,25);
-            _bounds = new BoundingRectangle(_position.X, _position.Y, 19, 25);
+            _bounds = new BoundingRectangle(_position.X-9.5f, _position.Y, 19, 25);
             arm = new ArmSprite(this);
         }
 
@@ -174,6 +174,7 @@ namespace ForeignSubstance.Sprites
             }
             SpriteEffects spriteEffects = (flipped) ? SpriteEffects.FlipHorizontally : SpriteEffects.None;
             _textureMapPosition = new Rectangle(animationFrame * 19, 0, 19,25);
+            
             spriteBatch.Draw(_activeTexture, _position, _textureMapPosition, Color, 0.0f, new Vector2(9.5f, 0), 2.5f, spriteEffects, 0);
             int j = _healthRemaining;
             Vector2 k = new Vector2(20, 20);

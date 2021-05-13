@@ -18,6 +18,7 @@ namespace ForeignSubstance.Screens
         private ContentManager _content;
         private SpriteBatch _spriteBatch;
         private Player _player;
+        private MechaSprite _mech;
 
         private int[,] _layout = new int[,] { { 1, 1, 1 } };
         private LevelBuilder _level;
@@ -34,6 +35,8 @@ namespace ForeignSubstance.Screens
             TransitionOffTime = TimeSpan.FromSeconds(0.5);
             _player = player;
             _player.gameScreen = this;
+
+            _mech = new MechaSprite(new Vector2(300, 400), _player);
 
             _level = new LevelBuilder(_layout);
 
@@ -52,6 +55,7 @@ namespace ForeignSubstance.Screens
 
             _level.LoadContent(_content);
             _player.LoadContent(_content);
+            _mech.LoadContent(_content);
         }
 
 
@@ -80,7 +84,7 @@ namespace ForeignSubstance.Screens
             if (IsActive)
             {
                 _player.Update(gameTime);
-                
+                _mech.Update(gameTime);
             }
 
         }
@@ -173,6 +177,7 @@ namespace ForeignSubstance.Screens
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: transform);
             _level.Draw(gameTime, _spriteBatch);
             _player.Draw(gameTime, _spriteBatch);
+            _mech.Draw(gameTime, _spriteBatch);
             _spriteBatch.End();
 
         }

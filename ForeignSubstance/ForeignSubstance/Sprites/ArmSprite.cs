@@ -78,7 +78,7 @@ namespace ForeignSubstance.Sprites
 
             if (currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released)
             {
-                var bullet = new Bullet(_player);
+                var bullet = new Bullet(_player, new Rectangle(4, 220, 16, 16));
                 bullets.Add(bullet);
                 bullet.LoadContent(_content);
             }

@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using ForeignSubstance.Screens;
 namespace ForeignSubstance.Sprites
 {
     public class Bullet : Sprite
@@ -20,25 +21,46 @@ namespace ForeignSubstance.Sprites
         private Vector2 _position;
         private Rectangle _textureMapPosition;
         private Player _player;
-        public bool IsRemoved;
-        public Bullet(Player player)
+        private MechaSprite _mecha;
+        private bool _isRemoved = false;
+        private float _scale;
+        private BoundingCircle _bounds;
+        public GameplayScreen gameScreen;
+
+        public bool IsRemoved => _isRemoved;
+        public Bullet(Player player, Rectangle textureMapPosition)
         {
             _player = player;
+            gameScreen = _player.gameScreen;
             _lifeSpan = 3.0f;
             _velocity = 5.0f;
-            _textureMapPosition = new Rectangle(4,220,16,16);
+            _textureMapPosition = textureMapPosition;
             _direction = _player.Arm.Direction;
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;
+            _scale = 1.5f;
+            _bounds = new BoundingCircle(_position,8);
+        }
+        public Bullet(MechaSprite shooter, Rectangle textureMapPosition)
+        {
+            _mecha = shooter;
+            gameScreen = _mecha.gameScreen;
+            _lifeSpan = 3.0f;
+            _velocity = 5.0f;
+            _textureMapPosition = textureMapPosition;
+            _direction = _mecha.Direction;
+            _position = _mecha.MuzzlePosition;
+            _scale = 2f;
+            _bounds = new BoundingCircle(_position, 8);
         }
         public override bool CheckCollision(BoundingRectangle other)
         {
-            throw new NotImplementedException();
+            return _bounds.CollidesWith(other);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(10, 8), 1.5f, SpriteEffects.None, 0);
+            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(8, 8), _scale, SpriteEffects.None, 0);
         }
 
         public override void LoadContent(ContentManager content)
@@ -49,9 +71,11 @@ namespace ForeignSubstance.Sprites
         public override void Update(GameTime gametime)
         {
             _timer += (float)gametime.ElapsedGameTime.TotalSeconds;
+            if (_timer > _lifeSpan) _isRemoved = true;
 
-            if (_timer > _lifeSpan) IsRemoved = true;
             _position += _direction * _velocity;
+
+            //if (this.gameScreen.CheckCollision(_bounds)) _isRemoved = true;
         }
     }
 }

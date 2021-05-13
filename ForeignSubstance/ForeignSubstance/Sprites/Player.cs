@@ -114,33 +114,30 @@ namespace ForeignSubstance.Sprites
             {
                 positionXChecker += new Vector2(-2, 0);
                 running = true;
-                _bounds.X = positionXChecker.X;
+                _bounds.X = positionXChecker.X - 23.75f;
                 if (!gameScreen.CheckCollision(_bounds))
                 {
                     _position.X = positionXChecker.X;
                 }
                 else
                 {
-                    _bounds.X = _position.X;
+                    _bounds.X = _position.X - 23.75f;
                 }
-               
             }
             if (keyboardState.IsKeyDown(Keys.Right) || keyboardState.IsKeyDown(Keys.D))
             {
                 positionXChecker += new Vector2(2, 0);
                 running = true;
-                _bounds.X = positionXChecker.X;
+                _bounds.X = positionXChecker.X - 23.75f;
                 if (!gameScreen.CheckCollision(_bounds))
                 {
                     _position.X = positionXChecker.X;
                 }
                 else
                 {
-                    _bounds.X = _position.X;
+                    _bounds.X = _position.X - 23.75f;
                 }
-
             }
-
             arm.Update(gametime);
             flipped = arm.Flipped;
 

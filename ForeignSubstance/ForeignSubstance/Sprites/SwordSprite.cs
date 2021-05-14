@@ -69,6 +69,8 @@ namespace ForeignSubstance.Sprites
             _position = position;
             _player = player;
             _bounds = new BoundingRectangle(0, 0, 93, 63);
+            _healthRemaining = 50;
+            _healthMax = 20;
         }
 
         public void Damaged(int damage)
@@ -125,7 +127,7 @@ namespace ForeignSubstance.Sprites
                     }
                 }
             }
-            if (!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(46.5f, 31.5f), 3f, _spriteEffects, 0);
+            if (!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(0, 0), 3f, _spriteEffects, 0);
         }
 
         public override void LoadContent(ContentManager content)
@@ -184,12 +186,11 @@ namespace ForeignSubstance.Sprites
                         }
 
                         _position += _direction * 40 * (float)gametime.ElapsedGameTime.TotalSeconds;
-                        _bounds.X = _position.X - 46.5f;
-                        _bounds.Y = _position.Y - 31.5f;
-
+                        _bounds.X = _position.X;
+                        _bounds.Y = _position.Y;
                         distance = (Math.Pow(this.Position.X - _player.Position.X, 2) + Math.Pow(this.Position.Y - _player.Position.Y, 2));
                         distance = Math.Sqrt(distance);
-                        if (distance < 2000)
+                        if (distance < 1000)
                         {
                             State = States.attacking;
                             stateChangeCurrent = true;
@@ -201,10 +202,10 @@ namespace ForeignSubstance.Sprites
                         break;
                     case States.attacking:
                         _textureActive = _textureAttack;
-                        animationFrameNum = 19;
+                        animationFrameNum = 10;
                         distance = (Math.Pow(this.Position.X - _player.Position.X, 2) + Math.Pow(this.Position.Y - _player.Position.Y, 2));
                         distance = Math.Sqrt(distance);
-                        if (distance < 1000)
+                        if (distance < 700)
                         {
                             _player.Damaged(2);
                         }

@@ -20,7 +20,7 @@ namespace ForeignSubstance.Screens
         private Player _player;
         private MechaSprite _mech;
 
-        private int[,] _layout = new int[,] { { 5, 1, 1 } };
+        private int[,] _layout = new int[,] { { 0, 1,0,0,0 }, { 1, 1, 1,0,0 }, {0,1,0,0,0 },{0,0,0,0,0}, { 0, 0, 0, 0, 0 } };
         private LevelBuilder _level;
 
         private float _pauseAlpha;
@@ -85,7 +85,10 @@ namespace ForeignSubstance.Screens
             if (IsActive)
             {
                 _player.Update(gameTime);
+                _level.Update(gameTime);
                 _mech.Update(gameTime);
+
+                _level.CheckDoorCollision(_player);
             }
 
         }

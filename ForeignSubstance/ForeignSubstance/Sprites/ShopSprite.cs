@@ -19,7 +19,7 @@ namespace ForeignSubstance.Sprites
         public ShopSprite(Vector2 position)
         {
             this._position = position;
-            _bounds = new BoundingRectangle(_position, 80, 132);
+            _bounds = new BoundingRectangle(_position.X-16,_position.Y-25, 60, 99);
         }
         
         public override bool CheckCollision(BoundingRectangle other)
@@ -30,7 +30,7 @@ namespace ForeignSubstance.Sprites
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             _textureMapPosition = new Rectangle(101, 681, 20, 33);
-            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 4.0f, SpriteEffects.None, 0);
+            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(0, 0), 3.0f, SpriteEffects.None, 0);
         }
 
         public override void LoadContent(ContentManager content)

@@ -9,11 +9,10 @@ using ForeignSubstance.Sprites;
 
 namespace ForeignSubstance.Rooms
 {
-    public class Cafeteria : Room
+    public class NormalRoom : Room
     {
         private Sprite[,] _sprites;
         private List<Sprite> _otherSprites;
-
 
         public override void Build(int length, int width, Vector2 position)
         {

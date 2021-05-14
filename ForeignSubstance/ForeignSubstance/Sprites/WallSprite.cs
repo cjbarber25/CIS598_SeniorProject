@@ -20,6 +20,8 @@ namespace ForeignSubstance.Sprites
 
         private Rectangle _textureMapPosition;
 
+        public Vector2 Position => _position;
+
         public WallSprite(Vector2 position, (string, string, string) type)
         {
             this._position = position;

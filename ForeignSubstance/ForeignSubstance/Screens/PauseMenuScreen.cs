@@ -33,7 +33,7 @@ namespace ForeignSubstance.Screens
 
         private void RestartGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            LoadingScreen.Load(ScreenManager, true, e.PlayerIndex, new GameplayScreen(new Player(new Vector2(200, 200))));
+            LoadingScreen.Load(ScreenManager, true, e.PlayerIndex, new GameplayScreen(new Player(new Vector2(ScreenManager.GraphicsDevice.Viewport.Width / 2, ScreenManager.GraphicsDevice.Viewport.Height / 2))));
         }
 
         private void QuitGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)

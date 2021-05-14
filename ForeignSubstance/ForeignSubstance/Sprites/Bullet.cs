@@ -22,11 +22,12 @@ namespace ForeignSubstance.Sprites
         private Rectangle _textureMapPosition;
         private Player _player;
         private MechaSprite _mecha;
-        private bool _isRemoved = true;
+        private bool _isRemoved;
         private float _scale;
         private BoundingRectangle _bounds;
         public GameplayScreen gameScreen;
 
+        public Vector2 Direction { get { return _direction; } set { _direction = value; } }
         public bool IsRemoved { get { return _isRemoved; } set { _isRemoved = value; } }
         public Bullet(Player player, Rectangle textureMapPosition)
         {
@@ -35,11 +36,11 @@ namespace ForeignSubstance.Sprites
             _lifeSpan = 3.0f;
             _velocity = 7.0f;
             _textureMapPosition = textureMapPosition;
-            _direction = _player.Arm.Direction;
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;
             _scale = 1.5f;
             _bounds = new BoundingRectangle(_position.X,_position.Y,16 ,16);
+            _isRemoved = true;
         }
         public Bullet(MechaSprite shooter, Rectangle textureMapPosition)
         {
@@ -51,11 +52,12 @@ namespace ForeignSubstance.Sprites
             _position = _mecha.MuzzlePosition;
             _scale = 2f;
             _bounds = new BoundingRectangle(0, 0, 16, 16);
+            _isRemoved = false;
         }
 
-        public void BulletReset(Bullet bullet)
+        public void BulletReset(Bullet bullet, bool modified)
         {
-            _direction = _player.Arm.Direction;
+            if(!modified) _direction = _player.Arm.Direction;
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;
             _bounds = new BoundingRectangle(_position.X, _position.Y, 16, 16);

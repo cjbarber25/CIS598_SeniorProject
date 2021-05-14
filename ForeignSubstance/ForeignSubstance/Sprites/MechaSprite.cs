@@ -45,6 +45,9 @@ namespace ForeignSubstance.Sprites
         private int _healthRemaining;
         private Room _room;
         private Tuple<int, int> _roomPosition;
+        private Color color;
+        private bool dying = false;
+        public bool dead = false;
 
         public Vector2 MuzzlePosition => _muzzlePosition;
         public Vector2 Direction => _direction;
@@ -86,6 +89,7 @@ namespace ForeignSubstance.Sprites
             _playerPosition = _player.Position;
             _direction = _playerPosition - _position;
             _direction.Normalize();
+            color = Color.White;
             switch (State)
             {
                 case States.idle:
@@ -164,6 +168,20 @@ namespace ForeignSubstance.Sprites
             stateChangeCurrent = false;
         }
 
+        public void Damaged(int damage)
+        {
+            _healthRemaining -= damage;
+            animationFrame = 0;
+            _textureActive = _textureDamaged;
+            animationFrameNum = 4;
+            color = Color.Red;
+            if(_healthMax <= 0)
+            {
+                animationFrameNum = 12;
+                dying = true;
+            }
+        }
+
         public override bool CheckCollision(BoundingRectangle other)
         {
             return false;
@@ -184,7 +202,8 @@ namespace ForeignSubstance.Sprites
             if (flipped) _spriteEffects = SpriteEffects.FlipHorizontally;
             else _spriteEffects = SpriteEffects.None;
             _sourceRect = new Rectangle(0, animationFrame * 60, 75, 60);
-            spriteBatch.Draw(_textureActive, _position, _sourceRect, Color.White, 0.0f, new Vector2(37.5f, 30), 2.5f, _spriteEffects, 0);
+            if (dying && animationFrame >= 12) dead = true;
+            if(!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(37.5f, 30), 2.5f, _spriteEffects, 0);
             for (int i = 0; i < bullets.Count; i++)
             {
                 if (bullets[i].IsRemoved)

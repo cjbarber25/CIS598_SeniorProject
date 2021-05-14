@@ -12,103 +12,116 @@ namespace ForeignSubstance.Rooms
     public class Hallway : Room
     {
         private Sprite[,] _sprites;
+        private List<Sprite> _otherSprites;
+        
         private bool _vertical;
 
-        public Hallway(bool direction)
+
+        public Hallway(bool vertical)
         {
-            _vertical = direction;
+            _vertical = vertical;
         }
 
         public override void Build(int length, int width, Vector2 position)
         {
-            _sprites = new Sprite[length, width];
-            Vector2 tempPosition = position;
-            float currentX = position.X;
-            float currentY = position.Y;
-            int xAdjust = 64;
-            int yAdjust = 128;
-
-            for (int i = 0; i < length; i++)
+            _room = new Basic();
+            _sprites = new Sprite[0, 5];
+            _otherSprites = new List<Sprite>();
+            if (_vertical)
             {
-                for (int j = 0; j < width; j++)
-                {
-                    if (i == 0)
-                    {
-                        if (j == 0)
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("TOP", "LEFT", "CORNER"));
-                            currentX += xAdjust;
-                        }
-                        else if (j == width - 1)
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("TOP", "RIGHT", "CORNER"));
-                            currentX = position.X;
-                            currentY += yAdjust;
-                        }
-                        else
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("TOP", "CENTER", "WALL"));
-                            currentX += xAdjust;
-                        }
-                    }
-                    else if (i == length - 1)
-                    {
-                        if (j == 0)
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("BOTTOM", "LEFT", "CORNER"));
-                            currentX += xAdjust;
-                        }
-                        else if (j == width - 1)
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("BOTTOM", "RIGHT", "CORNER"));
-                        }
-                        else
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("BOTTOM", "CENTER", "WALL"));
-                            currentX += xAdjust;
-                        }
-                    }
-                    else
-                    {
-                        if (j == 0)
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("NORMAL", "LEFT", "WALL"));
-                            currentX += xAdjust;
-                        }
-                        else if (j == width - 1)
-                        {
-                            _sprites[i, j] = new WallSprite(new Vector2(currentX, currentY), ("NORMAL", "RIGHT", "WALL"));
-                            currentX = position.X;
-                            currentY += 64;
-                        }
-                        else
-                        {
-                            _sprites[i, j] = new FloorSprite(new Vector2(currentX, currentY));
-                            currentX += xAdjust;
-                        }
-                    }
-                }
+                _room.Build(7, 5, position);
             }
+            else
+            {
+                _room.Build(5, 7, position);
+            }
+            
+            
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
         {
-            throw new NotImplementedException();
+            bool flag = false;
+            if (_room.CheckForOutOfBounds(playerBounds))
+            {
+                flag = true;
+            }
+            for (int i = 0; i < _sprites.GetLength(0); i++)
+            {
+                for (int j = 0; j < _sprites.GetLength(1); j++)
+                {
+                    if (_sprites[i, j] != null)
+                    {
+                        if (_sprites[i, j].CheckCollision(playerBounds))
+                        {
+                            flag = true;
+                        }
+                    }
+                }
+            }
+            foreach (Sprite s in _otherSprites)
+            {
+                if (s.CheckCollision(playerBounds))
+                {
+                    flag = true;
+                }
+            }
+            return flag;
+        }
+        public override bool CheckDoorCollision(Player player, out Tuple<int, int> _destination)
+        {
+            
+            return _room.CheckDoorCollision(player, out _destination);
         }
 
         public override void Draw(GameTime gametime, SpriteBatch spriteBatch)
         {
-            throw new NotImplementedException();
+            _room.Draw(gametime, spriteBatch);
+            for (int i = 0; i < _sprites.GetLength(0); i++)
+            {
+                for (int j = 0; j < _sprites.GetLength(1); j++)
+                {
+                    if (_sprites[i, j] != null)
+                    {
+                        _sprites[i, j].Draw(gametime, spriteBatch);
+                    }
+                }
+            }
+            foreach (Sprite s in _otherSprites)
+            {
+                s.Draw(gametime, spriteBatch);
+            }
         }
 
         public override void LoadContent(ContentManager content)
         {
-            throw new NotImplementedException();
+            _room.LoadContent(content);
+
+            for (int i = 0; i < _sprites.GetLength(0); i++)
+            {
+                for (int j = 0; j < _sprites.GetLength(1); j++)
+                {
+                    if (_sprites[i, j] != null)
+                    {
+                        _sprites[i, j].LoadContent(content);
+                    }
+                }
+            }
+            foreach (Sprite s in _otherSprites)
+            {
+                s.LoadContent(content);
+            }
+
         }
+        public override void AddDoors(int[,] layout, Tuple<int, int> currentPosition)
+        {
+            _room.AddDoors(layout, currentPosition);
+        }
+
 
         public override void Update(GameTime gametime)
         {
-            throw new NotImplementedException();
+            _room.Update(gametime);
         }
     }
 }

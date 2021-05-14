@@ -41,7 +41,7 @@ namespace ForeignSubstance.Sprites
         public BoundingRectangle Bounds => _bounds;
 
 
-        public Vector2 Position => _position;
+        public Vector2 Position { get { return _position; } set { _position = value; } } 
         public Player(Vector2 position1)
         {
             this._position = position1;

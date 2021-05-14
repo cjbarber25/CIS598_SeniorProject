@@ -24,7 +24,7 @@ namespace ForeignSubstance.Screens
 
         private void PlayGameMenuEntrySelected(object sender, PlayerIndexEventArgs e)
         {
-            ScreenManager.AddScreen(new GameplayScreen(new Player(new Vector2(200, 200))), e.PlayerIndex);
+            ScreenManager.AddScreen(new GameplayScreen(new Player(new Vector2(ScreenManager.GraphicsDevice.Viewport.Width / 2, ScreenManager.GraphicsDevice.Viewport.Height / 2))), e.PlayerIndex);
         }
 
         private void OptionsMenuEntrySelected(object sender, PlayerIndexEventArgs e)

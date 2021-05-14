@@ -6,6 +6,7 @@ using ForeignSubstance.Sprites;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using ForeignSubstance.Collisions;
+using Microsoft.Xna.Framework.Audio;
 
 namespace ForeignSubstance.Rooms
 {
@@ -20,6 +21,8 @@ namespace ForeignSubstance.Rooms
         private Vector2 _roomPosition;
 
         private Player _player;
+
+        private SoundEffect teleportSound;
 
         public List<DoorSprite> GetDoors()
         {
@@ -146,6 +149,7 @@ namespace ForeignSubstance.Rooms
             {
                 d.LoadContent(content);
             }
+            teleportSound = content.Load<SoundEffect>("Sounds/Teleport");
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
@@ -187,6 +191,7 @@ namespace ForeignSubstance.Rooms
                 
                 if (d.GoThrough(player, out _destination))
                 {
+                    teleportSound.Play();
                     return true;
                 }
                

@@ -8,6 +8,7 @@ using Microsoft.Xna.Framework.Input;
 using ForeignSubstance.Items;
 using ForeignSubstance.Collisions;
 using ForeignSubstance.Screens;
+using Microsoft.Xna.Framework.Audio;
 
 namespace ForeignSubstance.Sprites
 {
@@ -34,7 +35,9 @@ namespace ForeignSubstance.Sprites
         private bool idlingPrior = false;
         private bool running = false;
         private bool flipped = false;
-        
+
+        private SoundEffect damagedSound;
+
         private ArmSprite arm;
         public GameplayScreen gameScreen;
         public ArmSprite Arm => arm;
@@ -64,6 +67,7 @@ namespace ForeignSubstance.Sprites
             arm.LoadContent(content);
             _healthTexture = content.Load<Texture2D>("Health");
             _damagedTexture = content.Load<Texture2D>("Scifi Character/hurt");
+            damagedSound = content.Load<SoundEffect>("Sounds/PlayerDamaged");
         }
 
         public override bool CheckCollision(BoundingRectangle other)
@@ -82,6 +86,7 @@ namespace ForeignSubstance.Sprites
             _activeTexture = _damagedTexture;
             animationFrameNum = 2;
             Color = Color.Red;
+            damagedSound.Play();
         }
 
         public override void Update(GameTime gametime)

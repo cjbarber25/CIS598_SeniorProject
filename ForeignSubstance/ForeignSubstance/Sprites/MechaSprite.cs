@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using ForeignSubstance.Collisions;
 using ForeignSubstance.Screens;
 using ForeignSubstance.Rooms;
+using Microsoft.Xna.Framework.Audio;
 
 namespace ForeignSubstance.Sprites
 {
@@ -49,6 +50,9 @@ namespace ForeignSubstance.Sprites
         private bool dying = false;
         public bool dead = false;
 
+        private SoundEffect shootSound;
+        private SoundEffect damagedSound;
+        private SoundEffect killedSound;
         public Vector2 MuzzlePosition => _muzzlePosition;
         public Vector2 Direction => _direction;
         enum States
@@ -79,6 +83,9 @@ namespace ForeignSubstance.Sprites
             _textureAttack = content.Load<Texture2D>("Mecha/prep attack");
             _textureWalking = content.Load<Texture2D>("Mecha/walk");
             _textureDamaged = content.Load<Texture2D>("Mecha/damaged and death");
+            shootSound = content.Load<SoundEffect>("Sounds/Laser_Shoot");
+            damagedSound = content.Load<SoundEffect>("Sounds/EnemyDamaged");
+            killedSound = content.Load<SoundEffect>("Sounds/GetMoney");
             _textureActive = _textureIdle;
         }
 
@@ -143,6 +150,7 @@ namespace ForeignSubstance.Sprites
                         var bullet = new Bullet(this, new Rectangle(4, 220, 16, 16));
                         bullets.Add(bullet);
                         bullet.LoadContent(_content);
+                        shootSound.Play();
                     }
                     else firingCurrent = false;
                     if(timer > 0.9f)
@@ -175,6 +183,7 @@ namespace ForeignSubstance.Sprites
             _textureActive = _textureDamaged;
             animationFrameNum = 4;
             color = Color.Red;
+            damagedSound.Play();
             if(_healthMax <= 0)
             {
                 animationFrameNum = 12;
@@ -202,7 +211,11 @@ namespace ForeignSubstance.Sprites
             if (flipped) _spriteEffects = SpriteEffects.FlipHorizontally;
             else _spriteEffects = SpriteEffects.None;
             _sourceRect = new Rectangle(0, animationFrame * 60, 75, 60);
-            if (dying && animationFrame >= 12) dead = true;
+            if (dying && animationFrame >= 12)
+            {
+                dead = true;
+                killedSound.Play();
+            }
             if(!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(37.5f, 30), 2.5f, _spriteEffects, 0);
             for (int i = 0; i < bullets.Count; i++)
             {

@@ -1,6 +1,7 @@
 ﻿using ForeignSubstance.Collisions;
 using ForeignSubstance.Rooms;
 using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Audio;
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -49,6 +50,10 @@ namespace ForeignSubstance.Sprites
         private bool dying = false;
         private bool dead = false;
         private float distance;
+
+
+        private SoundEffect damagedSound;
+        private SoundEffect killedSound;
         public Vector2 Direction => _direction;
         enum States
         {
@@ -64,6 +69,7 @@ namespace ForeignSubstance.Sprites
             _textureActive = _textureDamaged;
             animationFrameNum = 3;
             color = Color.Red;
+            damagedSound.Play();
             if (_healthMax <= 0)
             {
                 animationFrameNum = 8;
@@ -92,7 +98,11 @@ namespace ForeignSubstance.Sprites
             if (flipped) _spriteEffects = SpriteEffects.FlipHorizontally;
             else _spriteEffects = SpriteEffects.None;
             _sourceRect = new Rectangle(0, animationFrame * 63, 93, 63);
-            if (dying && animationFrame >= 9) dead = true;
+            if (dying && animationFrame >= 9)
+            {
+                dead = true;
+                killedSound.Play();
+            }
             if (!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(37.5f, 30), 3f, _spriteEffects, 0);
         }
 
@@ -103,6 +113,8 @@ namespace ForeignSubstance.Sprites
             _textureAttack = content.Load<Texture2D>("SwordDroid/Red Sword Attack");
             _textureWalking = content.Load<Texture2D>("SwordDroid/Red Sword Run");
             _textureDamaged = content.Load<Texture2D>("SwordDroid/Red Sword Damaged and Death");
+            damagedSound = content.Load<SoundEffect>("Sounds/EnemyDamaged");
+            killedSound = content.Load<SoundEffect>("Sounds/GetMoney");
             _textureActive = _textureIdle;
         }
 

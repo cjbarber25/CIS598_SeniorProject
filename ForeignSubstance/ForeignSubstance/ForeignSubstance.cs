@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ForeignSubstance.Screens;
 using ForeignSubstance.StateManagement;
+using Microsoft.Xna.Framework.Media;
 
 namespace ForeignSubstance
 {
@@ -10,7 +11,7 @@ namespace ForeignSubstance
     {
         private GraphicsDeviceManager _graphics;
         private readonly ScreenManager _screenManager;
-
+        private Song backgroundMusic;
         public ForeignSubstance()
         {
             _graphics = new GraphicsDeviceManager(this);
@@ -82,7 +83,10 @@ namespace ForeignSubstance
 
         protected override void LoadContent()
         {
-
+            backgroundMusic = Content.Load<Song>("Sounds/Steamtech-Mayhem_Looping");
+            MediaPlayer.IsRepeating = true;
+            MediaPlayer.Play(backgroundMusic);
+            MediaPlayer.Volume = .5f;
         }
 
         protected override void Update(GameTime gameTime)

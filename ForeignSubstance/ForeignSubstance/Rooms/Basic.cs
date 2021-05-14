@@ -13,6 +13,7 @@ namespace ForeignSubstance.Rooms
     {
         private Sprite[,] _sprites;
         private List<Enemy> _enemySprites;
+        private List<Sprite> _otherSprites;
         private List<DoorSprite> _doors;
 
         private int _roomLength;
@@ -26,19 +27,17 @@ namespace ForeignSubstance.Rooms
             return _doors;
         }
 
-        public override void AddEnemy(Player player, Vector2 position)
-        { 
-            _enemySprites.Add(new MechaSprite(position, player, this));
-        }
         public override void Build(int length, int width,Vector2 position, Player player)
         {
             _doors = new List<DoorSprite>();
             _sprites = new Sprite[length,width];
+            
             _roomLength = length;
             _roomWidth = width;
             _roomPosition = position;
             _player = player;
             _enemySprites = new List<Enemy>();
+            _otherSprites = new List<Sprite>();
             
             Vector2 tempPosition = position;
             float currentX = position.X;
@@ -110,14 +109,27 @@ namespace ForeignSubstance.Rooms
                 }
             }
         }
-        public List<BoxSprite> AddObstacles(int NumberOfObstacles)
+        public void AddObstacles(int NumberOfObstacles, int NumberOfEnemies)
         {
             List<BoxSprite> _obstacles = new List<BoxSprite>();
+            List<MechaSprite> _enemies = new List<MechaSprite>();
             Random r = new Random(DateTime.Now.GetHashCode());
+            for(int j = 0; j < NumberOfEnemies; j++)
+            {
+                MechaSprite newEnemy = new MechaSprite(_sprites[r.Next(2, _roomLength - 2), r.Next(2, _roomWidth - 2)].Position, _player, this);
+                if (!newEnemy.CheckCollision(_player.Bounds))
+                {
+                    _enemies.Add(newEnemy);
+                }
+                else
+                {
+                    j--;
+                }
+            }
             for (int i = 0; i < NumberOfObstacles; i++)
             {
                 BoxSprite newBox = new BoxSprite(_sprites[r.Next(2, _roomLength - 2), r.Next(2, _roomWidth - 2)].Position, true);
-                if(!newBox.CheckCollision(_player.Bounds)){
+                if (!newBox.CheckCollision(_player.Bounds)){
                     _obstacles.Add(newBox);
                 }
                 else
@@ -126,7 +138,16 @@ namespace ForeignSubstance.Rooms
                 }
                 
             }
-            return _obstacles;
+            
+            foreach (BoxSprite b in _obstacles)
+            {
+                _otherSprites.Add(b);
+            }
+            foreach(Enemy e in _enemies)
+            {
+                e._gameplayScreen = _player.gameScreen;
+                _enemySprites.Add(e);
+            }
         }
 
         public override void LoadContent(ContentManager content)
@@ -138,13 +159,17 @@ namespace ForeignSubstance.Rooms
                     _sprites[i, j].LoadContent(content);
                 }
             }
-            foreach(var enemy in _enemySprites)
+            foreach(Enemy e in _enemySprites)
             {
-                enemy.LoadContent(content);
+                e.LoadContent(content);
             }
             foreach (DoorSprite d in _doors)
             {
                 d.LoadContent(content);
+            }
+            foreach (Sprite s in _otherSprites)
+            {
+                s.LoadContent(content);
             }
         }
 
@@ -158,6 +183,13 @@ namespace ForeignSubstance.Rooms
                     {
                         return true ;
                     }
+                }
+            }
+            foreach(Sprite s in _otherSprites)
+            {
+                if (s.CheckCollision(playerBounds))
+                {
+                    return true;
                 }
             }
    
@@ -177,7 +209,10 @@ namespace ForeignSubstance.Rooms
 
         public override void Update(GameTime gametime)
         {
-            
+            foreach(Enemy e in _enemySprites)
+            {
+                e.Update(gametime);
+            }
         }
         public override bool CheckDoorCollision(Player player, out Tuple<int,int> _destination)
         {
@@ -207,6 +242,10 @@ namespace ForeignSubstance.Rooms
             {
                 s.Draw(gameTime, spriteBatch);
             }
+            foreach(Sprite s in _otherSprites)
+            {
+                s.Draw(gameTime, spriteBatch);
+            }
             foreach(DoorSprite d in _doors)
             {
                 d.Draw(gameTime, spriteBatch);
@@ -214,5 +253,9 @@ namespace ForeignSubstance.Rooms
 
         }
 
+        public override void AddEnemy(Player player, Vector2 position)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

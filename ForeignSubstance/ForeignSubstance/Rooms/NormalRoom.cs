@@ -21,17 +21,14 @@ namespace ForeignSubstance.Rooms
             _otherSprites = new List<Sprite>();
             _room.Build(length, width, position,player);
             Random r = new Random(DateTime.Now.GetHashCode());
-            this.AddObstacles(r.Next(5,10));
-            this.AddEnemy(player,new Vector2(player.Position.X+100,player.Position.Y+100));
-            
+            //this.AddObstacles(r.Next(5,10),1);
+            this.AddObstacles(1, 1);
+
         }
 
-        public void AddObstacles(int NumberOfObstacles)
+        public void AddObstacles(int NumberOfObstacles, int NumberOfEnemies)
         {
-            foreach(BoxSprite b in _room.AddObstacles(NumberOfObstacles))
-            {
-                _otherSprites.Add(b);
-            }
+            _room.AddObstacles(NumberOfObstacles, NumberOfEnemies);
         }
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
         {

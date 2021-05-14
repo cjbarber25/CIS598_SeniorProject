@@ -48,6 +48,7 @@ namespace ForeignSubstance.Sprites
         private Color color;
         private bool dying = false;
         public bool dead = false;
+        private BoundingRectangle _bounds;
 
         public Vector2 MuzzlePosition => _muzzlePosition;
         public Vector2 Direction => _direction;
@@ -70,6 +71,7 @@ namespace ForeignSubstance.Sprites
             _healthRemaining = 6;
             _roomPosition = new Tuple<int, int>(1, 1);
             _room = room;
+            _bounds = new BoundingRectangle(_position.X-150, _position.Y+120, 75, 60);
         }
 
         public override void LoadContent(ContentManager content)
@@ -117,7 +119,29 @@ namespace ForeignSubstance.Sprites
                     {
                         flipped = false;
                     }
-                    _position += _direction * 20 * (float)gametime.ElapsedGameTime.TotalSeconds;
+
+
+                    Vector2 newPosition = _position + _direction * 20 * (float)gametime.ElapsedGameTime.TotalSeconds;
+                    _bounds.X = newPosition.X;
+                    if (!_gameplayScreen.CheckCollision(_bounds))
+                    {
+                        _position.X = _bounds.X;
+                    }
+                    else
+                    {
+                        _bounds.X = _position.X - 150;
+                    }
+                    _bounds.Y = newPosition.Y;
+                    if (!_gameplayScreen.CheckCollision(_bounds))
+                    {
+                        _position.Y = _bounds.Y;
+                    }
+                    else
+                    {
+                        _bounds.Y = _position.Y + 120;
+                    }
+
+
                     if(flipped) _muzzlePosition = _position + new Vector2(-75, 0);
                     else _muzzlePosition = _position + new Vector2(75, 0);
                     if (timer > 2)
@@ -184,8 +208,17 @@ namespace ForeignSubstance.Sprites
 
         public override bool CheckCollision(BoundingRectangle other)
         {
-            return false;
+            if (_bounds.CollidesWith(other))
+            {
+                color = Color.Gold;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
+
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
             animationTimer += gameTime.ElapsedGameTime.TotalSeconds;

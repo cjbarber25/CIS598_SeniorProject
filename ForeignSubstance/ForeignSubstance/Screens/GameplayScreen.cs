@@ -20,7 +20,7 @@ namespace ForeignSubstance.Screens
         private Player _player;
         private MechaSprite _mech;
 
-        private int[,] _layout = new int[,] { { 0, 1,0,0,0 }, { 1, 1, 1,0,0 }, {0,1,0,0,0 },{0,0,0,0,0}, { 0, 0, 0, 0, 0 } };
+        private int[,] _layout = new int[,] { {0 , 2,0,0,0 }, { 0, 1, 4,1,0 }, {0,0,0,0,0 },{0,0,0,0,0}, { 0, 0, 0, 0, 0 } };
         private LevelBuilder _level;
 
         private float _pauseAlpha;
@@ -35,8 +35,8 @@ namespace ForeignSubstance.Screens
             _player = player;
             _player.gameScreen = this;
 
-            _mech = new MechaSprite(new Vector2(300, 400), _player);
-            _mech.gameScreen = this;
+            //_mech = new MechaSprite(new Vector2(300, 400), _player);
+            //_mech.gameScreen = this;
 
             _level = new LevelBuilder(_layout);
 
@@ -55,7 +55,7 @@ namespace ForeignSubstance.Screens
 
             _level.LoadContent(_content);
             _player.LoadContent(_content);
-            _mech.LoadContent(_content);
+            //_mech.LoadContent(_content);
 
         }
 
@@ -86,7 +86,7 @@ namespace ForeignSubstance.Screens
             {
                 _player.Update(gameTime);
                 _level.Update(gameTime);
-                _mech.Update(gameTime);
+                //_mech.Update(gameTime);
 
                 _level.CheckDoorCollision(_player);
             }
@@ -181,7 +181,7 @@ namespace ForeignSubstance.Screens
             _spriteBatch.Begin(samplerState: SamplerState.PointClamp, transformMatrix: transform);
             _level.Draw(gameTime, _spriteBatch);
             _player.Draw(gameTime, _spriteBatch);
-            _mech.Draw(gameTime, _spriteBatch);
+            //_mech.Draw(gameTime, _spriteBatch);
 
            
 

@@ -4,6 +4,7 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/12_Kitchen_16x16.png</File>
     <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/19_Hospital_16x16.png</File>
     <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/blank.png</File>
     <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/File.spritefont</File>
@@ -85,6 +86,7 @@
     <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star7.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

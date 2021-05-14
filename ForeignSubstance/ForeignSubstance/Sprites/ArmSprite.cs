@@ -96,7 +96,6 @@ namespace ForeignSubstance.Sprites
             {
                 if (bullets[i].IsRemoved)
                 {
-                    bullets[i] = null;
                     bullets.RemoveAt(i);
                 }
             }

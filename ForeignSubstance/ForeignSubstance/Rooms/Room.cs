@@ -19,8 +19,7 @@ namespace ForeignSubstance.Rooms
         private int _length;
         private int _width;
         public Basic _room;
-
-
+        public List<Enemy> Enemies;
 
         /// <summary>
         /// Builds the rooms and assigns textures/bounds to proper locations.
@@ -32,6 +31,7 @@ namespace ForeignSubstance.Rooms
         public abstract bool CheckDoorCollision(Player player, out Tuple<int,int> destination);
         public abstract void LoadContent(ContentManager content);
 
+        public abstract void AddEnemy(Player player);
         /// <summary>
         /// Updates any changes that need to be occurring within the textures of the room.
         /// </summary>

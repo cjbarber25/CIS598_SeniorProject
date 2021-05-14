@@ -6,10 +6,11 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Content;
 using ForeignSubstance.Collisions;
 using ForeignSubstance.Screens;
+using ForeignSubstance.Rooms;
 
 namespace ForeignSubstance.Sprites
 {
-    public class MechaSprite : Sprite
+    public class MechaSprite : Enemy
     {
         #region textures
         private Texture2D _textureActive;
@@ -39,7 +40,11 @@ namespace ForeignSubstance.Sprites
         private Vector2 _direction;
         private ContentManager _content;
         private Vector2 _muzzlePosition;
-        public GameplayScreen gameScreen;
+        private int _damageValue;
+        private int _healthMax;
+        private int _healthRemaining;
+        private Room _room;
+        private Tuple<int, int> _roomPosition;
 
         public Vector2 MuzzlePosition => _muzzlePosition;
         public Vector2 Direction => _direction;
@@ -47,10 +52,9 @@ namespace ForeignSubstance.Sprites
         {
             idle,
             attacking,
-            walking,
-            damaged
+            walking
         }
-        public MechaSprite(Vector2 spawnLocation, Player player)
+        public MechaSprite(Vector2 spawnLocation, Player player, Room room)
         {
             _spriteEffects = SpriteEffects.None;
             _player = player;
@@ -58,6 +62,11 @@ namespace ForeignSubstance.Sprites
             _position = spawnLocation;
             _muzzlePosition = _position + new Vector2(75,0);
             bullets = new List<Bullet>();
+            _damageValue = 1;
+            _healthMax = 6;
+            _healthRemaining = 6;
+            _roomPosition = new Tuple<int, int>(1, 1);
+            _room = room;
         }
 
         public override void LoadContent(ContentManager content)
@@ -143,15 +152,13 @@ namespace ForeignSubstance.Sprites
                         animationFrame = 0;
                     }
                     break;
-                case States.damaged:
-
-                    break;
             }
             if (bullets != null)
             {
                 foreach (var bullet in bullets)
                 {
                     bullet.Update(gametime);
+                    if(bullet.CheckCollision(_player.Bounds)) _player.Damaged(_damageValue);
                 }
             }
             stateChangeCurrent = false;

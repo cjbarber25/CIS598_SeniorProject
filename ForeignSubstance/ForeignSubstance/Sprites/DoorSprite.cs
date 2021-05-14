@@ -61,15 +61,12 @@ namespace ForeignSubstance.Sprites
             destination = _destination;
             if (this.CheckCollision(player.Bounds) && _activated)
             {
-                
                 return true;
             }
             else
             {
                 return false;
             }
-           
-            
         }
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {

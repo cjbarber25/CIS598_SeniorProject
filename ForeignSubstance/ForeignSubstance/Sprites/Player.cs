@@ -17,6 +17,7 @@ namespace ForeignSubstance.Sprites
         private Texture2D _idleTexture;
         private Texture2D _runningTexture;
         private Texture2D _healthTexture;
+        private Texture2D _damagedTexture;
         private Vector2 _position;
         private Vector2 _velocity;
         private Inventory _inventory;
@@ -59,6 +60,7 @@ namespace ForeignSubstance.Sprites
             _activeTexture = _idleTexture;
             arm.LoadContent(content);
             _healthTexture = content.Load<Texture2D>("Health");
+            _damagedTexture = content.Load<Texture2D>("Scifi Character/hurt");
         }
 
         public override bool CheckCollision(BoundingRectangle other)
@@ -70,6 +72,15 @@ namespace ForeignSubstance.Sprites
             return false;
         }
 
+        public void Damaged(int damage)
+        {
+            _healthRemaining -= damage;
+            animationFrame = 0;
+            _activeTexture = _damagedTexture;
+            animationFrameNum = 2;
+            Color = Color.Red;
+        }
+
         public override void Update(GameTime gametime)
         {
             keyboardState = Keyboard.GetState();
@@ -78,7 +89,6 @@ namespace ForeignSubstance.Sprites
             idlingPrior = idlingCurrent;
             if (keyboardState.IsKeyDown(Keys.Up) || keyboardState.IsKeyDown(Keys.W))
             {
-
                 positionYChecker += new Vector2(0, -2);
                 running = true;
                 _bounds.Y = positionYChecker.Y;
@@ -146,6 +156,7 @@ namespace ForeignSubstance.Sprites
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
                 animationFrameNum = 5;
                 idlingCurrent = false;
+                Color = Color.White;
             }
             else
             {
@@ -153,6 +164,7 @@ namespace ForeignSubstance.Sprites
                 _activeTexture = _idleTexture;
                 _textureMapPosition = new Rectangle(0, 0, 19, 25);
                 animationFrameNum = 3;
+                Color = Color.White;
                 if(idlingCurrent && !idlingPrior)
                 {
                     animationFrame = 0;

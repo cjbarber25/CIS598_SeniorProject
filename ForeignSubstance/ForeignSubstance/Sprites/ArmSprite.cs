@@ -22,9 +22,9 @@ namespace ForeignSubstance.Sprites
         private float angle;
         private bool flip = false;
         private Vector2 muzzlePosition;
-        private Bullet[] bullets;
+        public Bullet[] bullets;
         private ContentManager _content;
-        private int _damageValue;
+        public int _damageValue;
         private double timer;
         private bool gunlock = false;
         private SoundEffect shootSound;
@@ -85,7 +85,6 @@ namespace ForeignSubstance.Sprites
                if(!bullet.IsRemoved)
                {
                     bullet.Update(gametime);
-                    //CHECK bullet bounds to enemies and call their damaged
                }
             }
             if (angle >= Math.PI / 2 && angle <= Math.PI)

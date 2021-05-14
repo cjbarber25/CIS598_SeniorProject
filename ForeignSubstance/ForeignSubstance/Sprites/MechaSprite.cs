@@ -50,6 +50,8 @@ namespace ForeignSubstance.Sprites
         private bool dying = false;
         public bool dead = false;
         private BoundingRectangle _bounds;
+        private bool damagedCurrent = false;
+        private bool damagedPrior = false;
 
         private SoundEffect shootSound;
         private SoundEffect damagedSound;
@@ -93,124 +95,137 @@ namespace ForeignSubstance.Sprites
 
         public override void Update(GameTime gametime)
         {
-            stateChangePrior = stateChangeCurrent;
-            timer += gametime.ElapsedGameTime.TotalSeconds;
-            _playerPosition = _player.Position;
-            _direction = _playerPosition - _position;
-            _direction.Normalize();
-            color = Color.White;
-            switch (State)
+            if (!dying)
             {
-                case States.idle:
-                    _textureActive = _textureIdle;
-                    animationFrameNum = 3;
-                    if(timer > 1)
-                    {
-                        State = States.walking;
-                        stateChangeCurrent = true;
-                        timer -= 1;
-                    }
-                    if (stateChangeCurrent && !stateChangePrior)
-                    {
-                        animationFrame = 0;
-                    }
-                    break;
-                case States.walking:
-                    _textureActive = _textureWalking;
-                    animationFrameNum = 5;
-                    if(_direction.X < 0)
-                    {
-                        flipped = true;
-                    }
-                    else
-                    {
-                        flipped = false;
-                    }
-
-
-                    Vector2 newPosition = _position + _direction * 20 * (float)gametime.ElapsedGameTime.TotalSeconds;
-                    _bounds.X = newPosition.X;
-                    if (!_gameplayScreen.CheckCollision(_bounds))
-                    {
-                        _position.X = _bounds.X;
-                    }
-                    else
-                    {
-                        _bounds.X = _position.X - 150;
-                    }
-                    _bounds.Y = newPosition.Y;
-                    if (!_gameplayScreen.CheckCollision(_bounds))
-                    {
-                        _position.Y = _bounds.Y;
-                    }
-                    else
-                    {
-                        _bounds.Y = _position.Y + 120;
-                    }
-
-
-                    if(flipped) _muzzlePosition = _position + new Vector2(-75, 0);
-                    else _muzzlePosition = _position + new Vector2(75, 0);
-                    if (timer > 2)
-                    {
-                        State = States.attacking;
-                        firingCounter = 69;
-                        stateChangeCurrent = true;
-                        timer -= 2;
-                    }
-                    if (stateChangeCurrent && !stateChangePrior)
-                    {
-                        animationFrame = 0;
-                    }
-                    break;
-                case States.attacking:
-                    _textureActive = _textureAttack;
-                    animationFrameNum = 2;
-                    firingPrior = firingCurrent;
-                    if (firingCounter > 0) firingCounter--;
-                    if (timer >= 0.6f && timer < 0.7f && firingCounter%2 == 0 && !firingPrior) //last frame of attack = fire
-                    {
-                        firingCurrent = true;
-                        var bullet = new Bullet(this, new Rectangle(4, 220, 16, 16));
-                        bullets.Add(bullet);
-                        bullet.LoadContent(_content);
-                        shootSound.Play();
-                    }
-                    else firingCurrent = false;
-                    if(timer > 0.9f)
-                    {
-                        State = States.walking;
-                        stateChangeCurrent = true;
-                        timer -= 0.9f;
-                    }
-                    if (stateChangeCurrent && !stateChangePrior)
-                    {
-                        animationFrame = 0;
-                    }
-                    break;
-            }
-            if (bullets != null)
-            {
-                foreach (var bullet in bullets)
+                damagedPrior = damagedCurrent;
+                stateChangePrior = stateChangeCurrent;
+                timer += gametime.ElapsedGameTime.TotalSeconds;
+                _playerPosition = _player.Position;
+                _direction = _playerPosition - _position;
+                _direction.Normalize();
+                color = Color.White;
+                foreach (var bullet in _player.Arm.bullets)
                 {
-                    bullet.Update(gametime);
-                    if(bullet.CheckCollision(_player.Bounds)) _player.Damaged(_damageValue);
+                    if (bullet.CheckCollision(this._bounds)) this.Damaged(_player.Arm._damageValue);
                 }
+                switch (State)
+                {
+                    case States.idle:
+                        _textureActive = _textureIdle;
+                        animationFrameNum = 3;
+                        if (timer > 1)
+                        {
+                            State = States.walking;
+                            stateChangeCurrent = true;
+                            timer -= 1;
+                        }
+                        if (stateChangeCurrent && !stateChangePrior)
+                        {
+                            animationFrame = 0;
+                        }
+                        break;
+                    case States.walking:
+                        _textureActive = _textureWalking;
+                        animationFrameNum = 5;
+                        if (_direction.X < 0)
+                        {
+                            flipped = true;
+                        }
+                        else
+                        {
+                            flipped = false;
+                        }
+
+
+                        Vector2 newPosition = _position + _direction * 20 * (float)gametime.ElapsedGameTime.TotalSeconds;
+                        _bounds.X = newPosition.X;
+                        if (!_gameplayScreen.CheckCollision(_bounds))
+                        {
+                            _position.X = _bounds.X;
+                        }
+                        else
+                        {
+                            _bounds.X = _position.X - 150;
+                        }
+                        _bounds.Y = newPosition.Y;
+                        if (!_gameplayScreen.CheckCollision(_bounds))
+                        {
+                            _position.Y = _bounds.Y;
+                        }
+                        else
+                        {
+                            _bounds.Y = _position.Y + 120;
+                        }
+
+
+                        if (flipped) _muzzlePosition = _position + new Vector2(-75, 0);
+                        else _muzzlePosition = _position + new Vector2(75, 0);
+                        if (timer > 2)
+                        {
+                            State = States.attacking;
+                            firingCounter = 69;
+                            stateChangeCurrent = true;
+                            timer -= 2;
+                        }
+                        if (stateChangeCurrent && !stateChangePrior)
+                        {
+                            animationFrame = 0;
+                        }
+                        break;
+                    case States.attacking:
+                        _textureActive = _textureAttack;
+                        animationFrameNum = 2;
+                        firingPrior = firingCurrent;
+                        if (firingCounter > 0) firingCounter--;
+                        if (timer >= 0.6f && timer < 0.7f && firingCounter % 2 == 0 && !firingPrior) //last frame of attack = fire
+                        {
+                            firingCurrent = true;
+                            var bullet = new Bullet(this, new Rectangle(4, 220, 16, 16));
+                            bullets.Add(bullet);
+                            bullet.LoadContent(_content);
+                            shootSound.Play();
+                        }
+                        else firingCurrent = false;
+                        if (timer > 0.9f)
+                        {
+                            State = States.walking;
+                            stateChangeCurrent = true;
+                            timer -= 0.9f;
+                        }
+                        if (stateChangeCurrent && !stateChangePrior)
+                        {
+                            animationFrame = 0;
+                        }
+                        break;
+                }
+                if (bullets != null)
+                {
+                    foreach (var bullet in bullets)
+                    {
+                        bullet.Update(gametime);
+                        if (bullet.CheckCollision(_player.Bounds)) _player.Damaged(_damageValue);
+                    }
+                }
+                stateChangeCurrent = false;
+                damagedCurrent = false;
             }
-            stateChangeCurrent = false;
         }
 
         public void Damaged(int damage)
         {
-            _healthRemaining -= damage;
-            animationFrame = 0;
-            _textureActive = _textureDamaged;
-            animationFrameNum = 4;
-            color = Color.Red;
-            damagedSound.Play();
-            if(_healthMax <= 0)
+            damagedCurrent = true;
+            if(!damagedPrior)
             {
-                animationFrameNum = 12;
+                _healthRemaining -= damage;
+                _textureActive = _textureDamaged;
+                animationFrame = 0;
+                animationFrameNum = 4;
+                color = Color.Red;
+                damagedSound.Play();
+            }
+            if(_healthRemaining <= 0)
+            {
+                animationFrameNum = 11;
                 dying = true;
             }
         }
@@ -219,7 +234,6 @@ namespace ForeignSubstance.Sprites
         {
             if (_bounds.CollidesWith(other))
             {
-                color = Color.Gold;
                 return true;
             }
             else
@@ -232,7 +246,7 @@ namespace ForeignSubstance.Sprites
         {
             animationTimer += gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (animationTimer > 0.3f)
+            if (animationTimer > 0.3f && !dying)
             {
                 animationFrame++;
                 if (animationFrame > animationFrameNum)
@@ -241,14 +255,23 @@ namespace ForeignSubstance.Sprites
                 }
                 animationTimer -= 0.3f;
             }
+            if(dying && !dead)
+            {
+                if (animationTimer > 0.3f)
+                {
+                    animationFrame++;
+                    animationTimer -= 0.3f;
+                    if (animationFrame > 11)
+                    {
+                        killedSound.Play();
+                        dead = true;
+                        animationFrame = 0;
+                    }
+                }
+            }
             if (flipped) _spriteEffects = SpriteEffects.FlipHorizontally;
             else _spriteEffects = SpriteEffects.None;
             _sourceRect = new Rectangle(0, animationFrame * 60, 75, 60);
-            if (dying && animationFrame >= 12)
-            {
-                dead = true;
-                killedSound.Play();
-            }
             if(!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(37.5f, 30), 2.5f, _spriteEffects, 0);
             for (int i = 0; i < bullets.Count; i++)
             {

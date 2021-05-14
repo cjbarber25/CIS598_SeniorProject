@@ -86,7 +86,7 @@ namespace ForeignSubstance
             backgroundMusic = Content.Load<Song>("Sounds/Steamtech-Mayhem_Looping");
             MediaPlayer.IsRepeating = true;
             MediaPlayer.Play(backgroundMusic);
-            MediaPlayer.Volume = .5f;
+            MediaPlayer.Volume = .1f;
         }
 
         protected override void Update(GameTime gameTime)

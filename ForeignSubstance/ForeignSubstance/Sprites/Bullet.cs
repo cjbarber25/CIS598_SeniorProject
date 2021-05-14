@@ -34,7 +34,7 @@ namespace ForeignSubstance.Sprites
             _player = player;
             gameScreen = _player.gameScreen;
             _lifeSpan = 3.0f;
-            _velocity = 7.0f;
+            _velocity = 8.0f;
             _textureMapPosition = textureMapPosition;
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;

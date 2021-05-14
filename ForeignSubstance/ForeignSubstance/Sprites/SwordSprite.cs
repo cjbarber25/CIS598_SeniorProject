@@ -50,8 +50,9 @@ namespace ForeignSubstance.Sprites
         private Color color;
         private bool dying = false;
         private bool dead = false;
-        private float distance;
-
+        private double distance;
+        private bool damagedCurrent = false;
+        private bool damagedPrior = false;
 
         private SoundEffect damagedSound;
         private SoundEffect killedSound;
@@ -67,19 +68,24 @@ namespace ForeignSubstance.Sprites
         {
             _position = position;
             _player = player;
+            _bounds = new BoundingRectangle(0, 0, 93, 63);
         }
 
         public void Damaged(int damage)
         {
-            _healthRemaining -= damage;
-            animationFrame = 0;
-            _textureActive = _textureDamaged;
-            animationFrameNum = 3;
-            color = Color.Red;
-            damagedSound.Play();
-            if (_healthMax <= 0)
+            damagedCurrent = true;
+            if (!damagedPrior)
             {
-                animationFrameNum = 8;
+                _healthRemaining -= damage;
+                _textureActive = _textureDamaged;
+                animationFrame = 0;
+                animationFrameNum = 4;
+                color = Color.Red;
+                damagedSound.Play();
+            }
+            if (_healthRemaining <= 0)
+            {
+                animationFrameNum = 11;
                 dying = true;
             }
         }
@@ -93,7 +99,7 @@ namespace ForeignSubstance.Sprites
         {
             animationTimer += gameTime.ElapsedGameTime.TotalSeconds;
 
-            if (animationTimer > 0.3f)
+            if (animationTimer > 0.3f && !dying)
             {
                 animationFrame++;
                 if (animationFrame > animationFrameNum)
@@ -105,12 +111,21 @@ namespace ForeignSubstance.Sprites
             if (flipped) _spriteEffects = SpriteEffects.FlipHorizontally;
             else _spriteEffects = SpriteEffects.None;
             _sourceRect = new Rectangle(0, animationFrame * 63, 93, 63);
-            if (dying && animationFrame >= 9)
+            if (dying && !dead)
             {
-                dead = true;
-                killedSound.Play();
+                if (animationTimer > 0.3f)
+                {
+                    animationFrame++;
+                    animationTimer -= 0.3f;
+                    if (animationFrame > 11)
+                    {
+                        killedSound.Play();
+                        dead = true;
+                        animationFrame = 0;
+                    }
+                }
             }
-            if (!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(37.5f, 30), 3f, _spriteEffects, 0);
+            if (!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(46.5f, 31.5f), 3f, _spriteEffects, 0);
         }
 
         public override void LoadContent(ContentManager content)
@@ -127,73 +142,87 @@ namespace ForeignSubstance.Sprites
 
         public override void Update(GameTime gametime)
         {
-            stateChangePrior = stateChangeCurrent;
-            timer += gametime.ElapsedGameTime.TotalSeconds;
-            _playerPosition = _player.Position;
-            _direction = _playerPosition - _position;
-            _direction.Normalize();
-            color = Color.White;
-            switch (State)
+            if (!dying)
             {
-                case States.idle:
-                    _textureActive = _textureIdle;
-                    animationFrameNum = 5;
-                    if (timer > 1)
-                    {
-                        State = States.walking;
-                        stateChangeCurrent = true;
-                        timer -= 1;
-                    }
-                    if (stateChangeCurrent && !stateChangePrior)
-                    {
-                        animationFrame = 0;
-                    }
-                    break;
-                case States.walking:
-                    _textureActive = _textureWalking;
-                    animationFrameNum = 5;
-                    distance = (float)(Math.Pow(this.Position.X - _player.Position.X, 2) + Math.Pow(this.Position.Y - _player.Position.Y, 2));
-                    if (_direction.X < 0)
-                    {
-                        flipped = true;
-                    }
-                    else
-                    {
-                        flipped = false;
-                    }
+                damagedPrior = damagedCurrent;
+                stateChangePrior = stateChangeCurrent;
+                timer += gametime.ElapsedGameTime.TotalSeconds;
+                _playerPosition = _player.Position;
+                _direction = _playerPosition - _position;
+                _direction.Normalize();
+                color = Color.White;
+                foreach (var bullet in _player.Arm.bullets)
+                {
+                    if (bullet.CheckCollision(this._bounds)) this.Damaged(_player.Arm._damageValue);
+                }
+                switch (State)
+                {
+                    case States.idle:
+                        _textureActive = _textureIdle;
+                        animationFrameNum = 5;
+                        if (timer > 1)
+                        {
+                            State = States.walking;
+                            stateChangeCurrent = true;
+                            timer -= 1;
+                        }
+                        if (stateChangeCurrent && !stateChangePrior)
+                        {
+                            animationFrame = 0;
+                        }
+                        break;
+                    case States.walking:
+                        _textureActive = _textureWalking;
+                        animationFrameNum = 5;
+                        if (_direction.X < 0)
+                        {
+                            flipped = true;
+                        }
+                        else
+                        {
+                            flipped = false;
+                        }
 
+                        _position += _direction * 40 * (float)gametime.ElapsedGameTime.TotalSeconds;
+                        _bounds.X = _position.X - 46.5f;
+                        _bounds.Y = _position.Y - 31.5f;
 
-
-                    _position += _direction * 40 * (float)gametime.ElapsedGameTime.TotalSeconds;
-
-
-
-                    if (distance < 40)
-                    {
-                        State = States.attacking;
-                        stateChangeCurrent = true;
-                    }
-                    if (stateChangeCurrent && !stateChangePrior)
-                    {
-                        animationFrame = 0;
-                    }
-                    break;
-                case States.attacking:
-                    _textureActive = _textureAttack;
-                    animationFrameNum = 19;
-                    if (timer > 5.7f)
-                    {
-                        State = States.walking;
-                        stateChangeCurrent = true;
-                        timer -= 5.7f;
-                    }
-                    if (stateChangeCurrent && !stateChangePrior)
-                    {
-                        animationFrame = 0;
-                    }
-                    break;
+                        distance = (Math.Pow(this.Position.X - _player.Position.X, 2) + Math.Pow(this.Position.Y - _player.Position.Y, 2));
+                        distance = Math.Sqrt(distance);
+                        if (distance < 2000)
+                        {
+                            State = States.attacking;
+                            stateChangeCurrent = true;
+                        }
+                        if (stateChangeCurrent && !stateChangePrior)
+                        {
+                            animationFrame = 0;
+                        }
+                        break;
+                    case States.attacking:
+                        _textureActive = _textureAttack;
+                        animationFrameNum = 19;
+                        distance = (Math.Pow(this.Position.X - _player.Position.X, 2) + Math.Pow(this.Position.Y - _player.Position.Y, 2));
+                        distance = Math.Sqrt(distance);
+                        if (distance < 1000)
+                        {
+                            _player.Damaged(2);
+                        }
+                        if (timer > 1f)
+                        {
+                            State = States.walking;
+                            stateChangeCurrent = true;
+                            timer -= 1f;
+                        }
+                        if (stateChangeCurrent && !stateChangePrior)
+                        {
+                            animationFrame = 0;
+                        }
+                        break;
+                }
+                stateChangeCurrent = false;
+                damagedCurrent = false;
             }
-            stateChangeCurrent = false;
         }
     }
 }

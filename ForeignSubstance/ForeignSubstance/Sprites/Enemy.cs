@@ -11,6 +11,7 @@ namespace ForeignSubstance.Sprites
 {
     public abstract class Enemy : Sprite
     {
+
         private Vector2 _position;
         private Rectangle _sourceRect;
         private States State;

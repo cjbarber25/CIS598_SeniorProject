@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using Microsoft.Xna.Framework.Input;
+using Microsoft.Xna.Framework.Audio;
 
 namespace ForeignSubstance.Sprites
 {
@@ -26,6 +27,8 @@ namespace ForeignSubstance.Sprites
         private int _damageValue;
         private double timer;
         private bool gunlock = false;
+        private SoundEffect shootSound;
+
         public bool Flipped => flip;
         public Vector2 Direction => _direction;
         public Vector2 Position => _position;
@@ -68,6 +71,7 @@ namespace ForeignSubstance.Sprites
             {
                 bullet.LoadContent(content);
             }
+            shootSound = content.Load<SoundEffect>("Sounds/Laser_Shoot");
         }
         public override void Update(GameTime gametime)
         {
@@ -118,6 +122,7 @@ namespace ForeignSubstance.Sprites
                                 bullet.Direction = this.Direction;
                                 bullet.IsRemoved = false;
                                 bullet.BulletReset(bullet, false);
+                                shootSound.Play();
                                 gunlock = true;
                                 break;
                             }
@@ -141,6 +146,7 @@ namespace ForeignSubstance.Sprites
                                 bullet.Direction = this.Direction;
                                 bullet.IsRemoved = false;
                                 bullet.BulletReset(bullet, false);
+                                shootSound.Play();
                                 gunlock = true;
                                 break;
                             }
@@ -176,6 +182,7 @@ namespace ForeignSubstance.Sprites
                                     chamber[2].Direction = this.Direction + new Vector2(50,-50);
                                     chamber[2].IsRemoved = false;
                                     chamber[2].BulletReset(bullet, true);
+                                    shootSound.Play();
                                     gunlock = true;
                                     break;
                                 }

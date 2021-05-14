@@ -4,8 +4,11 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/12_Kitchen_16x16.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/19_Hospital_16x16.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/blank.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Brown_Crates_1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Brown_Crates_2.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/File.spritefont</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/gradient.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Health.png</File>
@@ -26,6 +29,12 @@
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/jump.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/run.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/scifi-tileset.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Sounds/EnemyDamaged.wav</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Sounds/GetMoney.wav</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Sounds/Laser_Shoot.wav</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Sounds/PlayerDamaged.wav</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Sounds/Steamtech-Mayhem_Looping.mp3</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Sounds/Teleport.wav</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue1.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue2.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue3.png</File>
@@ -83,8 +92,25 @@
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star5.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star6.png</File>
     <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star7.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SwordDroid/Red Sword Attack.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SwordDroid/Red Sword Damaged and Death.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SwordDroid/Red Sword Idle.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SwordDroid/Red Sword Run.png</File>
   </SourceFiles>
   <DestFiles>
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
+    <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />
     <File xsi:nil="true" />

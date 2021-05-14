@@ -57,6 +57,7 @@ namespace ForeignSubstance.Sprites
         {
             if (_bounds.CollidesWith(other))
             {
+                this._isRemoved = true;
                 return true;
             }
             return false;

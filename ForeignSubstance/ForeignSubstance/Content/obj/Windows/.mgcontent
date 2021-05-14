@@ -4,85 +4,85 @@
   <Platform>Windows</Platform>
   <Config />
   <SourceFiles>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/19_Hospital_16x16.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/blank.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/File.spritefont</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/gradient.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Health.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/M484BulletCollection1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/attack.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/damaged and death.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/idle.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/prep attack.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/walk.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Baren.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Ice.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Lava.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Terran.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/arm_cannon.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/fall.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/hurt.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/idle.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/jump.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/run.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/scifi-tileset.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/BlueStars.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Purple1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Purple2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Purple3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Red1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Red2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Red3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/YellowStars.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/comet1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet4.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet5.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet6.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet7.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet8.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet4.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet5.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet6.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet7.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet8.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star4.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star5.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star6.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star7.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star8.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star4.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star5.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star6.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star7.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star8.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star4.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star5.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star6.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star7.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star1.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star2.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star3.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star4.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star5.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star6.png</File>
-    <File>C:/Users/ajbon/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star7.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/19_Hospital_16x16.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/blank.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/File.spritefont</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/gradient.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Health.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/M484BulletCollection1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/attack.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/damaged and death.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/idle.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/prep attack.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Mecha/walk.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Baren.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Ice.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Lava.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Planets/Terran.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/arm_cannon.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/fall.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/hurt.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/idle.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/jump.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/Scifi Character/run.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/scifi-tileset.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Blue3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/BlueStars.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Purple1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Purple2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Purple3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Red1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Red2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/Red3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Backgrounds/YellowStars.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/comet1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet4.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet5.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet6.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet7.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Blue/Comet8.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet4.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet5.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet6.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet7.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Comet/Yellow/Comet8.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star4.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star5.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star6.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star7.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Blue/star8.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star4.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star5.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star6.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star7.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star1/Yellow/star8.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star4.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star5.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star6.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Blue/star7.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star1.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star2.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star3.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star4.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star5.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star6.png</File>
+    <File>C:/Users/coleb/source/repos/CIS598_SeniorProject/ForeignSubstance/ForeignSubstance/Content/SpaceBackgrounds/Star2/Yellow/star7.png</File>
   </SourceFiles>
   <DestFiles>
     <File xsi:nil="true" />

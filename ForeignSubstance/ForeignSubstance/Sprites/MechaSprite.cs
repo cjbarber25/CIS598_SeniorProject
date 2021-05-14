@@ -40,6 +40,7 @@ namespace ForeignSubstance.Sprites
         private ContentManager _content;
         private Vector2 _muzzlePosition;
         public GameplayScreen gameScreen;
+        private int _damageValue;
 
         public Vector2 MuzzlePosition => _muzzlePosition;
         public Vector2 Direction => _direction;
@@ -58,6 +59,7 @@ namespace ForeignSubstance.Sprites
             _position = spawnLocation;
             _muzzlePosition = _position + new Vector2(75,0);
             bullets = new List<Bullet>();
+            _damageValue = 1;
         }
 
         public override void LoadContent(ContentManager content)
@@ -152,6 +154,7 @@ namespace ForeignSubstance.Sprites
                 foreach (var bullet in bullets)
                 {
                     bullet.Update(gametime);
+                    if(bullet.CheckCollision(_player.Bounds)) _player.Damaged(_damageValue);
                 }
             }
             stateChangeCurrent = false;

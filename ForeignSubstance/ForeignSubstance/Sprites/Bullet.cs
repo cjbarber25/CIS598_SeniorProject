@@ -39,7 +39,7 @@ namespace ForeignSubstance.Sprites
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;
             _scale = 1.5f;
-            _bounds = new BoundingRectangle(_position.X,_position.Y,16 ,16);
+            _bounds = new BoundingRectangle(_position.X+5,_position.Y,1 ,1);
             _isRemoved = true;
         }
         public Bullet(MechaSprite shooter, Rectangle textureMapPosition)
@@ -60,7 +60,7 @@ namespace ForeignSubstance.Sprites
             if(!modified) _direction = _player.Arm.Direction;
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;
-            _bounds = new BoundingRectangle(_position.X, _position.Y, 16, 16);
+            _bounds = new BoundingRectangle(_position.X+5, _position.Y, 1, 1);
         }
         public override bool CheckCollision(BoundingRectangle other)
         {
@@ -87,8 +87,8 @@ namespace ForeignSubstance.Sprites
             if (_timer > _lifeSpan) _isRemoved = true;
             _timer -= _lifeSpan;
             _position += _direction * _velocity;
-            _bounds.X = _position.X - 8 * _scale;
-            _bounds.Y = _position.Y - 8 * _scale;
+            _bounds.X = (_position.X - 8 * _scale)+5;
+            _bounds.Y = (_position.Y - 8 * _scale);
             if (gameScreen.CheckCollision(_bounds)) _isRemoved = true;
         }
     }

@@ -19,22 +19,25 @@ namespace ForeignSubstance.Rooms
         private int _roomWidth;
         private Vector2 _roomPosition;
 
+        private Player _player;
+
         public List<DoorSprite> GetDoors()
         {
             return _doors;
         }
 
-        public override void AddEnemy(Player player)
+        public override void AddEnemy(Player player, Vector2 position)
         { 
-            _enemySprites.Add(new MechaSprite(new Vector2(300, 400), player, this));
+            _enemySprites.Add(new MechaSprite(position, player, this));
         }
-        public override void Build(int length, int width,Vector2 position)
+        public override void Build(int length, int width,Vector2 position, Player player)
         {
             _doors = new List<DoorSprite>();
             _sprites = new Sprite[length,width];
             _roomLength = length;
             _roomWidth = width;
             _roomPosition = position;
+            _player = player;
             _enemySprites = new List<Enemy>();
             
             Vector2 tempPosition = position;
@@ -106,6 +109,24 @@ namespace ForeignSubstance.Rooms
                     }
                 }
             }
+        }
+        public List<BoxSprite> AddObstacles(int NumberOfObstacles)
+        {
+            List<BoxSprite> _obstacles = new List<BoxSprite>();
+            Random r = new Random(DateTime.Now.GetHashCode());
+            for (int i = 0; i < NumberOfObstacles; i++)
+            {
+                BoxSprite newBox = new BoxSprite(_sprites[r.Next(2, _roomLength - 2), r.Next(2, _roomWidth - 2)].Position, true);
+                if(!newBox.CheckCollision(_player.Bounds)){
+                    _obstacles.Add(newBox);
+                }
+                else
+                {
+                    i--;
+                }
+                
+            }
+            return _obstacles;
         }
 
         public override void LoadContent(ContentManager content)

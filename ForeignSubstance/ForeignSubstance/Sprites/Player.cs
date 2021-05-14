@@ -23,6 +23,7 @@ namespace ForeignSubstance.Sprites
         private Inventory _inventory;
         private int _healthMax;
         private int _healthRemaining;
+        private float _money;
         private BoundingRectangle _bounds;
         Rectangle _textureMapPosition;
         private KeyboardState keyboardState;
@@ -33,6 +34,7 @@ namespace ForeignSubstance.Sprites
         private bool idlingPrior = false;
         private bool running = false;
         private bool flipped = false;
+        
         private ArmSprite arm;
         public GameplayScreen gameScreen;
         public ArmSprite Arm => arm;
@@ -48,6 +50,7 @@ namespace ForeignSubstance.Sprites
             _inventory = new Inventory(5,this);
             _healthMax = 6;
             _healthRemaining = 6;
+            _money = 0;
             _textureMapPosition = new Rectangle(0,0,19,25);
             _bounds = new BoundingRectangle(_position.X-9.5f, _position.Y, 19, 25);
             arm = new ArmSprite(this);

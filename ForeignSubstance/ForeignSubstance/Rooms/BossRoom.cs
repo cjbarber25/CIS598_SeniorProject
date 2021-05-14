@@ -13,16 +13,16 @@ namespace ForeignSubstance.Rooms
         private Sprite[,] _sprites;
         private List<Sprite> _otherSprites;
 
-        public override void Build(int length, int width, Vector2 position)
+        public override void Build(int length, int width, Vector2 position, Player player)
         {
             _room = new Basic();
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
-            _room.Build(length, width, position);
+            _room.Build(length, width, position,player);
         }
-        public override void AddEnemy(Player player)
+        public override void AddEnemy(Player player, Vector2 position)
         {
-            _room.AddEnemy(player);
+            _room.AddEnemy(player,position);
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)

@@ -15,12 +15,12 @@ namespace ForeignSubstance.Rooms
         private List<Sprite> _otherSprites;
 
 
-        public override void Build(int length, int width, Vector2 position)
+        public override void Build(int length, int width, Vector2 position, Player player)
         {
             _room = new Basic();
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
-            _room.Build(10, 15, position);
+            _room.Build(10, 15, position,player);
             Vector2 tempPosition = position + new Vector2(128,150);
             for(int i = 0; i < 8; i++)
             {
@@ -91,9 +91,9 @@ namespace ForeignSubstance.Rooms
                 s.Draw(gametime, spriteBatch);
             }
         }
-        public override void AddEnemy(Player player)
+        public override void AddEnemy(Player player, Vector2 position)
         {
-            _room.AddEnemy(player);
+            _room.AddEnemy(player,position);
         }
         public override void LoadContent(ContentManager content)
         {

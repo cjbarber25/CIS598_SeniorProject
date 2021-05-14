@@ -22,25 +22,25 @@ namespace ForeignSubstance.Rooms
             _vertical = vertical;
         }
 
-        public override void Build(int length, int width, Vector2 position)
+        public override void Build(int length, int width, Vector2 position,Player player)
         {
             _room = new Basic();
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
             if (_vertical)
             {
-                _room.Build(10, 5, position);
+                _room.Build(10, 5, position,player);
             }
             else
             {
-                _room.Build(5, 13, position);
+                _room.Build(5, 13, position,player);
             }
             
             
         }
-        public override void AddEnemy(Player player)
+        public override void AddEnemy(Player player, Vector2 position)
         {
-            _room.AddEnemy(player);
+            _room.AddEnemy(player, position);
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)

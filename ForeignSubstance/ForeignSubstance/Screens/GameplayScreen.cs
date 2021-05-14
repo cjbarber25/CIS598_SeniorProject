@@ -34,7 +34,7 @@ namespace ForeignSubstance.Screens
             _player = player;
             _player.gameScreen = this;
 
-            _level = new LevelBuilder(_layout);
+            _level = new LevelBuilder(_layout, _player);
 
             _pauseAction = new InputAction(
                 new[] { Buttons.Start, Buttons.Back },

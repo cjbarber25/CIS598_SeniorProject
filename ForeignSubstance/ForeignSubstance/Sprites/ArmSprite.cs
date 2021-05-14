@@ -71,7 +71,7 @@ namespace ForeignSubstance.Sprites
                if(!bullet.IsRemoved)
                {
                     bullet.Update(gametime);
-                    bullet.CheckCollision();
+                    //CHECK bullet bounds to enemies and call their damaged
                }
             }
             if (angle >= Math.PI / 2 && angle <= Math.PI)

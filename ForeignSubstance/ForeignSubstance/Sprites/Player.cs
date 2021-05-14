@@ -13,7 +13,6 @@ namespace ForeignSubstance.Sprites
 {
     public class Player : Sprite
     {
-
         private Texture2D _activeTexture;
         private Texture2D _idleTexture;
         private Texture2D _runningTexture;

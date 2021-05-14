@@ -12,7 +12,7 @@ namespace ForeignSubstance.Sprites
 {
     public class Bullet : Sprite
     {
-        private float _fireRate;
+
         private double _timer;
         private Texture2D _texture;
         private float _velocity;
@@ -24,7 +24,7 @@ namespace ForeignSubstance.Sprites
         private MechaSprite _mecha;
         private bool _isRemoved = false;
         private float _scale;
-        private BoundingCircle _bounds;
+        private BoundingRectangle _bounds;
         public GameplayScreen gameScreen;
 
         public bool IsRemoved => _isRemoved;
@@ -39,7 +39,7 @@ namespace ForeignSubstance.Sprites
             _direction.Normalize();
             _position = _player.Arm.MuzzlePosition;
             _scale = 1.5f;
-            _bounds = new BoundingCircle(_position,8);
+            _bounds = new BoundingRectangle(_position.X,_position.Y,16 ,16);
         }
         public Bullet(MechaSprite shooter, Rectangle textureMapPosition)
         {
@@ -51,11 +51,15 @@ namespace ForeignSubstance.Sprites
             _direction = _mecha.Direction;
             _position = _mecha.MuzzlePosition;
             _scale = 2f;
-            _bounds = new BoundingCircle(_position, 8);
+            _bounds = new BoundingRectangle(0, 0, 16, 16);
         }
         public override bool CheckCollision(BoundingRectangle other)
         {
-            return _bounds.CollidesWith(other);
+            if (_bounds.CollidesWith(other))
+            {
+                return true;
+            }
+            return false;
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -74,8 +78,9 @@ namespace ForeignSubstance.Sprites
             if (_timer > _lifeSpan) _isRemoved = true;
 
             _position += _direction * _velocity;
-
-            //if (this.gameScreen.CheckCollision(_bounds)) _isRemoved = true;
+            _bounds.X = _position.X - 8 * _scale;
+            _bounds.Y = _position.Y - 8 * _scale;
+            if (gameScreen.CheckCollision(_bounds)) _isRemoved = true;
         }
     }
 }

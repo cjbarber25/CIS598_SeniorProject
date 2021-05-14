@@ -22,18 +22,18 @@ namespace ForeignSubstance.Sprites
         private Rectangle _textureMapPosition;
         private Player _player;
         private MechaSprite _mecha;
-        private bool _isRemoved = false;
+        private bool _isRemoved = true;
         private float _scale;
         private BoundingRectangle _bounds;
         public GameplayScreen gameScreen;
 
-        public bool IsRemoved => _isRemoved;
+        public bool IsRemoved { get { return _isRemoved; } set { _isRemoved = value; } }
         public Bullet(Player player, Rectangle textureMapPosition)
         {
             _player = player;
             gameScreen = _player.gameScreen;
             _lifeSpan = 3.0f;
-            _velocity = 5.0f;
+            _velocity = 7.0f;
             _textureMapPosition = textureMapPosition;
             _direction = _player.Arm.Direction;
             _direction.Normalize();
@@ -53,11 +53,18 @@ namespace ForeignSubstance.Sprites
             _scale = 2f;
             _bounds = new BoundingRectangle(0, 0, 16, 16);
         }
+
+        public void BulletReset(Bullet bullet)
+        {
+            _direction = _player.Arm.Direction;
+            _direction.Normalize();
+            _position = _player.Arm.MuzzlePosition;
+            _bounds = new BoundingRectangle(_position.X, _position.Y, 16, 16);
+        }
         public override bool CheckCollision(BoundingRectangle other)
         {
             if (_bounds.CollidesWith(other))
             {
-                this._isRemoved = true;
                 return true;
             }
             return false;
@@ -65,7 +72,7 @@ namespace ForeignSubstance.Sprites
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(8, 8), _scale, SpriteEffects.None, 0);
+            if(!this.IsRemoved) spriteBatch.Draw(_texture, _position, _textureMapPosition, Color.White, 0.0f, new Vector2(8, 8), _scale, SpriteEffects.None, 0);
         }
 
         public override void LoadContent(ContentManager content)
@@ -77,7 +84,7 @@ namespace ForeignSubstance.Sprites
         {
             _timer += (float)gametime.ElapsedGameTime.TotalSeconds;
             if (_timer > _lifeSpan) _isRemoved = true;
-
+            _timer -= _lifeSpan;
             _position += _direction * _velocity;
             _bounds.X = _position.X - 8 * _scale;
             _bounds.Y = _position.Y - 8 * _scale;

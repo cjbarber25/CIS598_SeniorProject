@@ -30,6 +30,7 @@ namespace ForeignSubstance
             _graphics.IsFullScreen = true;
             _graphics.PreferredBackBufferWidth = screen.Width;
             _graphics.PreferredBackBufferHeight = screen.Height;
+            IsFixedTimeStep = false;
             Mouse.SetCursor(MouseCursor.Crosshair);
             AddInitialScreens();
         }

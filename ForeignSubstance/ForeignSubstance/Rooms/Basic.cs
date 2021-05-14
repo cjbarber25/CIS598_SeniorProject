@@ -12,7 +12,7 @@ namespace ForeignSubstance.Rooms
     public class Basic : Room
     {
         private Sprite[,] _sprites;
-        private List<Sprite> _otherSprites;
+        private List<Enemy> _enemySprites;
         private List<DoorSprite> _doors;
 
         private int _roomLength;
@@ -23,14 +23,19 @@ namespace ForeignSubstance.Rooms
         {
             return _doors;
         }
-    public override void Build(int length, int width,Vector2 position)
+
+        public override void AddEnemy(Player player)
+        { 
+            _enemySprites.Add(new MechaSprite(new Vector2(300, 400), player, this));
+        }
+        public override void Build(int length, int width,Vector2 position)
         {
             _doors = new List<DoorSprite>();
             _sprites = new Sprite[length,width];
             _roomLength = length;
             _roomWidth = width;
             _roomPosition = position;
-            _otherSprites = new List<Sprite>();
+            _enemySprites = new List<Enemy>();
             
             Vector2 tempPosition = position;
             float currentX = position.X;
@@ -112,9 +117,9 @@ namespace ForeignSubstance.Rooms
                     _sprites[i, j].LoadContent(content);
                 }
             }
-            foreach(Sprite s in _otherSprites)
+            foreach(var enemy in _enemySprites)
             {
-                s.LoadContent(content);
+                enemy.LoadContent(content);
             }
             foreach (DoorSprite d in _doors)
             {
@@ -170,7 +175,6 @@ namespace ForeignSubstance.Rooms
 
         public override void Draw(GameTime gameTime,SpriteBatch spriteBatch)
         {
-            
             for (int i = 0; i < _sprites.GetLength(0); i++)
             {
                 for(int j = 0; j < _sprites.GetLength(1); j++)
@@ -178,7 +182,7 @@ namespace ForeignSubstance.Rooms
                     _sprites[i, j].Draw(gameTime, spriteBatch);
                 }
             }
-            foreach (Sprite s in _otherSprites)
+            foreach (Sprite s in _enemySprites)
             {
                 s.Draw(gameTime, spriteBatch);
             }

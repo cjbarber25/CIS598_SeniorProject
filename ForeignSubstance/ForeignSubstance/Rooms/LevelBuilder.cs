@@ -69,6 +69,11 @@ namespace ForeignSubstance.Rooms
 
         }
 
+        public void AddEnemy(Player player,Tuple<int,int> roomPosition)
+        {
+            _level[roomPosition.Item1, roomPosition.Item2].AddEnemy(player);
+        }
+
         public void Update(GameTime gametime)
         {
             _level[_activeRoom.Item1, _activeRoom.Item2].Update(gametime);
@@ -102,9 +107,6 @@ namespace ForeignSubstance.Rooms
 
         public void CheckDoorCollision(Player player)
         {
-            
-            
-            
             Tuple<int, int> destination;
             Vector2 newPosition = Vector2.Zero;
             if (_level[_activeRoom.Item1, _activeRoom.Item2].CheckDoorCollision(player, out destination))

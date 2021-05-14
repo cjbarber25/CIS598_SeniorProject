@@ -224,18 +224,6 @@
 /processorParam:TextureFormat=Color
 /build:Scifi Character/hurt.png
 
-#begin Scifi Character/hurt.png
-/importer:TextureImporter
-/processor:TextureProcessor
-/processorParam:ColorKeyColor=255,0,255,255
-/processorParam:ColorKeyEnabled=True
-/processorParam:GenerateMipmaps=False
-/processorParam:PremultiplyAlpha=True
-/processorParam:ResizeToPowerOfTwo=False
-/processorParam:MakeSquare=False
-/processorParam:TextureFormat=Color
-/build:Scifi Character/hurt.png
-
 #begin Scifi Character/idle.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -263,7 +251,7 @@
 #begin Scifi Character/run.png
 /importer:TextureImporter
 /processor:TextureProcessor
-/processorParam:ColorKeyColor=0,0,0,255
+/processorParam:ColorKeyColor=232,149,149,255
 /processorParam:ColorKeyEnabled=True
 /processorParam:GenerateMipmaps=False
 /processorParam:PremultiplyAlpha=True

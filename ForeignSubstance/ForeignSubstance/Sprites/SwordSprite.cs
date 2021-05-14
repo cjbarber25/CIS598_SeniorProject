@@ -53,6 +53,8 @@ namespace ForeignSubstance.Sprites
         private double distance;
         private bool damagedCurrent = false;
         private bool damagedPrior = false;
+        private float distance;
+        private SpriteFont _spriteFont;
 
         private SoundEffect damagedSound;
         private SoundEffect killedSound;
@@ -127,7 +129,11 @@ namespace ForeignSubstance.Sprites
                     }
                 }
             }
-            if (!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(0, 0), 3f, _spriteEffects, 0);
+            if (!dead) spriteBatch.Draw(_textureActive, _position, _sourceRect, color, 0.0f, new Vector2(37.5f, 30), 3f, _spriteEffects, 0);
+            else
+            {
+                spriteBatch.DrawString(_spriteFont, "YOU HAVE WON", new Vector2(600, 600), Color.Gold);
+            }
         }
 
         public override void LoadContent(ContentManager content)
@@ -139,6 +145,7 @@ namespace ForeignSubstance.Sprites
             _textureDamaged = content.Load<Texture2D>("SwordDroid/Red Sword Damaged and Death");
             damagedSound = content.Load<SoundEffect>("Sounds/EnemyDamaged");
             killedSound = content.Load<SoundEffect>("Sounds/GetMoney");
+            _spriteFont = content.Load<SpriteFont>("File");
             _textureActive = _textureIdle;
         }
 

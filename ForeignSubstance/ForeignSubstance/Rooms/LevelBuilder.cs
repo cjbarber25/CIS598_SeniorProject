@@ -35,7 +35,7 @@ namespace ForeignSubstance.Rooms
             _level = new Room[_levelHeight, _levelWidth];
             _layout = layout;
             _player = player;
-            _activeRoom = new Tuple<int, int>(3,4 );
+            _activeRoom = new Tuple<int, int>(3,0 );
             for(int i  = 0; i < _levelHeight; i++)
             {
                 for(int j = 0; j < _levelWidth; j++)

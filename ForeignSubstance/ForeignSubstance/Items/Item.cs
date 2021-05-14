@@ -11,8 +11,7 @@ namespace ForeignSubstance.Items
     public abstract class Item
     {
         private string _itemName;
-        private Texture2D _texture;
-        private string _type;
+        
         private Vector2 _position;
         private Player _player;
         private bool _displayed;

@@ -24,7 +24,7 @@ namespace ForeignSubstance.Sprites
         private Inventory _inventory;
         private int _healthMax;
         private int _healthRemaining;
-        private float _money;
+        public int _money;
         private BoundingRectangle _bounds;
         Rectangle _textureMapPosition;
         private KeyboardState keyboardState;
@@ -35,6 +35,8 @@ namespace ForeignSubstance.Sprites
         private bool idlingPrior = false;
         private bool running = false;
         private bool flipped = false;
+        private bool _dead = false;
+        private SpriteFont _spritefont;
 
         private SoundEffect damagedSound;
 
@@ -59,6 +61,21 @@ namespace ForeignSubstance.Sprites
             arm = new ArmSprite(this);
         }
 
+        public bool BuyItem(Tuple<ArmSprite.GunTypes, int> item)
+        {
+           if(_money >= item.Item2 && arm.currentGun != item.Item1)
+            {
+                _money -= item.Item2;
+                arm.currentGun = item.Item1;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
+        }
+
         public override void LoadContent(ContentManager content)
         {
             _idleTexture = content.Load<Texture2D>("Scifi Character/idle");
@@ -68,6 +85,7 @@ namespace ForeignSubstance.Sprites
             _healthTexture = content.Load<Texture2D>("Health");
             _damagedTexture = content.Load<Texture2D>("Scifi Character/hurt");
             damagedSound = content.Load<SoundEffect>("Sounds/PlayerDamaged");
+            _spritefont = content.Load<SpriteFont>("File");
         }
 
         public override bool CheckCollision(BoundingRectangle other)
@@ -82,6 +100,10 @@ namespace ForeignSubstance.Sprites
         public void Damaged(int damage)
         {
             _healthRemaining -= damage;
+            if(_healthRemaining <= 0)
+            {
+                LoadingScreen.Load(gameScreen.ScreenManager, false, null, new BackgroundScreen(), new MainMenuScreen());
+            }
             animationFrame = 0;
             _activeTexture = _damagedTexture;
             animationFrameNum = 2;
@@ -218,6 +240,8 @@ namespace ForeignSubstance.Sprites
                 }
                 k += new Vector2(60, 0);
             }
+
+            spriteBatch.DrawString(_spritefont, "$ " + _money.ToString(), new Vector2(20, 80),Color.Gold);
             arm.Draw(gameTime, spriteBatch);
         }
 

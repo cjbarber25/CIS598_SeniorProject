@@ -264,7 +264,10 @@ namespace ForeignSubstance.Rooms
 
         public override void AddEnemy(Player player, Vector2 position)
         {
-            throw new NotImplementedException();
+            MechaSprite newEnemy = new MechaSprite(this.GetCenter(), player, this);
+            newEnemy._gameplayScreen = player.gameScreen;
+            _enemySprites.Add(newEnemy);
+
         }
     }
 }

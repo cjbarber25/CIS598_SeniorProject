@@ -50,6 +50,10 @@ namespace ForeignSubstance.Sprites
             _damageValue = 1;
             currentGun = GunTypes.Single;
         }
+        public void SwapGunTypes(GunTypes g)
+        {
+            currentGun = g;
+        }
         public override void LoadContent(ContentManager content)
         {
             _texture = content.Load<Texture2D>("Scifi Character/arm_cannon");

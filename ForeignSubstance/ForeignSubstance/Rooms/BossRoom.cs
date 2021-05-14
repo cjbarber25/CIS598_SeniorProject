@@ -20,6 +20,10 @@ namespace ForeignSubstance.Rooms
             _otherSprites = new List<Sprite>();
             _room.Build(length, width, position);
         }
+        public override void AddEnemy(Player player)
+        {
+            _room.AddEnemy(player);
+        }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
         {

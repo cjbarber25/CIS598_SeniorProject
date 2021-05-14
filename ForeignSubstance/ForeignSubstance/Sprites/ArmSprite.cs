@@ -71,7 +71,7 @@ namespace ForeignSubstance.Sprites
                if(!bullet.IsRemoved)
                {
                     bullet.Update(gametime);
-                    bullet.CheckCollision();
+                    
                }
             }
             if (angle >= Math.PI / 2 && angle <= Math.PI)

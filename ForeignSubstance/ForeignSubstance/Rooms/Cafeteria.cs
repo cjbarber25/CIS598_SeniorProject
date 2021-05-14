@@ -91,7 +91,10 @@ namespace ForeignSubstance.Rooms
                 s.Draw(gametime, spriteBatch);
             }
         }
-
+        public override void AddEnemy(Player player)
+        {
+            _room.AddEnemy(player);
+        }
         public override void LoadContent(ContentManager content)
         {
             _room.LoadContent(content);

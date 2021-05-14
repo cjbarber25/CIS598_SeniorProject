@@ -38,6 +38,10 @@ namespace ForeignSubstance.Rooms
             
             
         }
+        public override void AddEnemy(Player player)
+        {
+            _room.AddEnemy(player);
+        }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
         {

@@ -13,7 +13,7 @@ namespace ForeignSubstance.Rooms
     {
         EMPTY = 0,
         BASIC = 1,
-        LOOT = 2,
+        CAFETERIA = 2,
         HALLWAYUP = 3,
         HALLWAYSIDE = 4,
         STORE = 5,
@@ -28,7 +28,6 @@ namespace ForeignSubstance.Rooms
         private Tuple<int,int> _activeRoom;
         private int[,] _layout;
         private bool currentDoorCollisionState = false;
-        private bool priorDoorCollisionState;
 
         public LevelBuilder(int[,] layout)
         {
@@ -46,10 +45,9 @@ namespace ForeignSubstance.Rooms
                             break;
                         case 1:
                             _level[i, j] = new NormalRoom();
-                            
                             break;
                         case 2:
-                            
+                            _level[i, j] = new Cafeteria();
                             break;
                         case 3:
                             _level[i, j] = new Hallway(true);
@@ -77,6 +75,7 @@ namespace ForeignSubstance.Rooms
         public void Update(GameTime gametime)
         {
             _level[_activeRoom.Item1, _activeRoom.Item2].Update(gametime);
+
         }
 
         public bool CheckCollision(BoundingRectangle b)
@@ -120,7 +119,7 @@ namespace ForeignSubstance.Rooms
                         {
                             if (d.GetBounds().Y > newPosition.Y || newPosition == Vector2.Zero)
                             {
-                                newPosition = new Vector2(d.GetBounds().X, d.GetBounds().Y);
+                                newPosition = new Vector2(d.GetBounds().X+32, d.GetBounds().Y-64);
                             }
                         }
                     }
@@ -130,7 +129,7 @@ namespace ForeignSubstance.Rooms
                         {
                             if (d.GetBounds().Y < newPosition.Y || newPosition == Vector2.Zero)
                             {
-                                newPosition = new Vector2(d.GetBounds().X, d.GetBounds().Y);
+                                newPosition = new Vector2(d.GetBounds().X+32, d.GetBounds().Y+64);
                             }
                         }
                     }
@@ -150,7 +149,7 @@ namespace ForeignSubstance.Rooms
                         {
                             if (d.GetBounds().X < newPosition.X || newPosition == Vector2.Zero)
                             {
-                                newPosition = new Vector2(d.GetBounds().X, d.GetBounds().Y);
+                                newPosition = new Vector2(d.GetBounds().X+64, d.GetBounds().Y);
                             }
                         }
                     }

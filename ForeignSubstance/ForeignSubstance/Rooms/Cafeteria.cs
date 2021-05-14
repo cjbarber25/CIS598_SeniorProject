@@ -20,7 +20,22 @@ namespace ForeignSubstance.Rooms
             _room = new Basic();
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
-            _room.Build(length, width, position);
+            _room.Build(10, 15, position);
+            Vector2 tempPosition = position + new Vector2(128,150);
+            for(int i = 0; i < 8; i++)
+            {
+                _otherSprites.Add(new TableSprite(tempPosition));
+                if (i%2 != 0)
+                {
+                    tempPosition += new Vector2(200, -256);
+                }
+                else
+                {
+                    tempPosition += new Vector2(0, 256);
+                }
+                
+
+            }
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
@@ -76,7 +91,10 @@ namespace ForeignSubstance.Rooms
                 s.Draw(gametime, spriteBatch);
             }
         }
-
+        public override void AddEnemy(Player player)
+        {
+            _room.AddEnemy(player);
+        }
         public override void LoadContent(ContentManager content)
         {
             _room.LoadContent(content);

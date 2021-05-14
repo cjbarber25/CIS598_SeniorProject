@@ -29,14 +29,18 @@ namespace ForeignSubstance.Rooms
             _otherSprites = new List<Sprite>();
             if (_vertical)
             {
-                _room.Build(7, 5, position);
+                _room.Build(10, 5, position);
             }
             else
             {
-                _room.Build(5, 7, position);
+                _room.Build(5, 13, position);
             }
             
             
+        }
+        public override void AddEnemy(Player player)
+        {
+            _room.AddEnemy(player);
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)

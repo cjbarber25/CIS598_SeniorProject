@@ -99,6 +99,11 @@ namespace ForeignSubstance.Rooms
             }
 
         }
+        public override void AddEnemy(Player player)
+        {
+            _room.AddEnemy(player);
+        }
+
         public override void AddDoors(int[,] layout, Tuple<int, int> currentPosition)
         {
             _room.AddDoors(layout, currentPosition);

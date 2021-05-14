@@ -53,7 +53,6 @@ namespace ForeignSubstance.Sprites
         private double distance;
         private bool damagedCurrent = false;
         private bool damagedPrior = false;
-        private float distance;
         private SpriteFont _spriteFont;
 
         private SoundEffect damagedSound;

@@ -46,6 +46,10 @@ namespace ForeignSubstance.Sprites
         {
             _activated = true;
         }
+        public void DeactivateDoor()
+        {
+            _activated = false;
+        }
         public BoundingRectangle GetBounds()
         {
             return _bounds;

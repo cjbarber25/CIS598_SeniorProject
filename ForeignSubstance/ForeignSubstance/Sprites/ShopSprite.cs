@@ -29,10 +29,17 @@ namespace ForeignSubstance.Sprites
 
         public void BuyItem()
         {
-            if (_player.BuyItem(_item))
+            
+            if (_player._money > 400 && _player.Arm.currentGun != ArmSprite.GunTypes.Auto)
             {
-                _item = new Tuple<ArmSprite.GunTypes, int>(ArmSprite.GunTypes.Auto, 200);
+                _item = new Tuple<ArmSprite.GunTypes, int>(ArmSprite.GunTypes.Auto, 400);
+                _player.BuyItem(_item);
             }
+            else
+            {
+                _player.BuyItem(_item);
+            }
+            
         }
         
         public override bool CheckCollision(BoundingRectangle other)

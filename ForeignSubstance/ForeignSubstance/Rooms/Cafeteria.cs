@@ -36,6 +36,11 @@ namespace ForeignSubstance.Rooms
                 
 
             }
+            this.AddObstacles(0, 1);
+        }
+        public void AddObstacles(int NumberOfObstacles, int NumberOfEnemies)
+        {
+            _room.AddObstacles(NumberOfObstacles, NumberOfEnemies);
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)

@@ -227,6 +227,7 @@ namespace ForeignSubstance.Sprites
             {
                 animationFrameNum = 11;
                 dying = true;
+                
             }
         }
 
@@ -265,6 +266,7 @@ namespace ForeignSubstance.Sprites
                     {
                         killedSound.Play();
                         dead = true;
+                        _player._money += 100;
                         animationFrame = 0;
                     }
                 }

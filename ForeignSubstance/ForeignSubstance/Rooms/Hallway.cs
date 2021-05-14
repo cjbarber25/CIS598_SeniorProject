@@ -35,8 +35,13 @@ namespace ForeignSubstance.Rooms
             {
                 _room.Build(5, 13, position,player);
             }
+            this.AddObstacles(0, 1);
             
             
+        }
+        public void AddObstacles(int NumberOfObstacles, int NumberOfEnemies)
+        {
+            _room.AddObstacles(NumberOfObstacles, NumberOfEnemies);
         }
         public override void AddEnemy(Player player, Vector2 position)
         {

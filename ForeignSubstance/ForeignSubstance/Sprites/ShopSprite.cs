@@ -5,6 +5,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using ForeignSubstance.Items;
 
 namespace ForeignSubstance.Sprites
 {
@@ -14,17 +15,37 @@ namespace ForeignSubstance.Sprites
         private Vector2 _position;
         private BoundingRectangle _bounds;
         private Rectangle _textureMapPosition;
+        private Player _player;
+        private Tuple<ArmSprite.GunTypes, int> _item;
         
 
-        public ShopSprite(Vector2 position)
+        public ShopSprite(Vector2 position,Player player)
         {
             this._position = position;
+            _player = player;
             _bounds = new BoundingRectangle(_position.X-16,_position.Y-25, 60, 99);
+            _item = new Tuple<ArmSprite.GunTypes, int>(ArmSprite.GunTypes.Shotgun, 100);
+        }
+
+        public void BuyItem()
+        {
+            if (_player.BuyItem(_item))
+            {
+                _item = new Tuple<ArmSprite.GunTypes, int>(ArmSprite.GunTypes.Auto, 200);
+            }
         }
         
         public override bool CheckCollision(BoundingRectangle other)
         {
-           return _bounds.CollidesWith(other);
+            if (_bounds.CollidesWith(other))
+            {
+                this.BuyItem();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)

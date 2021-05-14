@@ -22,7 +22,7 @@ namespace ForeignSubstance.Rooms
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
             _room.Build(length, width, position, player);
-            _otherSprites.Add( new ShopSprite(new Vector2(position.X+length * 64 / 2, position.Y+width * 64 / 2)));
+            _otherSprites.Add( new ShopSprite(new Vector2(position.X+length * 64 / 2, position.Y+width * 64 / 2),player));
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)

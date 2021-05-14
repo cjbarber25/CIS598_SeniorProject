@@ -49,17 +49,17 @@ namespace ForeignSubstance.Rooms
                         else
                         {
                             //BOTTOM ROOM CASE
-                            if (layout[currentPosition.Item1 + 1, currentPosition.Item2] != 0)
+                            if (layout[currentPosition.Item1, currentPosition.Item2 - 1] != 0)
                             {
-                                _sprites.Add(new DoorSprite(new Vector2(_roomPosition.X + (_roomWidth * 58) / 2, (_roomPosition.Y + (_roomLength - 1) * 62) + 48),new Tuple<int,int>(currentPosition.Item1+1,currentPosition.Item2)));
+                                _sprites.Add(new DoorSprite(new Vector2((_roomPosition.X + 62), (_roomPosition.Y + (_roomLength * 58) / 2)), new Tuple<int, int>(currentPosition.Item1, currentPosition.Item2 - 1)));
                             }
                             if (layout[currentPosition.Item1 - 1, currentPosition.Item2] != 0)
                             {
-                                _sprites.Add(new DoorSprite(new Vector2(_roomPosition.X + (_roomWidth * 58) / 2, (_roomPosition.Y + 62) + 32), new Tuple<int, int>(currentPosition.Item1 -1, currentPosition.Item2)));
+                                _sprites.Add(new DoorSprite(new Vector2(_roomPosition.X + (_roomWidth * 58) / 2, (_roomPosition.Y + 62) + 32), new Tuple<int, int>(currentPosition.Item1 - 1, currentPosition.Item2)));
                             }
                             if (layout[currentPosition.Item1, currentPosition.Item2 + 1] != 0)
                             {
-                                _sprites.Add(new DoorSprite(new Vector2((_roomPosition.X + (_roomWidth - 1) * 62), (_roomPosition.Y + (_roomLength * 58) / 2)), new Tuple<int, int>(currentPosition.Item1 , currentPosition.Item2+1)));
+                                _sprites.Add(new DoorSprite(new Vector2((_roomPosition.X + (_roomWidth - 1) * 62), (_roomPosition.Y + (_roomLength * 58) / 2)), new Tuple<int, int>(currentPosition.Item1, currentPosition.Item2 + 1)));
                             }
                         }
                     }
@@ -93,9 +93,9 @@ namespace ForeignSubstance.Rooms
                             {
                                 _sprites.Add(new DoorSprite(new Vector2(_roomPosition.X + (_roomWidth * 58) / 2, (_roomPosition.Y + 62) + 32), new Tuple<int, int>(currentPosition.Item1 - 1, currentPosition.Item2)));
                             }
-                            if (layout[currentPosition.Item1, currentPosition.Item2 + 1] != 0)
+                            if (layout[currentPosition.Item1 + 1, currentPosition.Item2] != 0)
                             {
-                                _sprites.Add(new DoorSprite(new Vector2((_roomPosition.X + (_roomWidth - 1) * 62), (_roomPosition.Y + (_roomLength * 58) / 2)), new Tuple<int, int>(currentPosition.Item1, currentPosition.Item2 + 1)));
+                                _sprites.Add(new DoorSprite(new Vector2(_roomPosition.X + (_roomWidth * 58) / 2, (_roomPosition.Y + (_roomLength - 1) * 62) + 48), new Tuple<int, int>(currentPosition.Item1 + 1, currentPosition.Item2)));
                             }
                             if (layout[currentPosition.Item1, currentPosition.Item2 - 1] != 0)
                             {
@@ -110,9 +110,9 @@ namespace ForeignSubstance.Rooms
                             {
                                 _sprites.Add(new DoorSprite(new Vector2(_roomPosition.X + (_roomWidth * 58) / 2, (_roomPosition.Y + 62) + 32), new Tuple<int, int>(currentPosition.Item1 - 1, currentPosition.Item2)));
                             }
-                            if (layout[currentPosition.Item1, currentPosition.Item2 + 1] != 0)
+                            if (layout[currentPosition.Item1, currentPosition.Item2 - 1] != 0)
                             {
-                                _sprites.Add(new DoorSprite(new Vector2((_roomPosition.X + (_roomWidth - 1) * 62), (_roomPosition.Y + (_roomLength * 58) / 2)), new Tuple<int, int>(currentPosition.Item1, currentPosition.Item2 + 1)));
+                                _sprites.Add(new DoorSprite(new Vector2((_roomPosition.X + 62), (_roomPosition.Y + (_roomLength * 58) / 2)), new Tuple<int, int>(currentPosition.Item1, currentPosition.Item2 - 1)));
                             }
                         }
                     }

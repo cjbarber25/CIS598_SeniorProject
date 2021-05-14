@@ -12,6 +12,7 @@ namespace ForeignSubstance.Rooms
     {
         private Sprite[,] _sprites;
         private List<Sprite> _otherSprites;
+        private SwordSprite _boss;
 
         public override void Build(int length, int width, Vector2 position, Player player)
         {
@@ -19,10 +20,11 @@ namespace ForeignSubstance.Rooms
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
             _room.Build(length, width, position,player);
+            _boss = new SwordSprite(_room.GetCenter(), player);
         }
         public override void AddEnemy(Player player, Vector2 position)
         {
-            _room.AddEnemy(player,position);
+            
         }
 
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
@@ -77,6 +79,7 @@ namespace ForeignSubstance.Rooms
             {
                 s.Draw(gametime, spriteBatch);
             }
+            _boss.Draw(gametime, spriteBatch);
         }
 
         public override void LoadContent(ContentManager content)
@@ -97,6 +100,7 @@ namespace ForeignSubstance.Rooms
             {
                 s.LoadContent(content);
             }
+            _boss.LoadContent(content);
 
         }
         public override void AddDoors(int[,] layout, Tuple<int, int> currentPosition)
@@ -108,6 +112,7 @@ namespace ForeignSubstance.Rooms
         public override void Update(GameTime gametime)
         {
             _room.Update(gametime);
+            _boss.Update(gametime);
         }
     }
 }

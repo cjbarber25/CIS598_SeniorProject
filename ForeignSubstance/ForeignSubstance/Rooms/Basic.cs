@@ -29,6 +29,10 @@ namespace ForeignSubstance.Rooms
         {
             return _doors;
         }
+        public Vector2 GetCenter()
+        {
+            return new Vector2(_roomPosition.X + _roomWidth * 64 / 2, _roomPosition.Y + _roomLength * 64 / 2);
+        }
 
         public override void Build(int length, int width,Vector2 position, Player player)
         {

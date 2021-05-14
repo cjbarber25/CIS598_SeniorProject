@@ -12,6 +12,7 @@ namespace ForeignSubstance.Sprites
 {
     public class SwordSprite : Sprite
     {
+
         #region textures
         private Texture2D _textureActive;
         private Texture2D _textureIdle;
@@ -22,6 +23,7 @@ namespace ForeignSubstance.Sprites
 
         private Vector2 _position;
         private Rectangle _sourceRect;
+        private BoundingRectangle _bounds;
         private States State;
         private SpriteEffects _spriteEffects;
         private double timer;
@@ -49,9 +51,6 @@ namespace ForeignSubstance.Sprites
         private bool dying = false;
         private bool dead = false;
         private float distance;
-        private bool damagedCurrent = false;
-        private bool damagedPrior = false;
-        private BoundingRectangle _bounds;
 
 
         private SoundEffect damagedSound;
@@ -62,6 +61,12 @@ namespace ForeignSubstance.Sprites
             idle,
             attacking,
             walking
+        }
+
+        public SwordSprite(Vector2 position, Player player)
+        {
+            _position = position;
+            _player = player;
         }
 
         public void Damaged(int damage)
@@ -81,7 +86,7 @@ namespace ForeignSubstance.Sprites
 
         public override bool CheckCollision(BoundingRectangle other)
         {
-            throw new NotImplementedException();
+            return _bounds.CollidesWith(other);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -122,75 +127,73 @@ namespace ForeignSubstance.Sprites
 
         public override void Update(GameTime gametime)
         {
-            if (!dying)
+            stateChangePrior = stateChangeCurrent;
+            timer += gametime.ElapsedGameTime.TotalSeconds;
+            _playerPosition = _player.Position;
+            _direction = _playerPosition - _position;
+            _direction.Normalize();
+            color = Color.White;
+            switch (State)
             {
+                case States.idle:
+                    _textureActive = _textureIdle;
+                    animationFrameNum = 5;
+                    if (timer > 1)
+                    {
+                        State = States.walking;
+                        stateChangeCurrent = true;
+                        timer -= 1;
+                    }
+                    if (stateChangeCurrent && !stateChangePrior)
+                    {
+                        animationFrame = 0;
+                    }
+                    break;
+                case States.walking:
+                    _textureActive = _textureWalking;
+                    animationFrameNum = 5;
+                    distance = (float)(Math.Pow(this.Position.X - _player.Position.X, 2) + Math.Pow(this.Position.Y - _player.Position.Y, 2));
+                    if (_direction.X < 0)
+                    {
+                        flipped = true;
+                    }
+                    else
+                    {
+                        flipped = false;
+                    }
 
-                stateChangePrior = stateChangeCurrent;
-                timer += gametime.ElapsedGameTime.TotalSeconds;
-                _playerPosition = _player.Position;
-                _direction = _playerPosition - _position;
-                _direction.Normalize();
-                color = Color.White;
-                foreach (var bullet in _player.Arm.bullets)
-                {
-                    if (bullet.CheckCollision(this._bounds)) this.Damaged(_player.Arm._damageValue);
-                }
-                switch (State)
-                {
-                    case States.idle:
-                        _textureActive = _textureIdle;
-                        animationFrameNum = 5;
-                        if (timer > 1)
-                        {
-                            State = States.walking;
-                            stateChangeCurrent = true;
-                            timer -= 1;
-                        }
-                        if (stateChangeCurrent && !stateChangePrior)
-                        {
-                            animationFrame = 0;
-                        }
-                        break;
-                    case States.walking:
-                        _textureActive = _textureWalking;
-                        animationFrameNum = 5;
-                        distance = (float)(Math.Pow(this.Position.X - _player.Position.X, 2) + Math.Pow(this.Position.Y - _player.Position.Y, 2));
-                        if (_direction.X < 0)
-                        {
-                            flipped = true;
-                        }
-                        else
-                        {
-                            flipped = false;
-                        }
-                        _position += _direction * 40 * (float)gametime.ElapsedGameTime.TotalSeconds;
-                        if (distance < 40)
-                        {
-                            State = States.attacking;
-                            stateChangeCurrent = true;
-                        }
-                        if (stateChangeCurrent && !stateChangePrior)
-                        {
-                            animationFrame = 0;
-                        }
-                        break;
-                    case States.attacking:
-                        _textureActive = _textureAttack;
-                        animationFrameNum = 19;
-                        if (timer > 5.7f)
-                        {
-                            State = States.walking;
-                            stateChangeCurrent = true;
-                            timer -= 5.7f;
-                        }
-                        if (stateChangeCurrent && !stateChangePrior)
-                        {
-                            animationFrame = 0;
-                        }
-                        break;
-                }
-                stateChangeCurrent = false;
+
+
+                    _position += _direction * 40 * (float)gametime.ElapsedGameTime.TotalSeconds;
+
+
+
+                    if (distance < 40)
+                    {
+                        State = States.attacking;
+                        stateChangeCurrent = true;
+                    }
+                    if (stateChangeCurrent && !stateChangePrior)
+                    {
+                        animationFrame = 0;
+                    }
+                    break;
+                case States.attacking:
+                    _textureActive = _textureAttack;
+                    animationFrameNum = 19;
+                    if (timer > 5.7f)
+                    {
+                        State = States.walking;
+                        stateChangeCurrent = true;
+                        timer -= 5.7f;
+                    }
+                    if (stateChangeCurrent && !stateChangePrior)
+                    {
+                        animationFrame = 0;
+                    }
+                    break;
             }
+            stateChangeCurrent = false;
         }
     }
 }

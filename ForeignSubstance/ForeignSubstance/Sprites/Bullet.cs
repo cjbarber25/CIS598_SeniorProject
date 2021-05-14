@@ -45,6 +45,7 @@ namespace ForeignSubstance.Sprites
         public Bullet(MechaSprite shooter, Rectangle textureMapPosition)
         {
             _mecha = shooter;
+            gameScreen = _mecha._gameplayScreen;
             _lifeSpan = 3.0f;
             _velocity = 5.0f;
             _textureMapPosition = textureMapPosition;

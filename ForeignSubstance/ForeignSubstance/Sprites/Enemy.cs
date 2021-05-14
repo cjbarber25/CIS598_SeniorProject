@@ -37,6 +37,7 @@ namespace ForeignSubstance.Sprites
         private int _healthRemaining;
         private Room _room;
         private Tuple<int, int> _roomPosition;
+        public GameplayScreen _gameplayScreen;
         enum States
         {
             idle,

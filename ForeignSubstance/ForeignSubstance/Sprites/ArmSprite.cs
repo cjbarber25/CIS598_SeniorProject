@@ -24,10 +24,20 @@ namespace ForeignSubstance.Sprites
         private Bullet[] bullets;
         private ContentManager _content;
         private int _damageValue;
+        private double timer;
+        private bool gunlock = false;
         public bool Flipped => flip;
         public Vector2 Direction => _direction;
         public Vector2 Position => _position;
         public Vector2 MuzzlePosition => muzzlePosition;
+
+        public GunTypes currentGun;
+        public enum GunTypes
+        {
+            Single,
+            Auto,
+            Shotgun
+        }
         public ArmSprite(Player player)
         {
             _player = player;
@@ -35,6 +45,7 @@ namespace ForeignSubstance.Sprites
             muzzlePosition = _position + new Vector2(22, 0);
             pivot = new Vector2(0,2.5f);
             _damageValue = 1;
+            currentGun = GunTypes.Single;
         }
         public override void LoadContent(ContentManager content)
         {
@@ -65,7 +76,6 @@ namespace ForeignSubstance.Sprites
             _direction = new Vector2(currentMouseState.X - _position.X, currentMouseState.Y - _position.Y);
             _position = _player.Position + new Vector2(8, 31);
             angle = (float)Math.Atan2(_direction.Y, _direction.X);
-            
             foreach (var bullet in bullets)
             {
                if(!bullet.IsRemoved)
@@ -91,21 +101,93 @@ namespace ForeignSubstance.Sprites
                 _position = _player.Position + new Vector2(-8, 31);
                 _direction = new Vector2(currentMouseState.X - _position.X, currentMouseState.Y - _position.Y);
             }
-
             _direction.Normalize();
             muzzlePosition = _position + _direction * (this._texture.Width * 2.5f);
 
-            if (currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released)
+            switch (currentGun)
             {
-                foreach(var bullet in bullets)
-                {
-                    if(bullet.IsRemoved)
+                case GunTypes.Single:
+                    _damageValue = 1;
+                    timer += gametime.ElapsedGameTime.TotalSeconds;
+                    if (currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released && !gunlock)
                     {
-                        bullet.IsRemoved = false;
-                        bullet.BulletReset(bullet);
-                        break;
+                        foreach (var bullet in bullets)
+                        {
+                            if (bullet.IsRemoved)
+                            {
+                                bullet.Direction = this.Direction;
+                                bullet.IsRemoved = false;
+                                bullet.BulletReset(bullet, false);
+                                gunlock = true;
+                                break;
+                            }
+                        }
                     }
-                }
+                    if(timer > 1)
+                    {
+                        gunlock = false;
+                        timer -= 1;
+                    }
+                    break;
+                case GunTypes.Auto:
+                    _damageValue = 1;
+                    timer += gametime.ElapsedGameTime.TotalSeconds;
+                    if (currentMouseState.LeftButton == ButtonState.Pressed && !gunlock)
+                    {
+                        foreach (var bullet in bullets)
+                        {
+                            if (bullet.IsRemoved)
+                            {
+                                bullet.Direction = this.Direction;
+                                bullet.IsRemoved = false;
+                                bullet.BulletReset(bullet, false);
+                                gunlock = true;
+                                break;
+                            }
+                        }
+                    }
+                    if (timer > .2f)
+                    {
+                        gunlock = false;
+                        timer -= .2f;
+                    }
+                    break;
+                case GunTypes.Shotgun:
+                    _damageValue = 1;
+                    int chamberNum = 0;
+                    Bullet[] chamber = new Bullet[3];
+                    timer += gametime.ElapsedGameTime.TotalSeconds;
+                    if (currentMouseState.LeftButton == ButtonState.Pressed && priorMouseState.LeftButton == ButtonState.Released && !gunlock)
+                    {
+                        foreach (var bullet in bullets)
+                        {
+                            if (bullet.IsRemoved)
+                            {
+                                chamber[chamberNum] = bullet;
+                                chamberNum++;
+                                if(chamberNum == 3)
+                                {
+                                    chamber[0].Direction = this.Direction + new Vector2(50,50);
+                                    chamber[0].IsRemoved = false;
+                                    chamber[0].BulletReset(bullet, true);
+                                    chamber[1].Direction = this.Direction;
+                                    chamber[1].IsRemoved = false;
+                                    chamber[1].BulletReset(bullet, false);
+                                    chamber[2].Direction = this.Direction + new Vector2(50,-50);
+                                    chamber[2].IsRemoved = false;
+                                    chamber[2].BulletReset(bullet, true);
+                                    gunlock = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    if (timer > 1.5)
+                    {
+                        gunlock = false;
+                        timer -= 1.5;
+                    }
+                    break;
             }
         }
         public override bool CheckCollision(BoundingRectangle other)

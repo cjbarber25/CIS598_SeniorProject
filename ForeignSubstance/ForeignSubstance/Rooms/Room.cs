@@ -24,14 +24,14 @@ namespace ForeignSubstance.Rooms
         /// <summary>
         /// Builds the rooms and assigns textures/bounds to proper locations.
         /// </summary>
-        public abstract void Build(int length, int width, Vector2 position);
+        public abstract void Build(int length, int width, Vector2 position,Player player);
         public abstract bool CheckForOutOfBounds(BoundingRectangle playerBounds);
 
         public abstract void AddDoors(int[,] layout, Tuple<int,int> currentPosition);
         public abstract bool CheckDoorCollision(Player player, out Tuple<int,int> destination);
         public abstract void LoadContent(ContentManager content);
 
-        public abstract void AddEnemy(Player player);
+        public abstract void AddEnemy(Player player, Vector2 position);
         /// <summary>
         /// Updates any changes that need to be occurring within the textures of the room.
         /// </summary>

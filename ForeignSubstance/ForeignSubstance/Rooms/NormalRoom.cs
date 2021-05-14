@@ -14,14 +14,25 @@ namespace ForeignSubstance.Rooms
         private Sprite[,] _sprites;
         private List<Sprite> _otherSprites;
 
-        public override void Build(int length, int width, Vector2 position)
+        public override void Build(int length, int width, Vector2 position,Player player)
         {
             _room = new Basic();
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
-            _room.Build(length, width, position);
+            _room.Build(length, width, position,player);
+            Random r = new Random(DateTime.Now.GetHashCode());
+            this.AddObstacles(r.Next(5,10));
+            this.AddEnemy(player,new Vector2(player.Position.X+100,player.Position.Y+100));
+            
         }
 
+        public void AddObstacles(int NumberOfObstacles)
+        {
+            foreach(BoxSprite b in _room.AddObstacles(NumberOfObstacles))
+            {
+                _otherSprites.Add(b);
+            }
+        }
         public override bool CheckForOutOfBounds(BoundingRectangle playerBounds)
         {
             bool flag = false;
@@ -74,6 +85,7 @@ namespace ForeignSubstance.Rooms
             {
                 s.Draw(gametime, spriteBatch);
             }
+            
         }
 
         public override void LoadContent(ContentManager content)
@@ -96,9 +108,9 @@ namespace ForeignSubstance.Rooms
             }
 
         }
-        public override void AddEnemy(Player player)
+        public override void AddEnemy(Player player, Vector2 position)
         {
-            _room.AddEnemy(player);
+            _room.AddEnemy(player,position);
         }
         public override void AddDoors(int[,] layout, Tuple<int, int> currentPosition)
         {

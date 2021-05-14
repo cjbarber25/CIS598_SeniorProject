@@ -11,12 +11,10 @@ namespace ForeignSubstance.Sprites
     public class FloorSprite : Sprite
     {
         private Texture2D _texture;
-        private Vector2 _position;
         public BoundingRectangle _bounds;
-
         public FloorSprite(Vector2 position)
         {
-            _position = position;
+            this.Position = position;
             
         }
 
@@ -37,7 +35,7 @@ namespace ForeignSubstance.Sprites
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(_texture, _position, new Rectangle(32, 32, 32, 32), Color.White, 0, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
+            spriteBatch.Draw(_texture, this.Position, new Rectangle(32, 32, 32, 32), Color.White, 0, new Vector2(0, 0), 2.0f, SpriteEffects.None, 0);
         }
     }
 }

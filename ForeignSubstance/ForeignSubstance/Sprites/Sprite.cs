@@ -13,7 +13,7 @@ namespace ForeignSubstance.Sprites
         private Texture2D _texture;
         private Vector2 _position;
 
-        public Vector2 Position => _position;
+        public Vector2 Position { get { return _position; } set { _position = value; } }
         public abstract void LoadContent(ContentManager content);
 
         public abstract void Update(GameTime gametime);

@@ -16,12 +16,12 @@ namespace ForeignSubstance.Rooms
         private List<Sprite> _otherSprites;
 
 
-        public override void Build(int length, int width, Vector2 position)
+        public override void Build(int length, int width, Vector2 position, Player player)
         {
             _room = new Basic();
             _sprites = new Sprite[0, 5];
             _otherSprites = new List<Sprite>();
-            _room.Build(length, width, position);
+            _room.Build(length, width, position, player);
             _otherSprites.Add( new ShopSprite(new Vector2(position.X+length * 64 / 2, position.Y+width * 64 / 2)));
         }
 
@@ -99,9 +99,9 @@ namespace ForeignSubstance.Rooms
             }
 
         }
-        public override void AddEnemy(Player player)
+        public override void AddEnemy(Player player, Vector2 position)
         {
-            _room.AddEnemy(player);
+            _room.AddEnemy(player,position);
         }
 
         public override void AddDoors(int[,] layout, Tuple<int, int> currentPosition)

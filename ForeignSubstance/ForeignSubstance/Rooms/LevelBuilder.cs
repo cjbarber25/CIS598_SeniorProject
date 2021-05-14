@@ -28,11 +28,13 @@ namespace ForeignSubstance.Rooms
         private Tuple<int,int> _activeRoom;
         private int[,] _layout;
         private bool currentDoorCollisionState = false;
+        private Player _player;
 
-        public LevelBuilder(int[,] layout)
+        public LevelBuilder(int[,] layout, Player player)
         {
             _level = new Room[_levelHeight, _levelWidth];
             _layout = layout;
+            _player = player;
             _activeRoom = new Tuple<int, int>(1, 1);
             for(int i  = 0; i < _levelHeight; i++)
             {
@@ -67,10 +69,6 @@ namespace ForeignSubstance.Rooms
 
         }
 
-        public void AddEnemy(Player player,Tuple<int,int> roomPosition)
-        {
-            _level[roomPosition.Item1, roomPosition.Item2].AddEnemy(player);
-        }
 
         public void Update(GameTime gametime)
         {
@@ -95,7 +93,7 @@ namespace ForeignSubstance.Rooms
                     {
                         int height = rand.Next(8, 12);
                         int width = rand.Next(8, 16);
-                        _level[i, j].Build(height, width, new Vector2((screen.Width/2)-(height*64/2), (screen.Height/2)-(width*64/2)));
+                        _level[i, j].Build(height, width, new Vector2((screen.Width/2)-(height*64/2), (screen.Height/2)-(width*64/2)),_player);
                         _level[i, j].AddDoors(_layout, new Tuple<int,int>(i,j));
                         _level[i, j].LoadContent(content);
                     }
@@ -108,6 +106,7 @@ namespace ForeignSubstance.Rooms
         {
             Tuple<int, int> destination;
             Vector2 newPosition = Vector2.Zero;
+            _player = player;
             if (_level[_activeRoom.Item1, _activeRoom.Item2].CheckDoorCollision(player, out destination))
             {
                 if (!currentDoorCollisionState)

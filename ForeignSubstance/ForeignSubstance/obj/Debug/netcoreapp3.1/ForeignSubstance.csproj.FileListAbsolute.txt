@@ -245,3 +245,14 @@ C:\Users\coleb\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstan
 C:\Users\coleb\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\SwordDroid\Red Sword Run.xnb
 C:\Users\coleb\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\Steamtech-Mayhem_Looping.wma
 C:\Users\coleb\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\Steamtech-Mayhem_Looping.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\EnemyDamaged.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\GetMoney.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\Laser_Shoot.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\PlayerDamaged.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\Steamtech-Mayhem_Looping.wma
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\Steamtech-Mayhem_Looping.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\Sounds\Teleport.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\SwordDroid\Red Sword Attack.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\SwordDroid\Red Sword Damaged and Death.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\SwordDroid\Red Sword Idle.xnb
+C:\Users\ajbon\source\repos\CIS598_SeniorProject\ForeignSubstance\ForeignSubstance\bin\Debug\netcoreapp3.1\Content\SwordDroid\Red Sword Run.xnb

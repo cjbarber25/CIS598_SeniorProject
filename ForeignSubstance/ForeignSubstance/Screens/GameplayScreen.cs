@@ -19,7 +19,7 @@ namespace ForeignSubstance.Screens
         private SpriteBatch _spriteBatch;
         private Player _player;
 
-        private int[,] _layout = new int[,] { {0 , 2,0,0,0 }, { 0, 1, 4,1,0 }, {0,0,0,0,0 },{0,0,0,0,0}, { 0, 0, 0, 0, 0 } };
+        private int[,] _layout = new int[,] { {0,0,2,0,0 }, {0,1,5,1,0 }, {0,0,3,0,0 },{1,4,1,0,6}, { 0,0,1,4,5} };
         private LevelBuilder _level;
 
         private float _pauseAlpha;

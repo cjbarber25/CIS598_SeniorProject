@@ -23,6 +23,7 @@ namespace ForeignSubstance.Sprites
 
         private Vector2 _position;
         private Rectangle _sourceRect;
+        private BoundingRectangle _bounds;
         private States State;
         private SpriteEffects _spriteEffects;
         private double timer;
@@ -62,6 +63,12 @@ namespace ForeignSubstance.Sprites
             walking
         }
 
+        public SwordSprite(Vector2 position, Player player)
+        {
+            _position = position;
+            _player = player;
+        }
+
         public void Damaged(int damage)
         {
             _healthRemaining -= damage;
@@ -79,7 +86,7 @@ namespace ForeignSubstance.Sprites
 
         public override bool CheckCollision(BoundingRectangle other)
         {
-            throw new NotImplementedException();
+            return _bounds.CollidesWith(other);
         }
 
         public override void Draw(GameTime gameTime, SpriteBatch spriteBatch)
@@ -154,7 +161,13 @@ namespace ForeignSubstance.Sprites
                     {
                         flipped = false;
                     }
+
+
+
                     _position += _direction * 40 * (float)gametime.ElapsedGameTime.TotalSeconds;
+
+
+
                     if (distance < 40)
                     {
                         State = States.attacking;

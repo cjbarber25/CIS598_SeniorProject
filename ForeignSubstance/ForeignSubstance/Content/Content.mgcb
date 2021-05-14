@@ -284,6 +284,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/Blue1.png
 
+#begin SpaceBackgrounds/Backgrounds/Blue1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Blue1.png
+
 #begin SpaceBackgrounds/Backgrounds/Blue2.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -295,6 +307,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/Blue2.png
+
+#begin SpaceBackgrounds/Backgrounds/Blue2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Blue2.png
+
+#begin SpaceBackgrounds/Backgrounds/Blue3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Blue3.png
 
 #begin SpaceBackgrounds/Backgrounds/Blue3.png
 /importer:TextureImporter
@@ -320,6 +356,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/BlueStars.png
 
+#begin SpaceBackgrounds/Backgrounds/BlueStars.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/BlueStars.png
+
 #begin SpaceBackgrounds/Backgrounds/Purple1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -331,6 +379,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/Purple1.png
+
+#begin SpaceBackgrounds/Backgrounds/Purple1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Purple1.png
+
+#begin SpaceBackgrounds/Backgrounds/Purple2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Purple2.png
 
 #begin SpaceBackgrounds/Backgrounds/Purple2.png
 /importer:TextureImporter
@@ -356,6 +428,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/Purple3.png
 
+#begin SpaceBackgrounds/Backgrounds/Purple3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Purple3.png
+
 #begin SpaceBackgrounds/Backgrounds/Red1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -367,6 +451,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/Red1.png
+
+#begin SpaceBackgrounds/Backgrounds/Red1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Red1.png
+
+#begin SpaceBackgrounds/Backgrounds/Red2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Red2.png
 
 #begin SpaceBackgrounds/Backgrounds/Red2.png
 /importer:TextureImporter
@@ -392,6 +500,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/Red3.png
 
+#begin SpaceBackgrounds/Backgrounds/Red3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/Red3.png
+
 #begin SpaceBackgrounds/Backgrounds/YellowStars.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -403,6 +523,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Backgrounds/YellowStars.png
+
+#begin SpaceBackgrounds/Backgrounds/YellowStars.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Backgrounds/YellowStars.png
+
+#begin SpaceBackgrounds/Comet/Blue/comet1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/comet1.png
 
 #begin SpaceBackgrounds/Comet/Blue/comet1.png
 /importer:TextureImporter
@@ -428,6 +572,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Blue/Comet2.png
 
+#begin SpaceBackgrounds/Comet/Blue/Comet2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/Comet2.png
+
 #begin SpaceBackgrounds/Comet/Blue/Comet3.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -439,6 +595,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Blue/Comet3.png
+
+#begin SpaceBackgrounds/Comet/Blue/Comet3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/Comet3.png
+
+#begin SpaceBackgrounds/Comet/Blue/Comet4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/Comet4.png
 
 #begin SpaceBackgrounds/Comet/Blue/Comet4.png
 /importer:TextureImporter
@@ -464,6 +644,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Blue/Comet5.png
 
+#begin SpaceBackgrounds/Comet/Blue/Comet5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/Comet5.png
+
 #begin SpaceBackgrounds/Comet/Blue/Comet6.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -475,6 +667,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Blue/Comet6.png
+
+#begin SpaceBackgrounds/Comet/Blue/Comet6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/Comet6.png
+
+#begin SpaceBackgrounds/Comet/Blue/Comet7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/Comet7.png
 
 #begin SpaceBackgrounds/Comet/Blue/Comet7.png
 /importer:TextureImporter
@@ -500,6 +716,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Blue/Comet8.png
 
+#begin SpaceBackgrounds/Comet/Blue/Comet8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Blue/Comet8.png
+
 #begin SpaceBackgrounds/Comet/Yellow/Comet1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -511,6 +739,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Yellow/Comet1.png
+
+#begin SpaceBackgrounds/Comet/Yellow/Comet1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet1.png
+
+#begin SpaceBackgrounds/Comet/Yellow/Comet2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet2.png
 
 #begin SpaceBackgrounds/Comet/Yellow/Comet2.png
 /importer:TextureImporter
@@ -536,6 +788,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Yellow/Comet3.png
 
+#begin SpaceBackgrounds/Comet/Yellow/Comet3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet3.png
+
 #begin SpaceBackgrounds/Comet/Yellow/Comet4.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -547,6 +811,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Yellow/Comet4.png
+
+#begin SpaceBackgrounds/Comet/Yellow/Comet4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet4.png
+
+#begin SpaceBackgrounds/Comet/Yellow/Comet5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet5.png
 
 #begin SpaceBackgrounds/Comet/Yellow/Comet5.png
 /importer:TextureImporter
@@ -572,6 +860,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Yellow/Comet6.png
 
+#begin SpaceBackgrounds/Comet/Yellow/Comet6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet6.png
+
 #begin SpaceBackgrounds/Comet/Yellow/Comet7.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -583,6 +883,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Comet/Yellow/Comet7.png
+
+#begin SpaceBackgrounds/Comet/Yellow/Comet7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet7.png
+
+#begin SpaceBackgrounds/Comet/Yellow/Comet8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Comet/Yellow/Comet8.png
 
 #begin SpaceBackgrounds/Comet/Yellow/Comet8.png
 /importer:TextureImporter
@@ -608,6 +932,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Blue/star1.png
 
+#begin SpaceBackgrounds/Star1/Blue/star1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star1.png
+
 #begin SpaceBackgrounds/Star1/Blue/star2.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -619,6 +955,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Blue/star2.png
+
+#begin SpaceBackgrounds/Star1/Blue/star2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star2.png
+
+#begin SpaceBackgrounds/Star1/Blue/star3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star3.png
 
 #begin SpaceBackgrounds/Star1/Blue/star3.png
 /importer:TextureImporter
@@ -644,6 +1004,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Blue/star4.png
 
+#begin SpaceBackgrounds/Star1/Blue/star4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star4.png
+
 #begin SpaceBackgrounds/Star1/Blue/star5.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -655,6 +1027,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Blue/star5.png
+
+#begin SpaceBackgrounds/Star1/Blue/star5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star5.png
+
+#begin SpaceBackgrounds/Star1/Blue/star6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star6.png
 
 #begin SpaceBackgrounds/Star1/Blue/star6.png
 /importer:TextureImporter
@@ -680,6 +1076,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Blue/star7.png
 
+#begin SpaceBackgrounds/Star1/Blue/star7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star7.png
+
 #begin SpaceBackgrounds/Star1/Blue/star8.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -691,6 +1099,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Blue/star8.png
+
+#begin SpaceBackgrounds/Star1/Blue/star8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Blue/star8.png
+
+#begin SpaceBackgrounds/Star1/Yellow/star1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star1.png
 
 #begin SpaceBackgrounds/Star1/Yellow/star1.png
 /importer:TextureImporter
@@ -716,6 +1148,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Yellow/star2.png
 
+#begin SpaceBackgrounds/Star1/Yellow/star2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star2.png
+
 #begin SpaceBackgrounds/Star1/Yellow/star3.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -727,6 +1171,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Yellow/star3.png
+
+#begin SpaceBackgrounds/Star1/Yellow/star3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star3.png
+
+#begin SpaceBackgrounds/Star1/Yellow/star4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star4.png
 
 #begin SpaceBackgrounds/Star1/Yellow/star4.png
 /importer:TextureImporter
@@ -752,6 +1220,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Yellow/star5.png
 
+#begin SpaceBackgrounds/Star1/Yellow/star5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star5.png
+
 #begin SpaceBackgrounds/Star1/Yellow/star6.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -763,6 +1243,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Yellow/star6.png
+
+#begin SpaceBackgrounds/Star1/Yellow/star6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star6.png
+
+#begin SpaceBackgrounds/Star1/Yellow/star7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star7.png
 
 #begin SpaceBackgrounds/Star1/Yellow/star7.png
 /importer:TextureImporter
@@ -788,6 +1292,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star1/Yellow/star8.png
 
+#begin SpaceBackgrounds/Star1/Yellow/star8.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star1/Yellow/star8.png
+
 #begin SpaceBackgrounds/Star2/Blue/star1.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -799,6 +1315,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Blue/star1.png
+
+#begin SpaceBackgrounds/Star2/Blue/star1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Blue/star1.png
+
+#begin SpaceBackgrounds/Star2/Blue/star2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Blue/star2.png
 
 #begin SpaceBackgrounds/Star2/Blue/star2.png
 /importer:TextureImporter
@@ -824,6 +1364,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Blue/star3.png
 
+#begin SpaceBackgrounds/Star2/Blue/star3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Blue/star3.png
+
 #begin SpaceBackgrounds/Star2/Blue/star4.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -835,6 +1387,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Blue/star4.png
+
+#begin SpaceBackgrounds/Star2/Blue/star4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Blue/star4.png
+
+#begin SpaceBackgrounds/Star2/Blue/star5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Blue/star5.png
 
 #begin SpaceBackgrounds/Star2/Blue/star5.png
 /importer:TextureImporter
@@ -860,6 +1436,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Blue/star6.png
 
+#begin SpaceBackgrounds/Star2/Blue/star6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Blue/star6.png
+
 #begin SpaceBackgrounds/Star2/Blue/star7.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -871,6 +1459,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Blue/star7.png
+
+#begin SpaceBackgrounds/Star2/Blue/star7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Blue/star7.png
+
+#begin SpaceBackgrounds/Star2/Yellow/star1.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Yellow/star1.png
 
 #begin SpaceBackgrounds/Star2/Yellow/star1.png
 /importer:TextureImporter
@@ -896,6 +1508,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Yellow/star2.png
 
+#begin SpaceBackgrounds/Star2/Yellow/star2.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Yellow/star2.png
+
 #begin SpaceBackgrounds/Star2/Yellow/star3.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -907,6 +1531,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Yellow/star3.png
+
+#begin SpaceBackgrounds/Star2/Yellow/star3.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Yellow/star3.png
+
+#begin SpaceBackgrounds/Star2/Yellow/star4.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Yellow/star4.png
 
 #begin SpaceBackgrounds/Star2/Yellow/star4.png
 /importer:TextureImporter
@@ -932,6 +1580,18 @@
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Yellow/star5.png
 
+#begin SpaceBackgrounds/Star2/Yellow/star5.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Yellow/star5.png
+
 #begin SpaceBackgrounds/Star2/Yellow/star6.png
 /importer:TextureImporter
 /processor:TextureProcessor
@@ -943,6 +1603,30 @@
 /processorParam:MakeSquare=False
 /processorParam:TextureFormat=Color
 /build:SpaceBackgrounds/Star2/Yellow/star6.png
+
+#begin SpaceBackgrounds/Star2/Yellow/star6.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Yellow/star6.png
+
+#begin SpaceBackgrounds/Star2/Yellow/star7.png
+/importer:TextureImporter
+/processor:TextureProcessor
+/processorParam:ColorKeyColor=255,0,255,255
+/processorParam:ColorKeyEnabled=True
+/processorParam:GenerateMipmaps=False
+/processorParam:PremultiplyAlpha=True
+/processorParam:ResizeToPowerOfTwo=False
+/processorParam:MakeSquare=False
+/processorParam:TextureFormat=Color
+/build:SpaceBackgrounds/Star2/Yellow/star7.png
 
 #begin SpaceBackgrounds/Star2/Yellow/star7.png
 /importer:TextureImporter

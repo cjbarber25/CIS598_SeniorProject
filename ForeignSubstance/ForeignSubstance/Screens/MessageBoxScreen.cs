@@ -21,8 +21,8 @@ namespace ForeignSubstance.Screens
         // "A=ok, B=cancel" usage text prompt.
         public MessageBoxScreen(string message, bool includeUsageText = true)
         {
-            const string usageText = "\nA button, Space, Enter = ok" +
-                                     "\nB button, Backspace = cancel";
+            const string usageText = "\nEnter = ok" +
+                                     "\nBackspace = cancel";
 
             if (includeUsageText)
                 _message = message + usageText;

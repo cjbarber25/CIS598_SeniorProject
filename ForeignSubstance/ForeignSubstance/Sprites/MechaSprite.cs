@@ -273,7 +273,7 @@ namespace ForeignSubstance.Sprites
                 {
                     animationFrame++;
                     animationTimer -= 0.3f;
-                    if (animationFrame > 4)
+                    if (animationFrame > 2)
                     {
                         killedSound.Play();
                         dead = true;

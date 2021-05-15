@@ -30,12 +30,12 @@ namespace ForeignSubstance.Sprites
         public void BuyItem()
         {
             
-            if (_player._money > 400 && _player.Arm.currentGun != ArmSprite.GunTypes.Auto)
+            if ( _player.Arm.currentGun == ArmSprite.GunTypes.Shotgun)
             {
                 _item = new Tuple<ArmSprite.GunTypes, int>(ArmSprite.GunTypes.Auto, 400);
                 _player.BuyItem(_item);
             }
-            else
+            else if (_player.Arm.currentGun != ArmSprite.GunTypes.Shotgun)
             {
                 _player.BuyItem(_item);
             }

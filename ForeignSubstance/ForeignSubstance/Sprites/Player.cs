@@ -63,7 +63,8 @@ namespace ForeignSubstance.Sprites
 
         public bool BuyItem(Tuple<ArmSprite.GunTypes, int> item)
         {
-           if(_money >= item.Item2 && arm.currentGun != item.Item1)
+            
+           if(_money >= item.Item2 )
             {
                 _money -= item.Item2;
                 arm.currentGun = item.Item1;

@@ -135,7 +135,7 @@ namespace ForeignSubstance.Rooms
             }
             for (int i = 0; i < NumberOfObstacles; i++)
             {
-                BoxSprite newBox = new BoxSprite(_sprites[r.Next(2, _roomLength - 2), r.Next(2, _roomWidth - 2)].Position, true);
+                BoxSprite newBox = new BoxSprite(_sprites[r.Next(3, _roomLength - 3), r.Next(3, _roomWidth - 3)].Position, true);
                 if (!newBox.CheckCollision(_player.Bounds)){
                     _obstacles.Add(newBox);
                 }
@@ -217,10 +217,31 @@ namespace ForeignSubstance.Rooms
 
         public override void Update(GameTime gametime)
         {
-            foreach(Enemy e in _enemySprites)
+            bool flag = false ;
+            foreach (Enemy e in _enemySprites)
             {
                 e.Update(gametime);
+                if (e.CheckIfAlive())
+                {
+                    flag = true;
+                }
             }
+            if (!flag)
+            {
+                foreach(DoorSprite d in _doors)
+                {
+                    d.ActivateDoor();
+                }
+            }
+            else
+            {
+                foreach (DoorSprite d in _doors)
+                {
+                    d.DeactivateDoor();
+                }
+            }
+            
+            
         }
         public override bool CheckDoorCollision(Player player, out Tuple<int,int> _destination)
         {

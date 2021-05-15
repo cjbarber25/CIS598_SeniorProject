@@ -44,5 +44,7 @@ namespace ForeignSubstance.Sprites
             attacking,
             walking
         }
+
+        public abstract bool CheckIfAlive();
     }
 }

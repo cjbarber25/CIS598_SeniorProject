@@ -93,6 +93,17 @@ namespace ForeignSubstance.Sprites
             _textureActive = _textureIdle;
         }
 
+        public override bool CheckIfAlive()
+        {
+            if (!dead)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public override void Update(GameTime gametime)
         {
             if (!dying)
@@ -262,7 +273,7 @@ namespace ForeignSubstance.Sprites
                 {
                     animationFrame++;
                     animationTimer -= 0.3f;
-                    if (animationFrame > 4)
+                    if (animationFrame > 2)
                     {
                         killedSound.Play();
                         dead = true;
